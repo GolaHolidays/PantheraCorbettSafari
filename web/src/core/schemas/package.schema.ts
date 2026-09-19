@@ -18,7 +18,7 @@ export const SafariPackageSchema = z.object({
   inclusions: z.array(z.string().min(1)).min(1),
   exclusions: z.array(z.string().min(1)),
   itineraryHighlights: z.array(z.string().min(1)).min(1),
-  image: z.url("Invalid image URL"),
+  image: z.string().min(1),
   isFeatured: z.boolean(),
 });
 

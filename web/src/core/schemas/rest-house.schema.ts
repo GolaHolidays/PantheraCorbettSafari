@@ -14,7 +14,7 @@ export const ForestRestHouseSchema = z.object({
   description: z.string().min(1),
   features: z.array(z.string().min(1)).min(1),
   permitWindow: z.string().min(1),
-  image: z.url("Invalid image URL"),
+  image: z.string().min(1),
   isFeatured: z.boolean(),
 });
 

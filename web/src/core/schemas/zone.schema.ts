@@ -23,7 +23,7 @@ export const SafariZoneSchema = z.object({
   priceNote: z.string().min(1),
   highlights: z.array(z.string().min(1)).min(1),
   bestFor: z.array(z.string().min(1)).min(1),
-  image: z.url("Invalid image URL"),
+  image: z.string().min(1),
   isFeatured: z.boolean(),
 });
 

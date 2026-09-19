@@ -17,6 +17,8 @@ export function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+const SITE_URL = "https://pantheracorbettsafari.com";
+
 export async function generateMetadata({
   params,
 }: {
@@ -26,9 +28,34 @@ export async function generateMetadata({
   const zone = ZoneRepository.getZoneBySlug(slug);
   if (!zone) return { title: "Zone Not Found" };
 
+  const title = `${zone.name} Safari Permit & Booking — Jim Corbett`;
+  const description = `Book ${zone.name} jeep safari permits with Panthera Corbett Safari. ${zone.gate}. Season: ${zone.season}. Starting ₹${zone.startingPriceINR.toLocaleString("en-IN")} per jeep. ${zone.description.slice(0, 120)}...`;
+  const canonical = `${SITE_URL}/zones/${zone.slug}`;
+
   return {
-    title: `${zone.name} Safari Booking & Permits | Jim Corbett`,
-    description: zone.description,
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title,
+      description,
+      images: [
+        {
+          url: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
+          width: 1200,
+          height: 630,
+          alt: `${zone.name} — Jim Corbett Tiger Reserve`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`],
+    },
   };
 }
 
@@ -49,8 +76,37 @@ export default async function ZoneDetailPage({
     `Hello Panthera Corbett! I want to check availability for ${zone.name}.`
   );
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: `${zone.name} — Jim Corbett Tiger Reserve`,
+    description: zone.description,
+    url: `${SITE_URL}/zones/${zone.slug}`,
+    image: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ramnagar",
+      addressRegion: "Uttarakhand",
+      addressCountry: "IN",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: zone.startingPriceINR,
+      availability: zone.isOpenNow
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
+    },
+    touristType: zone.bestFor,
+  };
+
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-2 text-xs text-[#8A9468]">
