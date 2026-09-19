@@ -14,10 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#37482E]">
           {/* Brand & Authority */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-[4px] bg-[#37482E] border border-[#8A9468]/40 flex items-center justify-center text-[#C99A3D] font-serif font-bold text-lg">
-                P
-              </div>
+            <div>
               <span className="font-serif text-xl font-bold text-[#FBF8F0]">
                 {config.name}
               </span>
@@ -25,20 +22,6 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             <p className="text-sm text-[#E8E0CC]/80 leading-relaxed">
               {config.tagline}
             </p>
-            <div className="pt-2 text-xs space-y-1 text-[#8A9468]">
-              <div>
-                <strong className="text-[#E8E0CC]">Reg Authority:</strong>{" "}
-                {config.registeredAuthority}
-              </div>
-              <div>
-                <strong className="text-[#E8E0CC]">License:</strong>{" "}
-                {config.licenseNumber}
-              </div>
-              <div>
-                <strong className="text-[#E8E0CC]">Operating Since:</strong>{" "}
-                {config.foundedYear} ({config.experienceYears}+ years)
-              </div>
-            </div>
           </div>
 
           {/* Corbett Safari Zones */}
@@ -142,13 +125,9 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
           </div>
         </div>
 
-        {/* Legal and Scarcity statement */}
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-[#8A9468] gap-4">
+        <div className="mt-8 text-xs text-[#8A9468]">
           <p>
-            © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas and environmental guidelines.
-          </p>
-          <p className="text-right">
-            Pure SSG (Static Site Generation) Architecture. Single source of truth.
+            © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas.
           </p>
         </div>
       </div>

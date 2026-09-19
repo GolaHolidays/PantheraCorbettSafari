@@ -79,8 +79,7 @@ export const zones = [
       "Good raptor sightings in winter months",
     ],
     bestFor: ["Monsoon travel", "Sloth bear watching", "Off-season visitors"],
-    image:
-      "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80",
+    image: "/jhirna-zone.jpg",
     isFeatured: true,
   },
   {
@@ -107,8 +106,7 @@ export const zones = [
       "Elephant herds pass through regularly",
     ],
     bestFor: ["Quiet safari experience", "Bird watchers", "Second-day safari"],
-    image:
-      "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1200&q=80",
+    image: "/dhela-zone.jpg",
     isFeatured: false,
   },
   {
@@ -191,8 +189,7 @@ export const zones = [
       "Dense spotted deer and wild boar populations",
     ],
     bestFor: ["Last-minute travelers", "Repeat visitors", "Families and groups"],
-    image:
-      "https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=1200&q=80",
+    image: "/phato-zone.jpg",
     isFeatured: false,
   },
   {

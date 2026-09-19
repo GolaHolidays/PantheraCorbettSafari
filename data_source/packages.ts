@@ -125,8 +125,7 @@ export const packages = [
       "32 km drive through dense sal forest to Dhikala complex",
       "Approximately 2 hours scanning Dhikala Chaur and Ramganga river bank",
     ],
-    image:
-      "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80",
+    image: "/dhikala-canter.jpg",
     isFeatured: false,
   },
 ];

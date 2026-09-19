@@ -1,10 +1,10 @@
 export const trustMetrics = {
-  rating: 4.9,
-  reviewCount: 1840,
+  rating: 4.9,          // kept in schema for future use, not displayed
+  reviewCount: 0,        // not displayed
   safarisCompleted: "12,500+",
   licensedGypsies: 28,
   registeredGuides: 34,
-  yearsServing: 15,
+  yearsServing: 15,      // kept in schema, not displayed in trust row
   trustHighlights: [
     {
       title: "Forest Dept Authorized",
@@ -12,14 +12,14 @@ export const trustMetrics = {
       badge: "Official Agent",
     },
     {
-      title: "4.9 on Google",
-      subtitle: "1,840+ reviews from verified guests",
-      badge: "Top Rated in Ramnagar",
+      title: "All 8 Zones Covered",
+      subtitle: "Bijrani, Dhikala, Jhirna, Garjiya and more",
+      badge: "Every Zone",
     },
     {
-      title: "15 Years in Corbett",
-      subtitle: "Local naturalists who know every zone",
-      badge: "Local Experts",
+      title: "28 Licensed Jeeps",
+      subtitle: "34 registered Forest Dept guides",
+      badge: "Licensed Fleet",
     },
     {
       title: "Fixed Pricing",
