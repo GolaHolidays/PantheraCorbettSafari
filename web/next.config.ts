@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   // ─── Pure Static Export ──────────────────────────────────────────────────
@@ -7,12 +6,6 @@ const nextConfig: NextConfig = {
   // No Node.js server needed — deploy to Nginx, Cloudflare Pages, GitHub Pages, etc.
   output: "export",
 
-  // ─── Turbopack root ──────────────────────────────────────────────────────
-  // Extends Turbopack's filesystem boundary to the workspace root so it can
-  // follow the web/data_source → ../data_source symlink.
-  turbopack: {
-    root: path.resolve(__dirname, ".."),
-  },
 
   // ─── Image handling ──────────────────────────────────────────────────────
   // Static export cannot run server-side image optimization.
