@@ -23,7 +23,7 @@ const inter = Inter({
 
 const config = SiteConfigRepository.getConfig();
 
-const SITE_URL = "https://pantheracorbettsafari.com";
+const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
 export const viewport: Viewport = {
   width: "device-width",

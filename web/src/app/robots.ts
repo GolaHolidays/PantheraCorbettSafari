@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -9,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://pantheracorbettsafari.com/sitemap.xml",
-    host: "https://pantheracorbettsafari.com",
+    sitemap: "https://pantheracorbettsafari.corbettcamp.com/sitemap.xml",
+    host: "https://pantheracorbettsafari.corbettcamp.com",
   };
 }

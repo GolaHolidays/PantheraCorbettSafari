@@ -17,7 +17,7 @@ export function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-const SITE_URL = "https://pantheracorbettsafari.com";
+const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
 export async function generateMetadata({
   params,

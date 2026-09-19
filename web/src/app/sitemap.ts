@@ -5,7 +5,9 @@ import {
   RestHouseRepository,
 } from "../core/database/repositories";
 
-const SITE_URL = "https://pantheracorbettsafari.com";
+export const dynamic = "force-static";
+
+const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const zoneSlugs = ZoneRepository.getAvailableSlugs();
