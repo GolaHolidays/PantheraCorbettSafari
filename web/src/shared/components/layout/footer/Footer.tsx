@@ -1,0 +1,157 @@
+import React from "react";
+import Link from "next/link";
+import { SiteConfig, SafariZone } from "@/core/models";
+
+interface FooterProps {
+  config: SiteConfig;
+  zones: SafariZone[];
+}
+
+export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
+  return (
+    <footer className="bg-[#17211A] text-[#E8E0CC] border-t border-[#37482E] pb-24 sm:pb-12 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#37482E]">
+          {/* Brand & Authority */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-[4px] bg-[#37482E] border border-[#8A9468]/40 flex items-center justify-center text-[#C99A3D] font-serif font-bold text-lg">
+                P
+              </div>
+              <span className="font-serif text-xl font-bold text-[#FBF8F0]">
+                {config.name}
+              </span>
+            </div>
+            <p className="text-sm text-[#E8E0CC]/80 leading-relaxed">
+              {config.tagline}
+            </p>
+            <div className="pt-2 text-xs space-y-1 text-[#8A9468]">
+              <div>
+                <strong className="text-[#E8E0CC]">Reg Authority:</strong>{" "}
+                {config.registeredAuthority}
+              </div>
+              <div>
+                <strong className="text-[#E8E0CC]">License:</strong>{" "}
+                {config.licenseNumber}
+              </div>
+              <div>
+                <strong className="text-[#E8E0CC]">Operating Since:</strong>{" "}
+                {config.foundedYear} ({config.experienceYears}+ years)
+              </div>
+            </div>
+          </div>
+
+          {/* Corbett Safari Zones */}
+          <div>
+            <h3 className="font-serif text-base font-semibold text-[#FBF8F0] mb-4">
+              Corbett Safari Zones
+            </h3>
+            <ul className="space-y-2 text-sm text-[#E8E0CC]/80">
+              {zones.map((zone) => (
+                <li key={zone.id}>
+                  <Link
+                    href={`/zones/${zone.slug}`}
+                    className="hover:text-white transition-colors flex items-center justify-between"
+                  >
+                    <span>{zone.name}</span>
+                    <span className="text-xs text-[#8A9468]">{zone.zoneType}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Safari Guidelines & Bookings */}
+          <div>
+            <h3 className="font-serif text-base font-semibold text-[#FBF8F0] mb-4">
+              Safari Planning
+            </h3>
+            <ul className="space-y-2 text-sm text-[#E8E0CC]/80">
+              <li>
+                <Link href="/#packages" className="hover:text-white transition-colors">
+                  Corbett Tour Packages
+                </Link>
+              </li>
+              <li>
+                <Link href="/#night-stays" className="hover:text-white transition-colors">
+                  Dhikala FRH Night Stay
+                </Link>
+              </li>
+              <li>
+                <Link href="/#safari-types" className="hover:text-white transition-colors">
+                  Jeep vs Canter Safari
+                </Link>
+              </li>
+              <li>
+                <Link href="/#secondary-services" className="hover:text-white transition-colors">
+                  Delhi to Ramnagar Cabs
+                </Link>
+              </li>
+              <li>
+                <Link href="/#faq" className="hover:text-white transition-colors">
+                  Permit & Advance Booking Rules
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Official Desk & Support */}
+          <div>
+            <h3 className="font-serif text-base font-semibold text-[#FBF8F0] mb-4">
+              Direct Safari Desk
+            </h3>
+            <div className="space-y-3 text-sm text-[#E8E0CC]/80">
+              <p>
+                <strong className="text-white block">Central Helpdesk:</strong>
+                <a
+                  href={`tel:${config.contact.phoneRaw}`}
+                  className="text-white hover:underline font-tabular"
+                >
+                  {config.contact.phoneDisplay}
+                </a>
+              </p>
+              <p>
+                <strong className="text-white block">WhatsApp Booking:</strong>
+                <a
+                  href={`https://wa.me/${config.contact.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#25D366] hover:underline"
+                >
+                  {config.contact.whatsappDisplay}
+                </a>
+              </p>
+              <p>
+                <strong className="text-white block">Official Email:</strong>
+                <a
+                  href={`mailto:${config.contact.email}`}
+                  className="text-white hover:underline break-all"
+                >
+                  {config.contact.email}
+                </a>
+              </p>
+              <p>
+                <strong className="text-white block">CTR Reception Office:</strong>
+                {config.contact.officeAddress.line1}, {config.contact.officeAddress.city},{" "}
+                {config.contact.officeAddress.pincode}
+              </p>
+              <p className="text-xs text-[#8A9468]">
+                Desk Timings: {config.hours.bookingDesk}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal and Scarcity statement */}
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-[#8A9468] gap-4">
+          <p>
+            © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas and environmental guidelines.
+          </p>
+          <p className="text-right">
+            Pure SSG (Static Site Generation) Architecture. Single source of truth.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
