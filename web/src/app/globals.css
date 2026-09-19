@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #17211A;
+  --color-forest: #37482E;
+  --color-moss: #8A9468;
+  --color-ember: #B84C1E;
+  --color-ember-dark: #8F3B16;
+  --color-gold: #C99A3D;
+  --color-sand: #E8E0CC;
+  --color-sand-light: #F4EFE6;
+  --color-paper: #FBF8F0;
+
+  --font-serif: var(--font-fraunces), serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  --radius-structure: 3px;
+  --radius-secondary: 6px;
+  --radius-pill: 9999px;
+}
+
+:root {
+  --bg-primary: #FBF8F0;
+  --text-primary: #17211A;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures for prices and numbers as per design guide */
+.font-tabular {
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
