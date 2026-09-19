@@ -31,18 +31,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: `${config.name} | Official Jim Corbett Safari Bookings`,
+  title: `${config.name} | Jim Corbett Safari Permits & Forest Rest House Bookings`,
   description: config.description,
   keywords: [
     "Jim Corbett Safari",
     "Dhikala Safari Booking",
     "Bijrani Jeep Safari",
-    "Corbett Tiger Reserve",
+    "Corbett Tiger Reserve Permit",
     "Dhikala Forest Rest House",
     "Jim Corbett Canter Safari",
-    "Ramnagar Corbett Safari Booking",
+    "Ramnagar Safari Booking",
+    "Forest Rest House Corbett",
   ],
   authors: [{ name: config.name }],
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
+  generator: undefined,
 };
 
 export default function RootLayout({
