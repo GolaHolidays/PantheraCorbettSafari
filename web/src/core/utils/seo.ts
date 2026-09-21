@@ -535,3 +535,89 @@ export function buildServiceListSchema(): object {
   };
 }
 
+/**
+ * TouristTrip schema for a safari package detail page.
+ * Enables rich results for package/tour listings in Google.
+ */
+export function buildPackageSchema(pkg: {
+  title: string;
+  overview: string;
+  image: string;
+  slug: string;
+  duration: string;
+  zone: string;
+  priceFromINR: number;
+}): object {
+  const imageUrl = pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: pkg.title,
+    description: pkg.overview,
+    image: imageUrl,
+    url: `${SITE_URL}/packages/${pkg.slug}`,
+    provider: {
+      "@type": "Organization",
+      name: "Panthera Corbett Safari",
+      url: SITE_URL,
+    },
+    touristType: ["Wildlife Enthusiasts", "Nature Photography", "Family Travel"],
+    itinerary: {
+      "@type": "ItemList",
+      name: `${pkg.title} Itinerary`,
+      description: `${pkg.duration} safari tour in ${pkg.zone}`,
+    },
+    offers: {
+      "@type": "Offer",
+      price: pkg.priceFromINR,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
+    },
+  };
+}
+
+/**
+ * LodgingBusiness schema for a Forest Rest House detail page.
+ * Signals accommodation + wildlife context to Google.
+ */
+export function buildRestHouseSchema(lodge: {
+  name: string;
+  description: string;
+  image: string;
+  slug: string;
+  zone: string;
+  tariffPerNightINR: number;
+}): object {
+  const imageUrl = lodge.image.startsWith("http") ? lodge.image : `${SITE_URL}${lodge.image}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: lodge.name,
+    description: lodge.description,
+    image: imageUrl,
+    url: `${SITE_URL}/forest-rest-houses/${lodge.slug}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Jim Corbett Tiger Reserve",
+      addressRegion: "Uttarakhand",
+      addressCountry: "IN",
+    },
+    containedInPlace: {
+      "@type": "TouristAttraction",
+      name: "Jim Corbett Tiger Reserve",
+    },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Wildlife Safari Access", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Inside Core Zone", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Meals Included", value: true },
+    ],
+    offers: {
+      "@type": "Offer",
+      price: lodge.tariffPerNightINR,
+      priceCurrency: "INR",
+      availability: "https://schema.org/LimitedAvailability",
+      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
+    },
+  };
+}

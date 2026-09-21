@@ -8,6 +8,11 @@ import {
   SiteConfigRepository,
 } from "../../../core/database/repositories";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
+import {
+  SITE_URL,
+  buildRestHouseSchema,
+  buildBreadcrumbSchema,
+} from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -26,9 +31,55 @@ export async function generateMetadata({
   const lodge = RestHouseRepository.getRestHouseBySlug(slug);
   if (!lodge) return { title: "Lodge Not Found" };
 
+  const canonical = `${SITE_URL}/forest-rest-houses/${slug}`;
+  const ogImage = lodge.image.startsWith("http") ? lodge.image : `${SITE_URL}${lodge.image}`;
+
+  // Rich, keyword-dense titles per FRH
+  const titleMap: Record<string, string> = {
+    "dhikala-forest-rest-house":
+      "Dhikala Forest Rest House Booking | Inside Corbett Core Zone | ₹9,500/night",
+    "gairal-forest-rest-house":
+      "Gairal Forest Rest House Booking | Ramganga River | Jim Corbett",
+    "bijrani-forest-rest-house":
+      "Bijrani Forest Rest House Booking | Core Zone Stay | Jim Corbett",
+  };
+  const descMap: Record<string, string> = {
+    "dhikala-forest-rest-house":
+      "Book Dhikala Forest Rest House stay — government tariff from ₹9,500/room/night. Includes morning and evening Gypsy safaris, all vegetarian meals, inside the core zone. Permit window opens 45 days ahead.",
+    "gairal-forest-rest-house":
+      "Book Gairal Forest Rest House stay inside Jim Corbett core zone. On the Ramganga riverbank, with private morning and evening Gypsy safaris included. Government tariff, all meals.",
+    "bijrani-forest-rest-house":
+      "Book Bijrani Forest Rest House inside Jim Corbett. Exclusive inside-core-zone stay with morning and evening jeep safaris, all meals, government tariff. Book 45 days in advance.",
+  };
+
+  const title = titleMap[slug] ?? `${lodge.name} Booking | Jim Corbett Core Stay`;
+  const description = descMap[slug] ?? lodge.description;
+
   return {
-    title: `${lodge.name} Booking & Tariff | Jim Corbett Core Stay`,
-    description: lodge.description,
+    title,
+    description,
+    keywords: [
+      `${lodge.name.toLowerCase()} booking`,
+      "jim corbett forest rest house booking",
+      "dhikala frh booking",
+      "corbett core zone overnight stay",
+      "jim corbett overnight safari stay",
+      "forest rest house jim corbett price",
+    ],
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title,
+      description,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${lodge.name} — Jim Corbett Tiger Reserve` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -49,8 +100,32 @@ export default async function RestHouseDetailPage({
     `Hello! I want to check forest rest house availability at ${lodge.name} (${lodge.zone}).`
   );
 
+  const lodgeSchema = buildRestHouseSchema({
+    name: lodge.name,
+    description: lodge.description,
+    image: lodge.image,
+    slug,
+    zone: lodge.zone,
+    tariffPerNightINR: lodge.startingPriceINR,
+  });
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Forest Rest Houses", href: "/#night-stays" },
+    { name: lodge.name, href: `/forest-rest-houses/${slug}` },
+  ]);
+
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      {/* Lodge structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgeSchema) }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-6 flex items-center gap-2 text-xs text-[#8A9468]">
           <Link href="/" className="hover:underline">

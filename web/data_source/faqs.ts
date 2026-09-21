@@ -186,4 +186,57 @@ export const faqs = [
     answer:
       "Wear neutral or earthy colours — khaki, olive, grey, or brown. Avoid bright colours and white. Carry a light jacket for morning shifts even in summer. Binoculars make a big difference, especially for birds. A camera with a long lens is helpful. Bring sunscreen, a hat, and a water bottle. Leave strong perfume at the resort — scent travels far in the forest.",
   },
+  // ─── Wildlife Guide ───────────────────────────────────────────────────────
+  {
+    category: "Wildlife Guide",
+    question: "Can I see leopards in Jim Corbett National Park?",
+    answer:
+      "Yes. Leopards are present across Jim Corbett Tiger Reserve, particularly in rocky hillside terrain. Jhirna and Durga Devi zones have the most frequent leopard sightings, especially at dawn and dusk on forest road edges. Jhirna's evening safaris occasionally yield road-crossing or tree-resting leopard sightings. They are shy and elusive compared to tigers, but active in all zones.",
+  },
+  {
+    category: "Wildlife Guide",
+    question: "Are there elephants in Jim Corbett National Park?",
+    answer:
+      "Yes — Jim Corbett has one of the highest wild elephant densities in India. Dhikala zone is famous for large herds gathering along the Ramganga reservoir, especially early morning and evening. Hathidangar zone is named for its elephant migratory corridor (meaning Elephant's Nose). Elephant herds are also frequently seen in Bijrani and Phato. Encounters are common, reliable, and quite spectacular.",
+  },
+  {
+    category: "Wildlife Guide",
+    question: "What is a gharial and can I see one in Jim Corbett?",
+    answer:
+      "The gharial is a critically endangered crocodilian found exclusively in freshwater rivers. The Ramganga river inside Dhikala zone is one of the most important gharial breeding rivers in India. They are easily spotted basking on the sandbanks of the Ramganga on morning Canter safaris. They are harmless to humans — they eat only fish. The Dhikala Canter safari offers some of the best gharial sightings in India.",
+  },
+  {
+    category: "Wildlife Guide",
+    question: "Is sloth bear sighting common in Jim Corbett?",
+    answer:
+      "Jhirna zone has the highest sloth bear density in Corbett Tiger Reserve. The zone's secondary vegetation — tall grasslands and bamboo groves — provides ideal habitat. Sloth bear activity peaks during monsoon (July–September) when ants and termites are most active. We regularly see sloth bears on evening Jhirna safaris from May through September.",
+  },
+  // ─── Transport ────────────────────────────────────────────────────────────
+  {
+    category: "Transport",
+    question: "Do you provide a Delhi to Jim Corbett cab service?",
+    answer:
+      "Yes. We provide Delhi to Ramnagar private cab from ₹4,500 (Sedan/Dzire) or ₹6,500 (Innova Crysta). Pickup from Delhi Airport, Gurgaon, Noida, or Ghaziabad. Tolls and driver night allowance included in the fixed price. We also offer Pantnagar Airport and Kathgodam Station pickup from ₹1,800.",
+  },
+  {
+    category: "Transport",
+    question: "Which train goes from Delhi to Ramnagar for Jim Corbett?",
+    answer:
+      "The Ranikhet Express (12039) departs New Delhi station at 10:45 PM and arrives at Ramnagar station at 06:35 AM — an ideal overnight train for Corbett visitors. Book AC or Sleeper class on IRCTC at least 2–3 weeks in advance. Kathgodam station (62 km from Ramnagar) is also served by multiple Delhi trains including Shatabdi — we offer a Kathgodam transfer at ₹1,800.",
+  },
+  // ─── Wildlife Guide ───────────────────────────────────────────────────────
+  {
+    category: "Wildlife Guide",
+    question: "Is mahseer fishing allowed in Jim Corbett?",
+    answer:
+      "Golden mahseer angling is permitted in the Ramganga and Kosi rivers at designated locations near Corbett Tiger Reserve, including certain stretches in the Durga Devi zone. A fishing permit from the Uttarakhand Forest Department is required. We assist with permit arrangements for guests interested in the legendary golden mahseer — considered one of the finest sport fish in Asia.",
+  },
+  // ─── Safari Behaviour ─────────────────────────────────────────────────────
+  {
+    category: "Safari Types",
+    question: "What rules must I follow during a Jim Corbett safari?",
+    answer:
+      "Follow all Forest Department rules: (1) Stay inside the vehicle at all times — exiting is illegal inside core zones. (2) No littering — carry all waste out. (3) No loud noise, shouting, or playing music. (4) No smoking or alcohol inside the park. (5) No flash photography. (6) Do not feed or harass any animal. (7) Follow guide instructions immediately. Violations can result in permit cancellation and fines.",
+  },
 ];
+

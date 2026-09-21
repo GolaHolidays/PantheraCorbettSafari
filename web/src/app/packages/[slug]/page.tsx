@@ -7,7 +7,11 @@ import {
   PackageRepository,
   SiteConfigRepository,
 } from "../../../core/database/repositories";
-import { SITE_URL } from "../../../core/utils/seo";
+import {
+  SITE_URL,
+  buildPackageSchema,
+  buildBreadcrumbSchema,
+} from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -67,8 +71,33 @@ export default async function PackageDetailPage({
     `Hello! I want to enquire about the "${pkg.title}" safari tour package.`
   );
 
+  const packageSchema = buildPackageSchema({
+    title: pkg.seoTitle ?? pkg.title,
+    overview: pkg.seoDescription ?? pkg.overview,
+    image: pkg.image,
+    slug,
+    duration: pkg.duration,
+    zone: pkg.zone,
+    priceFromINR: pkg.startingPriceINR,
+  });
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Tour Packages", href: "/#packages" },
+    { name: pkg.title, href: `/packages/${slug}` },
+  ]);
+
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      {/* Package structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(packageSchema) }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav className="mb-6 flex items-center gap-2 text-xs text-[#8A9468]">
