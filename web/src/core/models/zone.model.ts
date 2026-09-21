@@ -3,6 +3,22 @@ export interface ZonePermitQuota {
   canter?: number;
 }
 
+export interface GatePricing {
+  gate: string;
+  priceINR: number;
+}
+
+export interface ZonePricing {
+  preBookingPriceINR?: number;
+  currentBookingPriceINR?: number;
+  perPersonPriceINR?: number;
+  sharingCapacity?: string;
+  bookingWindowNotice?: string;
+  pickupDropNote?: string;
+  inclusions?: string[];
+  gatePricing?: GatePricing[];
+}
+
 export interface SafariZone {
   id: string;
   slug: string;
@@ -23,4 +39,6 @@ export interface SafariZone {
   bestFor: string[];
   image: string;
   isFeatured: boolean;
+  pricing?: ZonePricing;
 }
+

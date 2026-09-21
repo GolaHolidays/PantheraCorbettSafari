@@ -37,16 +37,16 @@ export const TrustRow: React.FC<TrustRowProps> = ({ metrics }) => {
             </div>
           </div>
 
-          {/* Stat 3 — All 8 zones */}
+          {/* Stat 3 — All 9 zones */}
           <div className="border-r border-[#37482E]/60 last:border-r-0 px-2">
             <div className="text-2xl sm:text-3xl font-bold font-serif text-[#FBF8F0] font-tabular">
-              8 Zones
+              9 Zones
             </div>
             <div className="text-xs sm:text-sm font-medium text-[#FBF8F0] mt-0.5">
               All Corbett Zones
             </div>
             <div className="text-[11px] text-[#8A9468] hidden sm:block">
-              Core, buffer & reserve forest
+              Core, buffer & eco-corridors
             </div>
           </div>
 

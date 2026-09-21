@@ -77,10 +77,10 @@ export const ZoneCard: React.FC<ZoneCardProps> = ({ zone, whatsAppLink }) => {
 
       {/* Card Footer: Price & Primary CTA */}
       <div className="p-4 sm:p-5 pt-0 border-t border-[#E8E0CC]/60 mt-3">
-        <div className="flex items-baseline justify-between mb-3">
+        <div className="flex items-baseline justify-between mb-1.5">
           <div>
             <div className="text-[11px] text-[#8A9468] uppercase font-semibold">
-              Starts From
+              {zone.id === "dhikala" ? "Per Person / Seat" : "Starts From"}
             </div>
             <div className="text-xl sm:text-2xl font-bold font-serif text-[#17211A] font-tabular">
               {formatCurrencyINR(zone.startingPriceINR)}
@@ -95,6 +95,10 @@ export const ZoneCard: React.FC<ZoneCardProps> = ({ zone, whatsAppLink }) => {
             </Link>
           </div>
         </div>
+
+        <p className="text-[11px] text-[#17211A]/80 mb-3 line-clamp-2 leading-tight">
+          {zone.priceNote}
+        </p>
 
         {/* Action Button: Rounded pill in Ember */}
         <Button
