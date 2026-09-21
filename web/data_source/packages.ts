@@ -87,6 +87,14 @@ export const packages = [
       "jim corbett weekend trip from delhi",
       "delhi corbett weekend getaway",
     ],
+    resortSlugs: [
+      "serenity-resort",
+      "la-perle-river-resort",
+      "river-heritage-resort",
+      "avn-sarovar-portico",
+      "pratiksha-river-retreat",
+      "the-taj-corbett",
+    ],
   },
   {
     id: "double-zone-day-safari",

@@ -34,6 +34,17 @@ export const packages = [
     image:
       "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80",
     isFeatured: true,
+    seoTitle: "Dhikala Forest Rest House Package — 2 Night 3 Day | Jim Corbett",
+    seoDescription:
+      "Book Dhikala FRH immersion package — 2 nights inside Jim Corbett core zone, 4 private Gypsy safaris, all meals and Forest Rest House stay. ₹28,500/couple. Forest Department permits open 45 days ahead. Licensed operator.",
+    seoKeywords: [
+      "dhikala forest rest house booking",
+      "dhikala frh package",
+      "jim corbett overnight stay inside core zone",
+      "dhikala 2 night 3 day package",
+      "dhikala forest rest house price",
+      "jim corbett frh immersion package",
+    ],
   },
   {
     id: "bijrani-tiger-weekend",
@@ -65,6 +76,23 @@ export const packages = [
     image:
       "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80",
     isFeatured: true,
+    seoTitle: "Bijrani Weekend Safari Package — 1 Night | Delhi to Jim Corbett",
+    seoDescription:
+      "Best Delhi to Jim Corbett weekend package — 1 night jungle resort + 2 private Bijrani jeep safaris from ₹11,500/couple. Highest tiger sighting zone. Permits, guide & breakfast included. Book online.",
+    seoKeywords: [
+      "bijrani weekend package",
+      "delhi to jim corbett weekend package",
+      "jim corbett 1 night 2 day package",
+      "bijrani resort safari package",
+      "jim corbett weekend trip from delhi",
+      "delhi corbett weekend getaway",
+    ],
+    resortSlugs: [
+      "la-perle-river-resort",
+      "river-heritage-resort",
+      "avn-sarovar-portico",
+      "serenity-resort",
+    ],
   },
   {
     id: "double-zone-day-safari",
@@ -97,6 +125,17 @@ export const packages = [
     image:
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
     isFeatured: false,
+    seoTitle: "Jim Corbett Double Zone Day Safari | Bijrani + Garjiya | ₹12,800/Jeep",
+    seoDescription:
+      "Two safaris in two Jim Corbett zones in one day — morning Bijrani + afternoon Garjiya or Jhirna. ₹12,800/jeep for up to 6 guests. Both permits, guides & private jeep included. Perfect for day visitors from Delhi.",
+    seoKeywords: [
+      "jim corbett double zone safari",
+      "two zone safari jim corbett",
+      "morning evening safari corbett",
+      "bijrani garjiya safari day trip",
+      "jim corbett full day safari package",
+      "jim corbett day trip from delhi",
+    ],
   },
   {
     id: "dhikala-day-canter",
@@ -128,5 +167,16 @@ export const packages = [
     ],
     image: "/dhikala-canter.jpg",
     isFeatured: false,
+    seoTitle: "Dhikala Canter Day Trip | ₹2,299/Seat | Jim Corbett Safari",
+    seoDescription:
+      "Book a seat on the Dhikala canter safari day trip at ₹2,299/person. 16-person sharing open Canter bus into Corbett’s deepest core zone. Season 15 Nov–15 Jun. Only 4 canters/shift — book 15–20 days ahead.",
+    seoKeywords: [
+      "dhikala canter safari day trip",
+      "dhikala canter safari booking",
+      "dhikala zone day visitor",
+      "jim corbett canter safari price per person",
+      "dhikala zone day safari",
+      "book dhikala canter safari online",
+    ],
   },
 ];
