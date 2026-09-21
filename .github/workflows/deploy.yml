@@ -23,7 +23,7 @@ jobs:
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
 
@@ -50,57 +50,44 @@ jobs:
           HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST || '62.72.28.18' }}
           HOSTINGER_PORT: ${{ secrets.HOSTINGER_PORT || '65002' }}
           HOSTINGER_USER: ${{ secrets.HOSTINGER_USERNAME || 'u291002470' }}
-          HOSTINGER_TARGET_DIR: ${{ secrets.HOSTINGER_TARGET_DIR || 'public_html/pantheracorbettsafari/' }}
+          HOSTINGER_TARGET_DIR: ${{ secrets.HOSTINGER_TARGET_DIR }}
           HOSTINGER_SSH_PASSWORD: ${{ secrets.HOSTINGER_SSH_PASSWORD || secrets.HOSTINGER_PASSWORD }}
           HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
         run: |
           set -e
 
-          TARGET_DIR="${HOSTINGER_TARGET_DIR%/}/"
           SSH_PORT="${HOSTINGER_PORT}"
           REMOTE_HOST="${HOSTINGER_HOST}"
           REMOTE_USER="${HOSTINGER_USER}"
 
           echo "=========================================="
-          echo "Target Host:      ${REMOTE_HOST}"
-          echo "Target Port:      ${SSH_PORT}"
-          echo "Target User:      ${REMOTE_USER}"
-          echo "Target Directory: ${TARGET_DIR}"
+          echo "Target Host:       ${REMOTE_HOST}"
+          echo "Target Port:       ${SSH_PORT}"
+          echo "Target User:       ${REMOTE_USER}"
+          echo "Custom Directory:  ${HOSTINGER_TARGET_DIR:-[Auto-Detect]}"
           echo "=========================================="
 
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
           SSH_OPTS="-p ${SSH_PORT} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=30 -o ServerAliveInterval=15 -o ServerAliveCountMax=4"
 
+          # Prepare authentication
           if [ -n "${HOSTINGER_SSH_KEY}" ]; then
-            echo "🔐 Deploying with SSH Private Key..."
-            mkdir -p ~/.ssh
-            chmod 700 ~/.ssh
+            echo "🔐 Using SSH Private Key authentication..."
             echo "${HOSTINGER_SSH_KEY}" | tr -d '\r' > ~/.ssh/id_hostinger
             chmod 600 ~/.ssh/id_hostinger
 
-            rsync -avz --delete \
-              --exclude '.well-known' \
-              --exclude 'error_log' \
-              --exclude '.trash' \
-              -e "ssh -i ~/.ssh/id_hostinger ${SSH_OPTS}" \
-              web/out/ \
-              "${REMOTE_USER}@${REMOTE_HOST}:${TARGET_DIR}"
-
-            echo "✅ Successfully deployed to Hostinger via SSH Key!"
-
+            run_remote() {
+              ssh -q -i ~/.ssh/id_hostinger ${SSH_OPTS} "${REMOTE_USER}@${REMOTE_HOST}" "$@"
+            }
           elif [ -n "${HOSTINGER_SSH_PASSWORD}" ]; then
-            echo "🔑 Deploying with SSH Password (sshpass)..."
+            echo "🔑 Using SSH Password authentication (sshpass)..."
             sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+            export SSHPASS="${HOSTINGER_SSH_PASSWORD}"
 
-            sshpass -p "${HOSTINGER_SSH_PASSWORD}" rsync -avz --delete \
-              --exclude '.well-known' \
-              --exclude 'error_log' \
-              --exclude '.trash' \
-              -e "ssh ${SSH_OPTS}" \
-              web/out/ \
-              "${REMOTE_USER}@${REMOTE_HOST}:${TARGET_DIR}"
-
-            echo "✅ Successfully deployed to Hostinger via SSH Password!"
-
+            run_remote() {
+              sshpass -e ssh -q ${SSH_OPTS} "${REMOTE_USER}@${REMOTE_HOST}" "$@"
+            }
           else
             echo "❌ [DEPLOYMENT ERROR]: No SSH credential found in GitHub Secrets!"
             echo ""
@@ -112,3 +99,58 @@ jobs:
             echo "Navigation: GitHub Repository -> Settings -> Secrets and variables -> Actions -> New repository secret"
             exit 1
           fi
+
+          echo "🔍 Detecting and preparing remote destination directory on Hostinger..."
+          REMOTE_CMD='
+            CUSTOM="'"${HOSTINGER_TARGET_DIR}"'"
+            if [ -n "$CUSTOM" ]; then
+              TARGET="$CUSTOM"
+            else
+              FOUND=$(find ~ -maxdepth 5 -type d -name "pantheracorbettsafari" 2>/dev/null | head -n 1)
+              if [ -n "$FOUND" ]; then
+                TARGET="$FOUND"
+              else
+                DOM_PUB=$(find ~/domains -maxdepth 3 -type d -name "public_html" 2>/dev/null | head -n 1)
+                if [ -n "$DOM_PUB" ]; then
+                  TARGET="$DOM_PUB/pantheracorbettsafari"
+                else
+                  TARGET="$HOME/public_html/pantheracorbettsafari"
+                fi
+              fi
+            fi
+            mkdir -p "$TARGET"
+            echo "___DETECTED_PATH___=$TARGET"
+          '
+
+          REMOTE_OUTPUT=$(run_remote "$REMOTE_CMD")
+          RESOLVED_PATH=$(echo "$REMOTE_OUTPUT" | grep '^___DETECTED_PATH___=' | head -n 1 | cut -d'=' -f2-)
+
+          if [ -z "$RESOLVED_PATH" ]; then
+            echo "⚠️ Detection fallback: using public_html/pantheracorbettsafari"
+            RESOLVED_PATH="public_html/pantheracorbettsafari"
+            run_remote "mkdir -p '$RESOLVED_PATH'"
+          fi
+
+          RESOLVED_PATH="${RESOLVED_PATH%/}/"
+          echo "📁 Target directory on Hostinger: ${RESOLVED_PATH}"
+
+          echo "🚀 Deploying static files to Hostinger via rsync..."
+          if [ -n "${HOSTINGER_SSH_KEY}" ]; then
+            rsync -avz --delete \
+              --exclude '.well-known' \
+              --exclude 'error_log' \
+              --exclude '.trash' \
+              -e "ssh -i ~/.ssh/id_hostinger ${SSH_OPTS}" \
+              web/out/ \
+              "${REMOTE_USER}@${REMOTE_HOST}:${RESOLVED_PATH}"
+          else
+            sshpass -e rsync -avz --delete \
+              --exclude '.well-known' \
+              --exclude 'error_log' \
+              --exclude '.trash' \
+              -e "ssh ${SSH_OPTS}" \
+              web/out/ \
+              "${REMOTE_USER}@${REMOTE_HOST}:${RESOLVED_PATH}"
+          fi
+
+          echo "✅ Successfully deployed to Hostinger at ${RESOLVED_PATH}!"
