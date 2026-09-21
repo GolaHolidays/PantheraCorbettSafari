@@ -17,9 +17,9 @@ export const trustMetrics = {
       badge: "Every Zone",
     },
     {
-      title: "28 Licensed Jeeps",
-      subtitle: "34 registered Forest Dept guides",
-      badge: "Licensed Fleet",
+      title: "Verified 4x4 Gypsies",
+      subtitle: "Forest Dept registered drivers & guides",
+      badge: "Verified Fleet",
     },
     {
       title: "Fixed Pricing",

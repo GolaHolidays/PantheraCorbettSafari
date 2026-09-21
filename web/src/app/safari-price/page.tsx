@@ -13,6 +13,10 @@ import {
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
 import { Button, Badge, SectionHeader } from "../../shared";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Calendar01Icon from "@hugeicons/core-free-icons/Calendar01Icon";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -98,8 +102,9 @@ export default function SafariPricePage() {
             <span className="text-[#E8E0CC]">Safari Price</span>
           </nav>
 
-          <Badge variant="gold" size="md" className="mb-5">
-            📋 Updated for 2025–2026 Season
+          <Badge variant="gold" size="md" className="mb-5 inline-flex items-center gap-1.5">
+            <HugeiconsIcon icon={Calendar01Icon} size={14} />
+            <span>Updated for 2025–2026 Season</span>
           </Badge>
 
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-2xl">
@@ -161,8 +166,9 @@ export default function SafariPricePage() {
                 Pickup & drop at Ramnagar or Dhangarhi Gate. Government-appointed guide and driver. All gate fees included.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button variant="primary" size="sm" href={whatsAppLink} isExternal>
-                  📲 Check Dhikala Availability
+                <Button variant="primary" size="sm" href={whatsAppLink} isExternal className="inline-flex items-center gap-1.5">
+                  <HugeiconsIcon icon={WhatsappIcon} size={16} />
+                  <span>Check Dhikala Availability</span>
                 </Button>
                 <Link href="/canter-safari" className="text-[#8A9468] text-sm underline underline-offset-2 self-center hover:text-[#E8E0CC]">
                   Full Canter Safari Details →
@@ -338,16 +344,18 @@ export default function SafariPricePage() {
             Share your dates, preferred zone, and group size. We check Forest Department availability and confirm within the hour.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 Check Availability on WhatsApp
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center justify-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>Check Availability on WhatsApp</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC] inline-flex items-center justify-center gap-2"
             >
-              📞 Call {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>Call {contact.phoneDisplay}</span>
             </Button>
           </div>
         </div>

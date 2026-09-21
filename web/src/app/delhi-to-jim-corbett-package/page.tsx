@@ -19,6 +19,20 @@ import {
   SectionHeader,
   Card,
 } from "../../shared";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Location01Icon from "@hugeicons/core-free-icons/Location01Icon";
+import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
+import Train01Icon from "@hugeicons/core-free-icons/Train01Icon";
+import Car01Icon from "@hugeicons/core-free-icons/Car01Icon";
+import Bus01Icon from "@hugeicons/core-free-icons/Bus01Icon";
+import Airplane01Icon from "@hugeicons/core-free-icons/Airplane01Icon";
+import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
+import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
+import StarIcon from "@hugeicons/core-free-icons/StarIcon";
+import CheckmarkBadge01Icon from "@hugeicons/core-free-icons/CheckmarkBadge01Icon";
+import MapPinIcon from "@hugeicons/core-free-icons/MapPinIcon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -34,12 +48,12 @@ export const metadata: Metadata = generatePageMetadata({
 // ─── Static data ──────────────────────────────────────────────────────────────
 
 const JOURNEY_FACTS = [
-  { label: "Distance", value: "~250–260 km", icon: "📍" },
-  { label: "Drive Time", value: "5–6 hours", icon: "🚗" },
-  { label: "Train Option", value: "Overnight Ramnagar Express", icon: "🚂" },
-  { label: "Cab (Sedan)", value: "₹4,500 one-way", icon: "🚕" },
-  { label: "Cab (Innova)", value: "₹6,500 one-way", icon: "🚙" },
-  { label: "Nearest Airport", value: "Pantnagar (70 km)", icon: "✈️" },
+  { label: "Distance", value: "~250–260 km", icon: MapPinIcon },
+  { label: "Drive Time", value: "5–6 hours", icon: Clock01Icon },
+  { label: "Train Option", value: "Overnight Ramnagar Express", icon: Train01Icon },
+  { label: "Cab (Sedan)", value: "₹4,500 one-way", icon: Car01Icon },
+  { label: "Cab (Innova)", value: "₹6,500 one-way", icon: Bus01Icon },
+  { label: "Nearest Airport", value: "Pantnagar (70 km)", icon: Airplane01Icon },
 ];
 
 const PACKAGES_HIGHLIGHTS = [
@@ -109,10 +123,26 @@ const PACKAGES_HIGHLIGHTS = [
 ];
 
 const WHY_BOOK = [
-  { icon: "🏛️", title: "Licensed since 2009", text: "UK-FOREST-CTR-2009-8842 — Uttarakhand Forest Dept registered. 15+ years of permit management." },
-  { icon: "🎫", title: "We handle your permits", text: "Forest Department quota checked and locked in your name. No portal confusion, no middlemen." },
-  { icon: "🚐", title: "Delhi cab service", text: "From ₹4,500 sedan / ₹6,500 Innova Crysta. Pickup from Delhi Airport, Gurgaon, Noida, Ghaziabad." },
-  { icon: "📞", title: "Desk open 6 AM – 9:30 PM", text: "Same team you book with picks you up, handles permits, and guides you. One point of contact throughout." },
+  {
+    icon: ShieldCheckIcon,
+    title: "Official Permit Assistance",
+    text: "Direct Corbett Tiger Reserve permit assistance with 100% quota verification in your name. Transparent booking with zero hidden charges.",
+  },
+  {
+    icon: Car01Icon,
+    title: "Delhi-NCR Doorstep Transfers",
+    text: "Comfortable private transfers from Delhi Airport, Gurgaon, Noida, and Ghaziabad directly to your Corbett resort in AC Sedan or Innova Crysta.",
+  },
+  {
+    icon: Ticket01Icon,
+    title: "End-to-End Safari Planning",
+    text: "Registered 4x4 Gypsy vehicles, mandatory forest guides, and zone selection curated for maximum wildlife sighting odds.",
+  },
+  {
+    icon: Call02Icon,
+    title: "Dedicated Ramnagar Desk",
+    text: "Local on-ground team available 6:00 AM – 9:30 PM daily. One point of contact to coordinate your permits, stay, and safari shifts.",
+  },
 ];
 
 // ─── Page Component ───────────────────────────────────────────────────────────
@@ -155,8 +185,9 @@ export default function DelhiToJimCorbettPackagePage() {
             <span className="text-[#E8E0CC]">Delhi to Jim Corbett Package</span>
           </nav>
 
-          <Badge variant="ember" size="md" className="mb-5">
-            📍 250 km from Delhi · 5–6 hrs Drive
+          <Badge variant="ember" size="md" className="mb-5 inline-flex items-center gap-1.5">
+            <HugeiconsIcon icon={MapPinIcon} size={14} />
+            <span>250 km from Delhi · 5–6 hrs Drive</span>
           </Badge>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-3xl">
@@ -167,16 +198,18 @@ export default function DelhiToJimCorbettPackagePage() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 WhatsApp for Package Quote
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>WhatsApp for Package Quote</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC] inline-flex items-center gap-2"
             >
-              📞 {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>{contact.phoneDisplay}</span>
             </Button>
           </div>
 
@@ -185,7 +218,7 @@ export default function DelhiToJimCorbettPackagePage() {
             {[
               { val: "₹11,500", sub: "Starting price / couple" },
               { val: "2N 3D", sub: "Most popular duration" },
-              { val: "15+", sub: "Years operating" },
+              { val: "9 Zones", sub: "Corbett-wide access" },
             ].map((stat) => (
               <div key={stat.val} className="text-center">
                 <div className="font-serif text-2xl font-bold text-[#FBF8F0] font-tabular">{stat.val}</div>
@@ -212,8 +245,9 @@ export default function DelhiToJimCorbettPackagePage() {
                 className={`flex flex-col ${pkg.isPopular ? "ring-2 ring-[#B84C1E]/40" : ""}`}
               >
                 {pkg.isPopular && (
-                  <div className="bg-[#B84C1E] text-white text-xs font-bold text-center py-1.5 tracking-wider uppercase">
-                    ⭐ Most Popular for Delhi Weekends
+                  <div className="bg-[#B84C1E] text-white text-xs font-bold text-center py-1.5 tracking-wider uppercase flex items-center justify-center gap-1.5">
+                    <HugeiconsIcon icon={StarIcon} size={13} />
+                    <span>Most Popular for Delhi Weekends</span>
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">
@@ -232,7 +266,7 @@ export default function DelhiToJimCorbettPackagePage() {
                   <ul className="space-y-2 mb-6 flex-1">
                     {pkg.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-[#17211A]/85">
-                        <span className="text-[#37482E] font-bold mt-0.5 shrink-0">✓</span>
+                        <HugeiconsIcon icon={CheckmarkBadge01Icon} size={14} className="text-[#37482E] mt-0.5 shrink-0" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -257,8 +291,9 @@ export default function DelhiToJimCorbettPackagePage() {
             <p className="text-sm text-[#8A9468] mb-4">
               Family group of 10? Honeymoon with resort decoration? Solo with FRH stay? We build it for you.
             </p>
-            <Button variant="primary" size="md" href={whatsAppLink} isExternal>
-              📲 WhatsApp Your Requirements
+            <Button variant="primary" size="md" href={whatsAppLink} isExternal className="inline-flex items-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>WhatsApp Your Requirements</span>
             </Button>
           </div>
         </div>
@@ -277,9 +312,11 @@ export default function DelhiToJimCorbettPackagePage() {
             {JOURNEY_FACTS.map((fact) => (
               <div
                 key={fact.label}
-                className="bg-white border border-[#E8E0CC] rounded-[4px] p-4 text-center"
+                className="bg-white border border-[#E8E0CC] rounded-[4px] p-4 text-center flex flex-col items-center"
               >
-                <div className="text-2xl mb-2">{fact.icon}</div>
+                <div className="w-10 h-10 rounded-full bg-[#37482E]/8 flex items-center justify-center text-[#37482E] mb-2.5">
+                  <HugeiconsIcon icon={fact.icon} size={20} />
+                </div>
                 <div className="font-semibold text-sm text-[#17211A] font-tabular">{fact.value}</div>
                 <div className="text-xs text-[#8A9468] mt-0.5">{fact.label}</div>
               </div>
@@ -293,11 +330,13 @@ export default function DelhiToJimCorbettPackagePage() {
               Take NH-9 from Delhi toward Ghaziabad → Hapur Bypass → Moradabad Bypass → Rampur → Bilaspur → Ramnagar. The route is well-marked and mostly 4-lane highway. Final 30 km to Ramnagar is state highway — comfortable in sedan or SUV.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button variant="primary" size="sm" href={whatsAppLink} isExternal>
-                Book Delhi–Ramnagar Cab
+              <Button variant="primary" size="sm" href={whatsAppLink} isExternal className="inline-flex items-center gap-1.5">
+                <HugeiconsIcon icon={WhatsappIcon} size={16} />
+                <span>Book Delhi–Ramnagar Cab</span>
               </Button>
-              <Button variant="outline" size="sm" href={`tel:${contact.phoneRaw}`}>
-                Call for Cab Rates
+              <Button variant="outline" size="sm" href={`tel:${contact.phoneRaw}`} className="inline-flex items-center gap-1.5">
+                <HugeiconsIcon icon={Call02Icon} size={16} />
+                <span>Call for Cab Rates</span>
               </Button>
             </div>
           </div>
@@ -308,9 +347,9 @@ export default function DelhiToJimCorbettPackagePage() {
       <section className="py-16 sm:py-20 bg-[#FBF8F0]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Why Book Through Us"
-            subtitle="Licensed Uttarakhand Forest Department operator since 2009. 28 jeeps, 34 guides, one desk."
-            badgeText="Our Track Record"
+            title="Why Book With Panthera Corbett Safari"
+            subtitle="Ramnagar-based wildlife specialists handling your permits, registered 4x4 Gypsies, experienced forest guides, and Delhi transfers seamlessly."
+            badgeText="The Panthera Advantage"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_BOOK.map((item) => (
@@ -318,7 +357,9 @@ export default function DelhiToJimCorbettPackagePage() {
                 key={item.title}
                 className="flex gap-4 p-5 bg-[#F4EFE6] border border-[#E8E0CC] rounded-[4px]"
               >
-                <span className="text-2xl shrink-0 mt-0.5">{item.icon}</span>
+                <div className="w-11 h-11 rounded-full bg-[#37482E]/10 flex items-center justify-center text-[#37482E] shrink-0 mt-0.5">
+                  <HugeiconsIcon icon={item.icon} size={22} />
+                </div>
                 <div>
                   <h3 className="font-serif font-bold text-[#17211A] text-sm mb-1">{item.title}</h3>
                   <p className="text-xs text-[#17211A]/80 leading-relaxed">{item.text}</p>
@@ -369,16 +410,18 @@ export default function DelhiToJimCorbettPackagePage() {
             WhatsApp us your dates, group size, and budget. We'll share availability and a quote within the hour.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 WhatsApp for Package Quote
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center justify-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>WhatsApp for Package Quote</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC] inline-flex items-center justify-center gap-2"
             >
-              📞 Call {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>Call {contact.phoneDisplay}</span>
             </Button>
           </div>
         </div>

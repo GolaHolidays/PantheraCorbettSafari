@@ -12,6 +12,10 @@ import {
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
 import { Button, Badge, SectionHeader } from "../../shared";
+import { HugeiconsIcon } from "@hugeicons/react";
+import AlertCircleIcon from "@hugeicons/core-free-icons/AlertCircleIcon";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -109,7 +113,8 @@ export default function CanterSafariPage() {
 
           {/* Scarcity badge */}
           <div className="inline-flex items-center gap-2 bg-[#B84C1E]/20 border border-[#B84C1E]/40 text-[#B84C1E] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-            ⚠️ Only 4 Canters per Shift — Limited Seats
+            <HugeiconsIcon icon={AlertCircleIcon} size={14} />
+            <span>Only 4 Canters per Shift — Limited Seats</span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-3xl">
@@ -123,16 +128,18 @@ export default function CanterSafariPage() {
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 Check Dhikala Seat Availability
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>Check Dhikala Seat Availability</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC] inline-flex items-center gap-2"
             >
-              📞 {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>{contact.phoneDisplay}</span>
             </Button>
           </div>
 
@@ -246,8 +253,8 @@ export default function CanterSafariPage() {
               <thead className="bg-[#17211A] text-[#FBF8F0]">
                 <tr>
                   <th className="text-left px-4 py-3 font-semibold w-1/3">Feature</th>
-                  <th className="text-center px-4 py-3 font-semibold bg-[#B84C1E]/90">🐅 Canter Safari</th>
-                  <th className="text-center px-4 py-3 font-semibold bg-[#37482E]/90">🚙 Jeep Safari</th>
+                  <th className="text-center px-4 py-3 font-semibold bg-[#B84C1E]/90">Canter Safari (16-Seater)</th>
+                  <th className="text-center px-4 py-3 font-semibold bg-[#37482E]/90">Jeep Safari (Private 4x4)</th>
                 </tr>
               </thead>
               <tbody>
@@ -314,16 +321,18 @@ export default function CanterSafariPage() {
             Only 4 canters per shift. Share your dates and number of seats — we check quota immediately.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 Check Dhikala Seat Availability
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center justify-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>Check Dhikala Seat Availability</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC] inline-flex items-center justify-center gap-2"
             >
-              📞 Call {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>Call {contact.phoneDisplay}</span>
             </Button>
           </div>
         </div>

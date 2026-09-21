@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     siteName: config.name,
     title: "Jim Corbett Safari Booking | Jeep & Canter Safari | Panthera Corbett Safari",
     description:
-      "Book Jim Corbett safari online. Dhikala canter safari, jeep safari, Delhi packages. All zones covered. Licensed Uttarakhand Forest Dept operator since 2009.",
+      "Book Jim Corbett safari online. Dhikala canter safari, jeep safari, Delhi packages. All zones covered. Local Ramnagar safari specialists.",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,

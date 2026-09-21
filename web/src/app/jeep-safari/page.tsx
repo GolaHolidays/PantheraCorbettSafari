@@ -14,6 +14,10 @@ import {
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
 import { Button, Badge, SectionHeader, Card } from "../../shared";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -102,8 +106,9 @@ export default function JeepSafariPage() {
             <span className="text-[#E8E0CC]">Jeep Safari</span>
           </nav>
 
-          <Badge variant="forest" size="md" className="mb-5">
-            🎫 Private 4x4 Gypsy · Up to 6 Guests
+          <Badge variant="forest" size="md" className="mb-5 inline-flex items-center gap-1.5">
+            <HugeiconsIcon icon={Ticket01Icon} size={14} />
+            <span>Private 4x4 Gypsy · Up to 6 Guests</span>
           </Badge>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-3xl">
@@ -114,16 +119,18 @@ export default function JeepSafariPage() {
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 Check Availability
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>Check Availability</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/60 hover:border-[#E8E0CC] inline-flex items-center gap-2"
             >
-              📞 {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>{contact.phoneDisplay}</span>
             </Button>
           </div>
 
@@ -292,16 +299,18 @@ export default function JeepSafariPage() {
             Share your dates and preferred zone. We check permit availability and confirm within the hour.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="primary" size="lg" href={whatsAppLink} isExternal>
-              📲 Check Availability on WhatsApp
+            <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center justify-center gap-2">
+              <HugeiconsIcon icon={WhatsappIcon} size={18} />
+              <span>Check Availability on WhatsApp</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
               href={`tel:${contact.phoneRaw}`}
-              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC]"
+              className="text-white border-[#8A9468]/50 hover:border-[#E8E0CC] inline-flex items-center justify-center gap-2"
             >
-              📞 Call {contact.phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={18} />
+              <span>Call {contact.phoneDisplay}</span>
             </Button>
           </div>
         </div>
