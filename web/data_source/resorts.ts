@@ -147,16 +147,16 @@ export const resorts: Resort[] = [
       priceNote: "Per room / night — seasonal variations apply",
     },
     location: {
-      area: "Khushalpur / Dhikuli Edge",
-      address: "Khasra No 17/1/2, Khushalpur Shahbazpur, Guljarpur Ramsingh, Ramnagar, Nainital, Uttarakhand - 263140",
+      area: "Choi / Hanuman Dham Road",
+      address: "KH No. 17/1/2, Khushhalpur Shah Bazpur, Village Choi, Hanuman Dham Road, Ramnagar, Nainital, Uttarakhand - 263140",
       distanceFromStation: "6 km from Ramnagar Railway Station",
-      nearestSafariGates: ["Bijrani Gate (4.5 km)", "Jhirna Gate (14 km)"],
+      nearestSafariGates: ["Bijrani Gate (4.5 km)", "Dhela Gate (9 km)", "Jhirna Gate (10 km)"],
       riverFront: false,
-      riverProximity: "Panoramic views of Kosi riverbed and adjacent sal forest",
+      riverProximity: "Panoramic views of Kosi river valley and adjacent sal forest buffer",
     },
     tagline: "Authentic Kumaoni heritage courtyard architecture overlooking Kosi valley",
     overview:
-      "Arch The Baakhli Resort is uniquely designed around the traditional Kumaoni 'Baakhli' architectural pattern — a continuous cluster of stone cottages flanking a shared community promenade. Perched along the edge of the Corbett forest foothills with sweeping perspectives of the river valley, it blends local architectural charm with modern guest amenities including an outdoor swimming pool, fitness zone, and multi-cuisine restaurant.",
+      "Arch The Baakhli Resort is uniquely designed around the traditional Kumaoni 'Baakhli' architectural pattern — a continuous cluster of stone and timber cottages flanking a shared community promenade. Perched along the edge of the Corbett forest foothills in Village Choi near Hanuman Dham with sweeping perspectives of the river valley, it blends local architectural charm with modern guest amenities including an infinity swimming pool, children's splash pool, fitness zone, and multi-cuisine restaurant.",
     amenities: [
       "Outdoor Swimming Pool with Kids' Splash Section",
       "Heritage Architecture Courtyard & Promenade",
@@ -635,8 +635,8 @@ export const resorts: Resort[] = [
       "Premium Valley View Room",
       "Executive River Suite with Balcony",
     ],
-    checkInTime: "12:30 PM",
-    checkOutTime: "10:30 AM",
+    checkInTime: "12:00 PM",
+    checkOutTime: "10:00 AM",
     highlights: [
       "Private stone stairway providing immediate access to the Kosi riverbed",
       "Proximity to Garjiya Devi Temple (just 2 km away)",
@@ -683,9 +683,9 @@ export const resorts: Resort[] = [
       riverFront: false,
       riverProximity: "Surrounded by mountain springs and pristine Corbett Reserve Forest",
     },
-    tagline: "Eco-certified 5-star forest resort boasting the largest swimming pool in Corbett",
+    tagline: "Eco-certified 5-star forest sanctuary (Series by Marriott) boasting the largest swimming pool in Corbett",
     overview:
-      "Debu's The Fern Resort & Spa, Jim Corbett, is an upscale 5-star eco-sensitive property located in the secluded forest hamlet of Patkote. Managed by The Fern Hotels & Resorts — India's leading environmentally responsible hotel brand — the resort is encircled by dense reserve forests and mountain horizons. It features over 76 luxurious rooms, the region's largest outdoor swimming pool, the comprehensive 'Flavour' multi-cuisine restaurant, the chic 'Safari Lounge' bar, and expansive wedding lawns like Shakuntalam.",
+      "Debu's The Fern Resort & Spa, Jim Corbett (Series by Marriott), is an upscale 5-star eco-sensitive property located in the secluded forest hamlet of Patkote. Managed by The Fern Hotels & Resorts and affiliated with Marriott Bonvoy, the resort is encircled by dense reserve forests and mountain horizons. It features over 76 luxurious rooms, the region's largest outdoor swimming pool, the comprehensive 'Flavour' multi-cuisine restaurant, the chic 'Safari Lounge' bar, and expansive wedding lawns like Shakuntalam.",
     amenities: [
       "Region's Largest Outdoor Swimming Pool & Jacuzzi",
       "Full-Service Wellness Spa with Steam & Sauna",
@@ -706,6 +706,7 @@ export const resorts: Resort[] = [
     checkInTime: "02:00 PM",
     checkOutTime: "12:00 PM",
     highlights: [
+      "Affiliated with Marriott Bonvoy portfolio (Series by Marriott)",
       "Home to the largest outdoor swimming pool across the entire Corbett region",
       "Certified 5-star eco-resort adhering to strict global environmental standards",
       "Nestled in Patkote forest valley away from all city hustle and tourist traffic",
@@ -815,12 +816,13 @@ export const resorts: Resort[] = [
     },
     tagline: "Iconic IHCL luxury nestled in a 10-acre century-old mango orchard by the Kosi River",
     overview:
-      "Taj Corbett Resort & Spa is the pinnacle of luxury wilderness hospitality in Jim Corbett. Set within a 10-acre estate shaded by century-old mango and jamun trees along the Kosi River, this legendary property brings the iconic Taj hospitality to the Himalayan foothills. Guests stay in stone-and-thatch cottages, indulge in bespoke Ayurvedic therapies at the renowned J Wellness Circle (Jiva Spa), and dine across four distinct venues including the romantic Treetop, Jim's Grill, and the classic Tusker Bar.",
+      "Taj Corbett Resort & Spa is the pinnacle of luxury wilderness hospitality in Jim Corbett. Set within a 10-acre estate shaded by century-old mango and jamun trees along the Kosi River, this legendary property features 75 luxurious rooms and cottages, bringing iconic Taj hospitality to the Himalayan foothills. Guests stay in stone-and-thatch cottages, indulge in bespoke therapies at the renowned J Wellness Circle (Jiva Spa), and dine across four distinct venues including the romantic Treetop, Jim's Grill, Makrut (South East Asian), and the classic Tusker Bar.",
     amenities: [
       "J Wellness Circle (Award-Winning Jiva Luxury Spa)",
       "Outdoor Riverfront Swimming Pool with Sun Loungers",
       "Treetop Fine-Dining Multi-Cuisine Restaurant",
       "Jim's Grill Specialty Open-Air Dining",
+      "Makrut South East Asian Specialty Restaurant",
       "Tusker Bar & Poolside Cocktail Lounge",
       "Bespoke Wildlife Safaris with Veteran Naturalists",
       "Kosi Lawn & Regal Event Banqueting Venues",
@@ -837,7 +839,7 @@ export const resorts: Resort[] = [
     checkOutTime: "12:00 PM",
     highlights: [
       "Legendary Taj hospitality with bespoke wildlife naturalist guidance",
-      "Four distinct culinary venues: Treetop, Jim's Grill, Tusker Bar & Pool Bar",
+      "Four distinct culinary venues: Treetop, Jim's Grill, Makrut, & Tusker Bar",
       "Signature J Wellness Circle spa offering authentic Indian healing therapies",
       "Over 10 acres of pristine riverfront nature inhabited by over 100 bird species",
     ],
@@ -880,10 +882,11 @@ export const resorts: Resort[] = [
     },
     tagline: "International 5-star luxury benchmark with private plunge pool suites",
     overview:
-      "Jim Corbett Marriott Resort & Spa (frequently referred to as JW Marriott Corbett) defines ultra-modern luxury in the Corbett region. Overlooking the sparkling Kosi River in Dhikuli, the property pairs sleek contemporary design with the raw power of the surrounding forest. Offering opulent suites with private plunge pools, a world-class signature spa with sauna/steam rituals, an all-day global restaurant, arcade gaming zone, and a dedicated kids' club, it is the premiere destination for travelers seeking global luxury standards.",
+      "Jim Corbett Marriott Resort & Spa (frequently referred to as JW Marriott Corbett) defines ultra-modern luxury in the Corbett region. Overlooking the sparkling Kosi River in Dhikuli, the property features 99 contemporary rooms and opulent suites with private plunge pools. Facilities include the signature Quan Spa with sauna/steam rituals, The Corbett Kitchen all-day restaurant, Sal Bar & Malani Grill, an arcade gaming zone, and a dedicated kids' club.",
     amenities: [
       "Year-Round Outdoor Swimming Pool & Separate Heated Kids' Pool",
       "Signature Quan Spa with Sauna & Steam Rituals",
+      "The Corbett Kitchen All-Day Multi-Cuisine Dining",
       "Malani Grill Specialty Outdoor Riverside Dining",
       "Sal Bar & Cocktail Lounge",
       "Private Plunge Pools in Executive & River Suites",
@@ -903,8 +906,8 @@ export const resorts: Resort[] = [
     checkOutTime: "12:00 PM",
     highlights: [
       "Marriott Bonvoy global luxury standard in the heart of Jim Corbett",
-      "Exclusive suites featuring heated private riverside plunge pools",
-      "World-class hydrotherapy spa and high-tech fitness studio",
+      "99 premium rooms & suites with private heated riverside plunge pools",
+      "World-class Quan hydrotherapy spa and high-tech Matrix fitness studio",
       "Convenient Dhikuli location with rapid access to Bijrani and Garjiya gates",
     ],
     websiteUrl: "https://marriott.com",
