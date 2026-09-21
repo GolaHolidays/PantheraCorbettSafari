@@ -20,6 +20,7 @@ import {
   TrustMetricsSchema,
   BlogPostsSchema,
   ResortsSchema,
+  CabTransfersSchema,
 } from "../schemas";
 
 import { siteConfig } from "@data/site-config";
@@ -33,6 +34,7 @@ import { faqs } from "@data/faqs";
 import { trustMetrics } from "@data/trust-metrics";
 import { blogPosts } from "@data/blog-posts";
 import { resorts } from "@data/resorts";
+import { cabTransfers } from "@data/cab-transfers";
 
 export type {
   SiteConfig,
@@ -51,6 +53,9 @@ export type {
   ResortCategory,
   ResortPriceRange,
   ResortLocation,
+  CabTransferRoute,
+  CabVehicleFare,
+  CabPriceRange,
 } from "../schemas";
 
 /**
@@ -100,6 +105,10 @@ class DataSourceClient {
 
   public getResortsRaw() {
     return ResortsSchema.parse(resorts);
+  }
+
+  public getCabTransfersRaw() {
+    return CabTransfersSchema.parse(cabTransfers);
   }
 }
 

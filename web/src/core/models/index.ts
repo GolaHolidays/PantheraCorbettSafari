@@ -28,5 +28,9 @@ export type {
   ResortCategory,
   ResortPriceRange,
   ResortLocation,
+  CabVehicleCategory,
+  CabPriceRange,
+  CabVehicleFare,
+  CabTransferRoute,
 } from "../schemas";
 
