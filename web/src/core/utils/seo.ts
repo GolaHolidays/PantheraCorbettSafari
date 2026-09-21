@@ -215,6 +215,92 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
   },
 };
 
+// ─── Phase 2 Landing Page SEO Map ────────────────────────────────────────────
+// Keyed by route path. Each new landing page reads from here — zero inline metadata.
+
+export interface LandingPageSeo {
+  title: string;
+  description: string;
+  keywords: string[];
+  canonicalPath: string;
+  ogImage?: string;
+}
+
+export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
+  "delhi-to-jim-corbett-package": {
+    title: "Delhi to Jim Corbett Package | 2N3D & Weekend Tour",
+    description:
+      "Book Delhi to Jim Corbett tour packages from ₹11,500/couple. 2 night 3 day & weekend packages with jeep safari included. Family, honeymoon & group packages. Private Delhi to Ramnagar cab available. Call +91 99974 88004.",
+    keywords: [
+      "delhi to jim corbett package",
+      "jim corbett package from delhi",
+      "2 night 3 day jim corbett package from delhi",
+      "delhi jim corbett tour package",
+      "corbett weekend tour from delhi",
+      "jim corbett family package from delhi",
+      "jim corbett honeymoon package from delhi",
+      "delhi to ramnagar tour package",
+      "delhi to corbett national park package",
+      "jim corbett package with safari from delhi",
+    ],
+    canonicalPath: "/delhi-to-jim-corbett-package",
+  },
+  "jeep-safari": {
+    title: "Jim Corbett Jeep Safari Booking | Private 4x4 Gypsy | From ₹5,999",
+    description:
+      "Book Jim Corbett jeep safari online — exclusive private 4x4 Gypsy for up to 6 guests. Bijrani, Jhirna, Garjiya, Dhela, Durga Devi zones. Morning & evening shifts. Guide + permit + jeep included. Pre-booking from ₹5,999/jeep.",
+    keywords: [
+      "jim corbett jeep safari",
+      "corbett jeep safari booking",
+      "jim corbett jeep safari price",
+      "gypsy safari jim corbett",
+      "jeep safari jim corbett national park",
+      "jim corbett jeep safari booking online",
+      "bijrani jeep safari booking",
+      "jhirna jeep safari",
+      "garjiya jeep safari",
+      "jim corbett jeep safari timing",
+      "morning jeep safari jim corbett",
+    ],
+    canonicalPath: "/jeep-safari",
+  },
+  "canter-safari": {
+    title: "Jim Corbett Canter Safari | Dhikala Zone Booking | ₹2,299/Seat",
+    description:
+      "Book Dhikala canter safari online at ₹2,299/seat. 16-person sharing open safari bus with pickup from Ramnagar / Dhangarhi Gate. Season 15 Nov–15 Jun. Only 4 canters per shift — book 15–20 days ahead.",
+    keywords: [
+      "jim corbett canter safari",
+      "dhikala canter safari booking",
+      "canter safari dhikala",
+      "corbett canter safari price",
+      "dhikala zone day visitor safari",
+      "16 seat canter safari corbett",
+      "jim corbett canter safari price",
+      "book dhikala canter safari online",
+      "canter safari vs jeep safari jim corbett",
+    ],
+    canonicalPath: "/canter-safari",
+  },
+  "safari-price": {
+    title: "Jim Corbett Safari Price 2025–26 | All Zone Fees & Inclusions",
+    description:
+      "Complete Jim Corbett safari price guide 2025–26. Dhikala canter safari ₹2,299/person. Jeep safari from ₹5,999–₹8,499/jeep. All zones: Bijrani, Jhirna, Garjiya, Dhela, Sitabani. Zero hidden costs — guide, permit & jeep included.",
+    keywords: [
+      "jim corbett safari price",
+      "jim corbett safari fee",
+      "jim corbett entry fee 2025",
+      "jim corbett safari cost per person",
+      "dhikala canter safari fee",
+      "bijrani jeep safari price",
+      "jim corbett safari charges",
+      "jim corbett safari price for indians",
+      "jim corbett national park entry fee",
+      "corbett national park permit fee",
+    ],
+    canonicalPath: "/safari-price",
+  },
+};
+
 // ─── Metadata Factory ─────────────────────────────────────────────────────────
 
 export interface PageMetadataProps {
