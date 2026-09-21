@@ -8,6 +8,12 @@ import {
   SiteConfigRepository,
 } from "../../../core/database/repositories";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
+import {
+  SITE_URL,
+  ZONE_SEO_MAP,
+  buildZoneSchema,
+  buildBreadcrumbSchema,
+} from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -16,8 +22,6 @@ export function generateStaticParams() {
   const slugs = ZoneRepository.getAvailableSlugs();
   return slugs.map((slug) => ({ slug }));
 }
-
-const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
 export async function generateMetadata({
   params,
@@ -28,33 +32,33 @@ export async function generateMetadata({
   const zone = ZoneRepository.getZoneBySlug(slug);
   if (!zone) return { title: "Zone Not Found" };
 
-  const title = `${zone.name} Safari Permit & Booking — Jim Corbett`;
-  const description = `Book ${zone.name} jeep safari permits with Panthera Corbett Safari. ${zone.gate}. Season: ${zone.season}. Starting ₹${zone.startingPriceINR.toLocaleString("en-IN")} per jeep. ${zone.description.slice(0, 120)}...`;
+  // Read from ZONE_SEO_MAP — falls back to a sensible default for any future zone
+  const seoEntry = ZONE_SEO_MAP[slug] ?? {
+    title: `${zone.name} Safari Booking — Jim Corbett`,
+    description: `Book ${zone.name} safari with Panthera Corbett Safari. ${zone.season}. Starting ₹${zone.startingPriceINR.toLocaleString("en-IN")}. ${zone.description.slice(0, 100)}...`,
+    keywords: [`${zone.name.toLowerCase()} booking`, "jim corbett safari booking"],
+  };
+
   const canonical = `${SITE_URL}/zones/${zone.slug}`;
+  const ogImage = zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`;
 
   return {
-    title,
-    description,
+    title: seoEntry.title,
+    description: seoEntry.description,
+    keywords: seoEntry.keywords,
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
-      title,
-      description,
-      images: [
-        {
-          url: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
-          width: 1200,
-          height: 630,
-          alt: `${zone.name} — Jim Corbett Tiger Reserve`,
-        },
-      ],
+      title: seoEntry.title,
+      description: seoEntry.description,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${zone.name} — Jim Corbett Tiger Reserve` }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`],
+      title: seoEntry.title,
+      description: seoEntry.description,
+      images: [ogImage],
     },
   };
 }
@@ -76,36 +80,25 @@ export default async function ZoneDetailPage({
     `Hello Panthera Corbett! I want to check availability for ${zone.name}.`
   );
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: `${zone.name} — Jim Corbett Tiger Reserve`,
-    description: zone.description,
-    url: `${SITE_URL}/zones/${zone.slug}`,
-    image: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Ramnagar",
-      addressRegion: "Uttarakhand",
-      addressCountry: "IN",
-    },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "INR",
-      price: zone.startingPriceINR,
-      availability: zone.isOpenNow
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
-    },
-    touristType: zone.bestFor,
-  };
+  // Build JSON-LD schemas via pure seo.ts functions — no inline objects here
+  const zoneSchema = buildZoneSchema(zone);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Safari Zones", href: "/#zones" },
+    { name: zone.name, href: `/zones/${zone.slug}` },
+  ]);
 
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      {/* Zone structured data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(zoneSchema) }}
+      />
+      {/* BreadcrumbList structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}

@@ -6,6 +6,16 @@ import {
   ZoneRepository,
 } from "../core/database/repositories";
 import { Header, Footer, StickyCallBar } from "../shared";
+import {
+  SITE_URL,
+  SITE_KEYWORDS,
+  buildLocalBusinessSchema,
+  buildParkAttractionSchema,
+  buildWebSiteSchema,
+  buildServiceListSchema,
+} from "../core/utils/seo";
+
+// ─── Fonts ────────────────────────────────────────────────────────────────────
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -21,9 +31,11 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+// ─── Static data (evaluated at build time) ────────────────────────────────────
+
 const config = SiteConfigRepository.getConfig();
 
-const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
+// ─── Viewport ─────────────────────────────────────────────────────────────────
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -32,31 +44,17 @@ export const viewport: Viewport = {
   themeColor: "#17211A",
 };
 
+// ─── Root Metadata ────────────────────────────────────────────────────────────
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${config.name} — Jim Corbett Safari Permits & Forest Rest House Bookings`,
-    template: `%s | ${config.name}`,
+    default: "Jim Corbett Safari Booking | Jeep & Canter Safari | Dhikala Zone | Panthera Corbett Safari",
+    template: `%s | ${config.shortName}`,
   },
   description:
-    "Book Jim Corbett safari permits and Dhikala Forest Rest House stays directly. Bijrani, Jhirna, Garjiya, Dhikala — all zones. Licensed by Uttarakhand Forest Department. Call +91 99974 88004.",
-  keywords: [
-    "Jim Corbett safari booking",
-    "Corbett Tiger Reserve permit",
-    "Bijrani jeep safari",
-    "Dhikala safari permit",
-    "Dhikala Forest Rest House booking",
-    "Jim Corbett canter safari",
-    "Jhirna safari Ramnagar",
-    "Garjiya zone safari",
-    "forest rest house Corbett",
-    "Jim Corbett package tour",
-    "Ramnagar safari desk",
-    "Corbett overnight stay",
-    "tiger safari India",
-    "Uttarakhand wildlife safari",
-    "Corbett jeep safari booking",
-  ],
+    "Book Jim Corbett safari online — Dhikala canter safari ₹2,299/person, jeep safari from ₹5,999/jeep. Delhi to Jim Corbett packages available. All zones: Bijrani, Jhirna, Dhikala, Garjiya. Licensed Uttarakhand operator. Call +91 99974 88004.",
+  keywords: SITE_KEYWORDS,
   authors: [{ name: config.name, url: SITE_URL }],
   creator: config.name,
   publisher: config.name,
@@ -72,9 +70,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/icon.jpg", type: "image/jpeg" },
-    ],
+    icon: [{ url: "/icon.jpg", type: "image/jpeg" }],
     apple: "/icon.jpg",
   },
   openGraph: {
@@ -82,12 +78,12 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: config.name,
-    title: `${config.name} — Jim Corbett Safari Permits & Forest Rest House Bookings`,
+    title: "Jim Corbett Safari Booking | Jeep & Canter Safari | Panthera Corbett Safari",
     description:
-      "Book Jim Corbett safari permits and Dhikala Forest Rest House stays directly. Bijrani, Jhirna, Garjiya and all zones covered. Licensed operator since 2009.",
+      "Book Jim Corbett safari online. Dhikala canter safari, jeep safari, Delhi packages. All zones covered. Licensed Uttarakhand Forest Dept operator since 2009.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Jim Corbett Safari — Panthera Corbett Safari, Ramnagar",
@@ -96,92 +92,43 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${config.name} — Jim Corbett Safari Permits`,
+    title: "Jim Corbett Safari Booking | Jeep & Canter Safari | Panthera Corbett",
     description:
       "Book safari permits and Dhikala FRH stays. All Corbett zones. Licensed Uttarakhand Forest Dept operator.",
-    images: ["/og-image.jpg"],
+    images: [`${SITE_URL}/og-image.jpg`],
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
   category: "travel",
 };
 
-/** JSON-LD: LocalBusiness + TouristAttraction schema */
+// ─── Root JSON-LD (@graph) ────────────────────────────────────────────────────
+// Built entirely via seo.ts pure functions. Adding a new schema = one builder call.
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": `${SITE_URL}/#business`,
+    buildLocalBusinessSchema({
       name: config.name,
       description: config.description,
-      url: SITE_URL,
       telephone: config.contact.phoneDisplay,
       email: config.contact.email,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: config.contact.officeAddress.line1,
-        addressLocality: config.contact.officeAddress.city,
-        addressRegion: config.contact.officeAddress.state,
-        postalCode: config.contact.officeAddress.pincode,
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 29.3931,
-        longitude: 79.0506,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
-        ],
-        opens: "06:00",
-        closes: "21:30",
-      },
-      priceRange: "₹₹",
-      image: `${SITE_URL}/og-image.jpg`,
-      sameAs: [
-        config.social.instagram,
-        config.social.facebook,
-        config.social.googleBusinessProfile,
-      ],
-    },
-    {
-      "@type": "TouristAttraction",
-      "@id": `${SITE_URL}/#attraction`,
-      name: "Jim Corbett Tiger Reserve Safari",
-      description:
-        "Jim Corbett Tiger Reserve is India's oldest national park, covering 1,288 sq km in Uttarakhand. Known for Bengal tigers, Asian elephants, gharials, and over 600 bird species.",
-      url: SITE_URL,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Ramnagar",
-        addressRegion: "Uttarakhand",
-        addressCountry: "IN",
-      },
-      touristType: ["Wildlife Photography", "Safari", "Birdwatching", "Nature Tourism"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: config.name,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${SITE_URL}/zones/{search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
-    },
+      streetAddress: config.contact.officeAddress.line1,
+      city: config.contact.officeAddress.city,
+      state: config.contact.officeAddress.state,
+      pincode: config.contact.officeAddress.pincode,
+      instagram: config.social.instagram,
+      facebook: config.social.facebook,
+      googleBusinessProfile: config.social.googleBusinessProfile,
+    }),
+    buildParkAttractionSchema(),
+    buildWebSiteSchema(config.name),
+    buildServiceListSchema(),
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// ─── Root Layout ──────────────────────────────────────────────────────────────
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const contact = SiteConfigRepository.getContact();
   const whatsAppLink = SiteConfigRepository.getWhatsAppLink();
   const zones = ZoneRepository.getAllZones();
