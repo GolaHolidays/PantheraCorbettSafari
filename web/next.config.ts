@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // Outputs plain HTML/CSS/JS to the `out/` directory.
   // No Node.js server needed — deploy to Nginx, Cloudflare Pages, GitHub Pages, etc.
   output: "export",
+  trailingSlash: true,
 
 
   // ─── Image handling ──────────────────────────────────────────────────────

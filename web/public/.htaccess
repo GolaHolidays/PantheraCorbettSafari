@@ -1,0 +1,31 @@
+# ─── Custom 404 Error Document ──────────────────────────────────────────────
+# Tells Apache / LiteSpeed / Hostinger to serve the custom Next.js 404 page
+ErrorDocument 404 /404.html
+
+# ─── Clean URL & Static Routing Rules ───────────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Security: Deny access to hidden files
+  RewriteRule ^\.(?!well-known) - [F]
+
+  # If the exact file or directory exists, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # If page.html exists (e.g. /jeep-safari -> /jeep-safari.html), serve it
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+  # If directory/index.html exists, serve it
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>
+
+# ─── MIME Types & Caching ───────────────────────────────────────────────────
+<IfModule mod_mime.c>
+  AddType text/plain .txt
+  AddType application/xml .xml
+</IfModule>
