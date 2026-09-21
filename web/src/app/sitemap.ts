@@ -3,6 +3,7 @@ import {
   ZoneRepository,
   PackageRepository,
   RestHouseRepository,
+  BlogRepository,
 } from "../core/database/repositories";
 import { SITE_URL } from "../core/utils/seo";
 
@@ -20,12 +21,15 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/safari-price`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.90 },
   // Phase 3 — Supporting service pages
   { url: `${SITE_URL}/delhi-corbett-cab`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
+  // Phase 4 — Blog hub
+  { url: `${SITE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.85 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const zoneSlugs = ZoneRepository.getAvailableSlugs();
   const packageSlugs = PackageRepository.getAvailableSlugs();
   const restHouseSlugs = RestHouseRepository.getAvailableSlugs();
+  const blogSlugs = BlogRepository.getAvailableSlugs();
 
   const zoneEntries: MetadataRoute.Sitemap = zoneSlugs.map((slug) => ({
     url: `${SITE_URL}/zones/${slug}`,
@@ -48,10 +52,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.70,
   }));
 
+  const blogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${SITE_URL}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.80,
+  }));
+
   return [
     ...STATIC_PAGES,
     ...zoneEntries,
     ...packageEntries,
     ...restHouseEntries,
+    ...blogEntries,
   ];
 }

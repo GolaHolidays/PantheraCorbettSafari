@@ -21,4 +21,8 @@ export type {
   FaqItem,
   TrustMetrics,
   TrustHighlight,
+  BlogPost,
+  BlogCategory,
+  ContentSection,
 } from "../schemas";
+

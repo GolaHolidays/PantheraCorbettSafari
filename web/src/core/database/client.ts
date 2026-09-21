@@ -18,6 +18,7 @@ import {
   TestimonialsSchema,
   FaqsSchema,
   TrustMetricsSchema,
+  BlogPostsSchema,
 } from "../schemas";
 
 import { siteConfig } from "@data/site-config";
@@ -29,6 +30,7 @@ import { secondaryServices } from "@data/secondary-services";
 import { testimonials } from "@data/testimonials";
 import { faqs } from "@data/faqs";
 import { trustMetrics } from "@data/trust-metrics";
+import { blogPosts } from "@data/blog-posts";
 
 export type {
   SiteConfig,
@@ -40,6 +42,9 @@ export type {
   Testimonial,
   FaqItem,
   TrustMetrics,
+  BlogPost,
+  BlogCategory,
+  ContentSection,
 } from "../schemas";
 
 /**
@@ -81,6 +86,10 @@ class DataSourceClient {
 
   public getTrustMetricsRaw() {
     return TrustMetricsSchema.parse(trustMetrics);
+  }
+
+  public getBlogPostsRaw() {
+    return BlogPostsSchema.parse(blogPosts);
   }
 }
 

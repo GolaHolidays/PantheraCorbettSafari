@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: "Safari Prices", href: "/safari-price" },
     { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
     { label: "Safari Zones", href: "/#zones" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (

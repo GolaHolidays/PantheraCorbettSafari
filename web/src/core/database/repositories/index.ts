@@ -7,3 +7,5 @@ export * from "./secondary-services.repository";
 export * from "./testimonial.repository";
 export * from "./faq.repository";
 export * from "./trust-metrics.repository";
+export * from "./blog.repository";
+

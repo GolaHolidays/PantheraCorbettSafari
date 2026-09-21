@@ -130,10 +130,15 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
           </div>
         </div>
 
-        <div className="mt-8 text-xs text-[#8A9468]">
+        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-[#8A9468]">
           <p>
             © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas.
           </p>
+          <div className="flex gap-4">
+            <Link href="/blog" className="hover:text-white transition-colors">Safari Blog</Link>
+            <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
+            <Link href="/safari-price" className="hover:text-white transition-colors">Safari Prices</Link>
+          </div>
         </div>
       </div>
     </footer>
