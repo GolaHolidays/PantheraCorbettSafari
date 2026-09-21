@@ -10,6 +10,7 @@ import {
   TestimonialRepository,
   FaqRepository,
 } from "../core/database/repositories";
+import { buildFaqSchema } from "../core/utils/seo";
 
 import { HeroBanner, TrustRow } from "../features/hero";
 import { ZoneGrid } from "../features/zones";
@@ -33,8 +34,17 @@ export default function HomePage() {
   const testimonials = TestimonialRepository.getAll();
   const faqs = FaqRepository.getAll();
 
+  // Build FAQ schema once — inlined at render time into the page <head> equivalent
+  const faqSchema = buildFaqSchema(faqs);
+
   return (
     <>
+      {/* FAQPage JSON-LD — unlocks Google rich result accordion for Featured Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* 1. Cinematic Hero with Scarcity & Conversion Buttons */}
       <HeroBanner
         phoneDisplay={contact.phoneDisplay}

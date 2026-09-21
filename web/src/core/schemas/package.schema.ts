@@ -20,6 +20,14 @@ export const SafariPackageSchema = z.object({
   itineraryHighlights: z.array(z.string().min(1)).min(1),
   image: z.string().min(1),
   isFeatured: z.boolean(),
+  /** SEO-optimised title for generateMetadata — falls back to title if absent */
+  seoTitle: z.string().optional(),
+  /** SEO-optimised meta description targeting package-level keywords */
+  seoDescription: z.string().optional(),
+  /** Package-specific keyword array for metadata.keywords */
+  seoKeywords: z.array(z.string()).optional(),
+  /** Optional linked resort slugs for packages with resort stays */
+  resortSlugs: z.array(z.string()).optional(),
 });
 
 export const PackagesSchema = z.array(SafariPackageSchema).min(1);

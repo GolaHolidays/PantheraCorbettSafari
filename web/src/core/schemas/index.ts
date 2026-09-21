@@ -13,3 +13,7 @@ export * from "./secondary-services.schema";
 export * from "./testimonial.schema";
 export * from "./faq.schema";
 export * from "./trust-metrics.schema";
+export * from "./blog.schema";
+export * from "./resort.schema";
+export * from "./cab-transfer.schema";
+

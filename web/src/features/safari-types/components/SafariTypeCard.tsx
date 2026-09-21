@@ -65,6 +65,71 @@ export const SafariTypeCard: React.FC<SafariTypeCardProps> = ({
           </ul>
         </div>
 
+        {/* Transparent Rates Breakdown */}
+        {safari.id === "jeep-safari" && (
+          <div className="mb-6 p-4 rounded-[3px] bg-[#F4EFE6] border border-[#E8E0CC] space-y-3">
+            <span className="text-xs font-bold text-[#37482E] uppercase tracking-wider block">
+              Official Rate Card (All Costs Included)
+            </span>
+            <div className="space-y-2 text-xs">
+              <div className="p-2.5 bg-[#FBF8F0] rounded border border-[#E8E0CC]">
+                <div className="flex justify-between items-baseline mb-1">
+                  <span className="font-bold text-[#17211A]">Core Zones — Pre-Booking (&gt;5 Days)</span>
+                  <span className="font-bold text-[#B84C1E] font-tabular text-sm">₹7,999 / jeep</span>
+                </div>
+                <p className="text-[11px] text-[#17211A]/80">
+                  Dhela, Jhirna, Bijrani, Garjiya, Durga Devi. Includes guide + permit + personal jeep + complimentary 10 km pickup/drop from Ramnagar.
+                </p>
+              </div>
+
+              <div className="p-2.5 bg-[#FBF8F0] rounded border border-[#E8E0CC]">
+                <div className="flex justify-between items-baseline mb-1">
+                  <span className="font-bold text-[#17211A]">Core Zones — Current Booking (≤5 Days)</span>
+                  <span className="font-bold text-[#B84C1E] font-tabular text-sm">₹8,499 / jeep</span>
+                </div>
+                <p className="text-[11px] text-[#17211A]/80">
+                  Dhela, Jhirna, Bijrani, Garjiya, Durga Devi. Includes guide + permit + personal jeep + vehicle cost.
+                </p>
+              </div>
+
+              <div className="p-2.5 bg-[#FBF8F0] rounded border border-[#E8E0CC]">
+                <div className="flex justify-between items-baseline mb-1">
+                  <span className="font-bold text-[#17211A]">Buffer &amp; Reserve Zones (Pre &amp; Current)</span>
+                  <span className="font-bold text-[#37482E] font-tabular text-sm">₹5,999 – ₹6,499</span>
+                </div>
+                <p className="text-[11px] text-[#17211A]/80">
+                  ₹6,499: Phato, Hathidangar, Sitabani (Pawalgarh Gate).<br />
+                  ₹5,999: Sitabani (Teda Gate &amp; Bhandarpani Gate).<br />
+                  Includes guide + permit + personal jeep + complimentary 10 km pickup/drop.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {safari.id === "canter-safari" && (
+          <div className="mb-6 p-4 rounded-[3px] bg-[#F4EFE6] border border-[#E8E0CC] space-y-3">
+            <span className="text-xs font-bold text-[#37482E] uppercase tracking-wider block">
+              Official Rate Card (All Costs Included)
+            </span>
+            <div className="p-2.5 bg-[#FBF8F0] rounded border border-[#E8E0CC] text-xs space-y-1.5">
+              <div className="flex justify-between items-baseline">
+                <span className="font-bold text-[#17211A]">Dhikala Day Canter (16 Sharing)</span>
+                <span className="font-bold text-[#B84C1E] font-tabular text-sm">₹2,299 / person</span>
+              </div>
+              <p className="text-[11px] text-[#17211A]/80">
+                <strong>Pickup / Drop:</strong> Ramnagar / Dhangarhi Gate included.
+              </p>
+              <p className="text-[11px] text-[#17211A]/80">
+                <strong>Open Season:</strong> 15 November to 15 June.
+              </p>
+              <p className="text-[11px] text-[#B84C1E] font-medium">
+                <strong>Booking Advice:</strong> Book at least 15 to 20 days in advance for confirmed seat availability.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Permit Notice */}
         <div className="text-xs text-[#B84C1E] bg-[#B84C1E]/5 p-3 rounded-[3px] border border-[#B84C1E]/20 mb-6">
           <strong className="block mb-0.5">Forest Quota Notice:</strong>

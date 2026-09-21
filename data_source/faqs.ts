@@ -3,7 +3,13 @@ export const faqs = [
     category: "Booking and Permits",
     question: "How far ahead should I book a Jim Corbett safari?",
     answer:
-      "For Bijrani and Dhikala, book at least 30 to 45 days in advance — sometimes more in peak season (October to March). The Forest Department opens the booking window 45 days before the safari date for Indian citizens and 90 days for foreign nationals. Daily permits are capped, so they go quickly. Jhirna, Dhela, and Phato are easier to book on shorter notice.",
+      "For Dhikala Day Canter safari, book at least 15 to 20 days in advance to ensure seat availability, as only 4 canters enter per shift during the 15 Nov – 15 June open season. For Core Zone jeep safaris (Bijrani, Jhirna, Dhela, Garjiya, Durga Devi), booking more than 5 days in advance secures our ₹7,999/jeep pre-booking rate and includes complimentary hotel pickup/drop up to 10 km from Ramnagar. Bookings made within 5 days of safari are ₹8,499/jeep. Buffer zones like Phato, Hathidangar, and Sitabani can be booked with shorter lead times.",
+  },
+  {
+    category: "Pricing & Inclusions",
+    question: "What are your exact safari prices and what is included?",
+    answer:
+      "All prices are 100% all-inclusive with zero hidden costs. Dhikala Day Canter Safari (16 person sharing) is ₹2,299/person including Ramnagar/Dhangarhi Gate pickup & drop (open 15 Nov – 15 Jun). Core Zone Jeep Safaris (Dhela, Jhirna, Bijrani, Garjiya, Durga Devi) are ₹7,999/jeep for pre-bookings (>5 days ahead, includes complimentary pickup/drop up to 10 km from Ramnagar) and ₹8,499/jeep for current bookings (within 5 days). Buffer & Reserve Zones: Phato, Hathidangar, and Sitabani Pawalgarh Gate are ₹6,499/jeep; Sitabani Teda Gate & Bhandarpani Gate are ₹5,999/jeep. Every jeep booking includes guide, forest permit, personal 4x4 Gypsy, and vehicle cost.",
   },
   {
     category: "Documents",

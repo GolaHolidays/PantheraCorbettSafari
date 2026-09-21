@@ -11,3 +11,10 @@ export { secondaryServices } from "./secondary-services";
 export { testimonials } from "./testimonials";
 export { faqs } from "./faqs";
 export { trustMetrics } from "./trust-metrics";
+export { blogPosts } from "./blog-posts";
+export { resorts } from "./resorts";
+export {
+  cabTransfers,
+  getCabTransferFare,
+  calculatePackageWithCab,
+} from "./cab-transfers";

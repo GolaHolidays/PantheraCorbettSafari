@@ -21,4 +21,16 @@ export type {
   FaqItem,
   TrustMetrics,
   TrustHighlight,
+  BlogPost,
+  BlogCategory,
+  ContentSection,
+  Resort,
+  ResortCategory,
+  ResortPriceRange,
+  ResortLocation,
+  CabVehicleCategory,
+  CabPriceRange,
+  CabVehicleFare,
+  CabTransferRoute,
 } from "../schemas";
+

@@ -18,6 +18,9 @@ import {
   TestimonialsSchema,
   FaqsSchema,
   TrustMetricsSchema,
+  BlogPostsSchema,
+  ResortsSchema,
+  CabTransfersSchema,
 } from "../schemas";
 
 import { siteConfig } from "@data/site-config";
@@ -29,6 +32,9 @@ import { secondaryServices } from "@data/secondary-services";
 import { testimonials } from "@data/testimonials";
 import { faqs } from "@data/faqs";
 import { trustMetrics } from "@data/trust-metrics";
+import { blogPosts } from "@data/blog-posts";
+import { resorts } from "@data/resorts";
+import { cabTransfers } from "@data/cab-transfers";
 
 export type {
   SiteConfig,
@@ -40,6 +46,16 @@ export type {
   Testimonial,
   FaqItem,
   TrustMetrics,
+  BlogPost,
+  BlogCategory,
+  ContentSection,
+  Resort,
+  ResortCategory,
+  ResortPriceRange,
+  ResortLocation,
+  CabTransferRoute,
+  CabVehicleFare,
+  CabPriceRange,
 } from "../schemas";
 
 /**
@@ -81,6 +97,18 @@ class DataSourceClient {
 
   public getTrustMetricsRaw() {
     return TrustMetricsSchema.parse(trustMetrics);
+  }
+
+  public getBlogPostsRaw() {
+    return BlogPostsSchema.parse(blogPosts);
+  }
+
+  public getResortsRaw() {
+    return ResortsSchema.parse(resorts);
+  }
+
+  public getCabTransfersRaw() {
+    return CabTransfersSchema.parse(cabTransfers);
   }
 }
 

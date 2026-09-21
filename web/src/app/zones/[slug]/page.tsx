@@ -8,6 +8,12 @@ import {
   SiteConfigRepository,
 } from "../../../core/database/repositories";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
+import {
+  SITE_URL,
+  ZONE_SEO_MAP,
+  buildZoneSchema,
+  buildBreadcrumbSchema,
+} from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -16,8 +22,6 @@ export function generateStaticParams() {
   const slugs = ZoneRepository.getAvailableSlugs();
   return slugs.map((slug) => ({ slug }));
 }
-
-const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
 export async function generateMetadata({
   params,
@@ -28,33 +32,33 @@ export async function generateMetadata({
   const zone = ZoneRepository.getZoneBySlug(slug);
   if (!zone) return { title: "Zone Not Found" };
 
-  const title = `${zone.name} Safari Permit & Booking — Jim Corbett`;
-  const description = `Book ${zone.name} jeep safari permits with Panthera Corbett Safari. ${zone.gate}. Season: ${zone.season}. Starting ₹${zone.startingPriceINR.toLocaleString("en-IN")} per jeep. ${zone.description.slice(0, 120)}...`;
+  // Read from ZONE_SEO_MAP — falls back to a sensible default for any future zone
+  const seoEntry = ZONE_SEO_MAP[slug] ?? {
+    title: `${zone.name} Safari Booking — Jim Corbett`,
+    description: `Book ${zone.name} safari with Panthera Corbett Safari. ${zone.season}. Starting ₹${zone.startingPriceINR.toLocaleString("en-IN")}. ${zone.description.slice(0, 100)}...`,
+    keywords: [`${zone.name.toLowerCase()} booking`, "jim corbett safari booking"],
+  };
+
   const canonical = `${SITE_URL}/zones/${zone.slug}`;
+  const ogImage = zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`;
 
   return {
-    title,
-    description,
+    title: seoEntry.title,
+    description: seoEntry.description,
+    keywords: seoEntry.keywords,
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
-      title,
-      description,
-      images: [
-        {
-          url: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
-          width: 1200,
-          height: 630,
-          alt: `${zone.name} — Jim Corbett Tiger Reserve`,
-        },
-      ],
+      title: seoEntry.title,
+      description: seoEntry.description,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${zone.name} — Jim Corbett Tiger Reserve` }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`],
+      title: seoEntry.title,
+      description: seoEntry.description,
+      images: [ogImage],
     },
   };
 }
@@ -76,36 +80,25 @@ export default async function ZoneDetailPage({
     `Hello Panthera Corbett! I want to check availability for ${zone.name}.`
   );
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: `${zone.name} — Jim Corbett Tiger Reserve`,
-    description: zone.description,
-    url: `${SITE_URL}/zones/${zone.slug}`,
-    image: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Ramnagar",
-      addressRegion: "Uttarakhand",
-      addressCountry: "IN",
-    },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "INR",
-      price: zone.startingPriceINR,
-      availability: zone.isOpenNow
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
-    },
-    touristType: zone.bestFor,
-  };
+  // Build JSON-LD schemas via pure seo.ts functions — no inline objects here
+  const zoneSchema = buildZoneSchema(zone);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Safari Zones", href: "/#zones" },
+    { name: zone.name, href: `/zones/${zone.slug}` },
+  ]);
 
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      {/* Zone structured data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(zoneSchema) }}
+      />
+      {/* BreadcrumbList structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
@@ -164,6 +157,20 @@ export default async function ZoneDetailPage({
               </p>
             </div>
 
+            {/* SEO-rich long-form zone content — keyword dense prose */}
+            {zone.seoContent && (
+              <article className="space-y-4">
+                <h2 className="font-serif text-2xl font-bold text-[#17211A]">
+                  About {zone.name} Safari Booking
+                </h2>
+                {zone.seoContent.trim().split(/\n\n+/).map((para, idx) => (
+                  <p key={idx} className="text-sm text-[#17211A]/80 leading-relaxed">
+                    {para.trim()}
+                  </p>
+                ))}
+              </article>
+            )}
+
             {/* Highlights */}
             <div className="bg-[#E8E0CC]/40 p-6 rounded-[4px] border border-[#E8E0CC]">
               <h3 className="font-serif text-lg font-bold text-[#17211A] mb-3">
@@ -220,18 +227,142 @@ export default async function ZoneDetailPage({
                 )}
               </div>
             </div>
+
+            {/* Pricing Breakdown & Inclusions Box */}
+            <div className="p-6 bg-[#F4EFE6] border border-[#E8E0CC] rounded-[4px] space-y-4">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <h3 className="font-serif text-lg font-bold text-[#17211A]">
+                  All-Inclusive Safari Tariff &amp; Inclusions
+                </h3>
+                <span className="text-[11px] font-semibold text-[#37482E] bg-[#E8E0CC] px-2.5 py-1 rounded-full">
+                  No Hidden Costs
+                </span>
+              </div>
+
+              {/* Dhikala Pricing Breakdown */}
+              {zone.id === "dhikala" && (
+                <div className="space-y-3">
+                  <div className="p-4 bg-white rounded border border-[#E8E0CC] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                      <div className="font-bold text-[#17211A] text-base">Day Visit Canter Safari</div>
+                      <div className="text-xs text-[#8A9468]">16 Person Sharing Open Safari Bus</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold font-serif text-[#B84C1E] font-tabular">₹2,299</div>
+                      <div className="text-[11px] text-[#8A9468]">per person / seat</div>
+                    </div>
+                  </div>
+                  <div className="text-xs text-[#17211A]/85 space-y-2 bg-white/70 p-3.5 rounded border border-[#E8E0CC]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#37482E] font-bold">✓</span>
+                      <span><strong>Pickup / Drop:</strong> Ramnagar / Dhangarhi Gate included</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#37482E] font-bold">✓</span>
+                      <span><strong>Season:</strong> 15 November to 15 June (closed during monsoon)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#B84C1E]">
+                      <span className="font-bold">⚠</span>
+                      <span><strong>Advance Booking:</strong> Book at least 15 to 20 days in advance for better availability</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Core Zones Pricing Breakdown */}
+              {["bijrani", "jhirna", "dhela", "garjiya", "durga-devi"].includes(zone.id) && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white rounded border-2 border-[#37482E]/30 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#37482E] bg-[#E8E0CC]/80 px-2 py-0.5 rounded">
+                        Pre-Booking Rate
+                      </span>
+                      <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked &gt; 5 Days Ahead</h4>
+                      <p className="text-[11px] text-[#17211A]/75 mb-3">
+                        Includes complimentary hotel transfer within 10 km radius.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold font-serif text-[#37482E] font-tabular">₹7,999</div>
+                      <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
+                      <div className="text-[11px] text-[#37482E] font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
+                        ✓ Guide + Permit + Personal Jeep + Jeep Cost + Complimentary pickup/drop up to 10 km from Ramnagar
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-white rounded border border-[#E8E0CC] flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#B84C1E] bg-[#B84C1E]/10 px-2 py-0.5 rounded">
+                        Current Zone Booking
+                      </span>
+                      <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked Within 5 Days</h4>
+                      <p className="text-[11px] text-[#17211A]/75 mb-3">
+                        Last-minute slot confirmation subject to gate availability.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold font-serif text-[#17211A] font-tabular">₹8,499</div>
+                      <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
+                      <div className="text-[11px] text-[#17211A]/80 font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
+                        ✓ Guide + Permit + Personal Jeep + Jeep Cost
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Buffer & Reserve Zones Breakdown */}
+              {(zone.id === "phato" || zone.id === "hathidangar") && (
+                <div className="p-4 bg-white rounded border border-[#E8E0CC] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#37482E] bg-[#E8E0CC]/80 px-2 py-0.5 rounded">
+                      Standard Rate (Pre &amp; Current)
+                    </span>
+                    <h4 className="font-bold text-[#17211A] text-base mt-1">Personal 4x4 Gypsy Safari</h4>
+                    <p className="text-xs text-[#17211A]/75 mt-1">
+                      Includes guide + permit + personal jeep + jeep cost + complimentary pickup/drop up to 10 km radius from Ramnagar.
+                    </p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <div className="text-2xl font-bold font-serif text-[#B84C1E] font-tabular">₹6,499</div>
+                    <div className="text-[11px] text-[#8A9468]">per jeep (up to 6 guests)</div>
+                  </div>
+                </div>
+              )}
+
+              {zone.id === "sitabani" && (
+                <div className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="p-3.5 bg-white rounded border border-[#E8E0CC]">
+                      <div className="font-bold text-[#17211A] text-sm">Teda Gate &amp; Bhandarpani Gate</div>
+                      <div className="text-xs text-[#8A9468] mb-2">Pre &amp; Current Booking</div>
+                      <div className="text-xl font-bold font-serif text-[#37482E] font-tabular">₹5,999 / jeep</div>
+                    </div>
+                    <div className="p-3.5 bg-white rounded border border-[#E8E0CC]">
+                      <div className="font-bold text-[#17211A] text-sm">Pawalgarh Gate</div>
+                      <div className="text-xs text-[#8A9468] mb-2">Pre &amp; Current Booking</div>
+                      <div className="text-xl font-bold font-serif text-[#B84C1E] font-tabular">₹6,499 / jeep</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-[#17211A]/80 bg-white/70 p-3 rounded border border-[#E8E0CC]">
+                    <strong>Inclusions on all gates:</strong> Authorized guide + forest permit + personal jeep + jeep cost + complimentary pickup/drop up to 10 km radius from Ramnagar.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Sticky Booking Card */}
           <div className="lg:col-span-1">
             <div className="sticky top-28 bg-[#17211A] text-[#FBF8F0] border border-[#37482E] rounded-[4px] p-6 shadow-lg">
               <div className="text-xs text-[#C99A3D] font-bold uppercase tracking-wider mb-1">
-                Govt Authorized Booking
+                {zone.id === "dhikala" ? "Per Person Tariff" : "Personal Jeep Booking"}
               </div>
               <div className="font-serif text-3xl font-bold text-[#FBF8F0] font-tabular">
                 {formatCurrencyINR(zone.startingPriceINR)}
               </div>
-              <p className="text-xs text-[#8A9468] mt-1 mb-6">
+              <p className="text-xs text-[#E8E0CC]/80 mt-1 mb-6 leading-relaxed">
                 {zone.priceNote}
               </p>
 

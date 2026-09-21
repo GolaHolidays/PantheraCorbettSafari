@@ -5,6 +5,22 @@ export const ZonePermitQuotaSchema = z.object({
   canter: z.number().int().min(1).optional(),
 });
 
+export const GatePricingSchema = z.object({
+  gate: z.string().min(1),
+  priceINR: z.number().int().min(0),
+});
+
+export const ZonePricingSchema = z.object({
+  preBookingPriceINR: z.number().int().optional(),
+  currentBookingPriceINR: z.number().int().optional(),
+  perPersonPriceINR: z.number().int().optional(),
+  sharingCapacity: z.string().optional(),
+  bookingWindowNotice: z.string().optional(),
+  pickupDropNote: z.string().optional(),
+  inclusions: z.array(z.string()).optional(),
+  gatePricing: z.array(GatePricingSchema).optional(),
+}).optional();
+
 export const SafariZoneSchema = z.object({
   id: z.string().min(1),
   slug: z.string().min(1).regex(/^[a-z0-9-]+$/, "Slug must be lowercase kebab-case"),
@@ -25,9 +41,14 @@ export const SafariZoneSchema = z.object({
   bestFor: z.array(z.string().min(1)).min(1),
   image: z.string().min(1),
   isFeatured: z.boolean(),
+  pricing: ZonePricingSchema,
+  /** Long-form SEO prose (~200 words) rendered on the zone detail page and used for keyword density. */
+  seoContent: z.string().optional(),
 });
 
 export const ZonesSchema = z.array(SafariZoneSchema).min(1);
 
 export type SafariZone = z.infer<typeof SafariZoneSchema>;
 export type ZonePermitQuota = z.infer<typeof ZonePermitQuotaSchema>;
+export type ZonePricing = z.infer<typeof ZonePricingSchema>;
+

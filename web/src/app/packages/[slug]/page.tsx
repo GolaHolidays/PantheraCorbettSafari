@@ -7,6 +7,11 @@ import {
   PackageRepository,
   SiteConfigRepository,
 } from "../../../core/database/repositories";
+import {
+  SITE_URL,
+  buildPackageSchema,
+  buildBreadcrumbSchema,
+} from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -25,9 +30,27 @@ export async function generateMetadata({
   const pkg = PackageRepository.getPackageBySlug(slug);
   if (!pkg) return { title: "Package Not Found" };
 
+  const title = pkg.seoTitle ?? `${pkg.title} | Jim Corbett Safari Package`;
+  const description = pkg.seoDescription ?? pkg.overview;
+  const canonical = `${SITE_URL}/packages/${slug}`;
+
   return {
-    title: `${pkg.title} | Corbett Safari Package`,
-    description: pkg.overview,
+    title,
+    description,
+    ...(pkg.seoKeywords?.length ? { keywords: pkg.seoKeywords } : {}),
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title,
+      description,
+      images: [{ url: pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -48,8 +71,35 @@ export default async function PackageDetailPage({
     `Hello! I want to enquire about the "${pkg.title}" safari tour package.`
   );
 
+  const packageSchema = buildPackageSchema({
+    title: pkg.seoTitle ?? pkg.title,
+    overview: pkg.seoDescription ?? pkg.overview,
+    image: pkg.image,
+    slug,
+    duration: pkg.duration,
+    zone: pkg.zone,
+    priceFromINR: pkg.startingPriceINR,
+  });
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Tour Packages", href: "/#packages" },
+    { name: pkg.title, href: `/packages/${slug}` },
+  ]);
+
+  const packageResorts = PackageRepository.getResortsForPackage(pkg);
+
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
+      {/* Package structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(packageSchema) }}
+      />
+      {/* Breadcrumb structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav className="mb-6 flex items-center gap-2 text-xs text-[#8A9468]">
@@ -150,6 +200,98 @@ export default async function PackageDetailPage({
                 </ul>
               </div>
             </div>
+
+            {/* Associated / Available Resort Accommodations */}
+            {packageResorts.length > 0 && (
+              <div className="space-y-4 pt-4 border-t border-[#E8E0CC]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <h3 className="font-serif text-xl font-bold text-[#17211A]">
+                    Available Resort Accommodations
+                  </h3>
+                  <span className="text-xs text-[#8A9468] font-medium">
+                    {packageResorts.length} curated options available for this package
+                  </span>
+                </div>
+                <p className="text-xs text-[#17211A]/80 leading-relaxed">
+                  Choose your preferred stay tier when booking this package. We partner with top Corbett wildlife resorts ranging from 3-star boutique retreats to 5-star luxury estates.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                  {packageResorts.map((resort) => {
+                    const badgeVariant =
+                      resort.category === "5-star"
+                        ? "gold"
+                        : resort.category === "4-star"
+                        ? "ember"
+                        : "moss";
+
+                    return (
+                      <div
+                        key={resort.id}
+                        className="bg-white border border-[#E8E0CC] rounded-[4px] overflow-hidden flex flex-col hover:border-[#37482E] transition-all shadow-xs"
+                      >
+                        <div className="relative h-40 w-full bg-[#17211A]">
+                          <Image
+                            src={resort.image}
+                            alt={resort.name}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                          <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
+                            <Badge variant={badgeVariant} size="sm">
+                              {resort.category.toUpperCase()}
+                            </Badge>
+                            {resort.location.riverFront && (
+                              <Badge variant="forest" size="sm">
+                                Riverfront
+                              </Badge>
+                            )}
+                          </div>
+                          <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-baseline justify-between text-white text-xs">
+                            <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] font-medium text-[#FBF8F0]">
+                              {resort.priceRange.priceDisplay} / night
+                            </span>
+                            <span className="bg-[#37482E]/90 px-1.5 py-0.5 rounded text-[10px] font-semibold text-[#C99A3D]">
+                              ★ {resort.rating ?? 4.5}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-4 flex-1 flex flex-col justify-between">
+                          <div>
+                            <h4 className="font-serif font-bold text-base text-[#17211A] leading-snug mb-1">
+                              {resort.name}
+                            </h4>
+                            <p className="text-xs text-[#8A9468] mb-2 font-medium">
+                              {resort.location.area} · {resort.location.distanceFromStation}
+                            </p>
+                            <p className="text-xs text-[#17211A]/75 line-clamp-2 leading-relaxed mb-3">
+                              {resort.tagline}
+                            </p>
+                          </div>
+
+                          <div className="pt-2.5 border-t border-[#E8E0CC]/60 flex items-center justify-between text-[11px]">
+                            <span className="text-[#37482E] font-medium truncate max-w-[180px]">
+                              {resort.amenities.slice(0, 2).join(" · ")}
+                            </span>
+                            <a
+                              href={SiteConfigRepository.getWhatsAppLink(
+                                `Hello! I would like to book the "${pkg.title}" with a stay at ${resort.name}.`
+                              )}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#B84C1E] hover:underline font-semibold text-xs whitespace-nowrap"
+                            >
+                              Choose Stay →
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sticky Booking Sidebar */}

@@ -12,14 +12,14 @@ export const trustMetrics = {
       badge: "Official Agent",
     },
     {
-      title: "All 8 Zones Covered",
-      subtitle: "Bijrani, Dhikala, Jhirna, Garjiya and more",
+      title: "All 9 Zones Covered",
+      subtitle: "Bijrani, Dhikala, Jhirna, Garjiya, Phato and more",
       badge: "Every Zone",
     },
     {
-      title: "28 Licensed Jeeps",
-      subtitle: "34 registered Forest Dept guides",
-      badge: "Licensed Fleet",
+      title: "Verified 4x4 Gypsies",
+      subtitle: "Forest Dept registered drivers & guides",
+      badge: "Verified Fleet",
     },
     {
       title: "Fixed Pricing",

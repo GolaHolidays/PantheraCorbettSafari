@@ -12,8 +12,8 @@ export const trustMetrics = {
       badge: "Official Agent",
     },
     {
-      title: "All 8 Zones Covered",
-      subtitle: "Bijrani, Dhikala, Jhirna, Garjiya and more",
+      title: "All 9 Zones Covered",
+      subtitle: "Bijrani, Dhikala, Jhirna, Garjiya, Phato and more",
       badge: "Every Zone",
     },
     {
