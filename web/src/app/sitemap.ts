@@ -18,6 +18,8 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/jeep-safari`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.92 },
   { url: `${SITE_URL}/canter-safari`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.92 },
   { url: `${SITE_URL}/safari-price`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.90 },
+  // Phase 3 — Supporting service pages
+  { url: `${SITE_URL}/delhi-corbett-cab`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

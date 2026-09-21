@@ -42,6 +42,8 @@ export const SafariZoneSchema = z.object({
   image: z.string().min(1),
   isFeatured: z.boolean(),
   pricing: ZonePricingSchema,
+  /** Long-form SEO prose (~200 words) rendered on the zone detail page and used for keyword density. */
+  seoContent: z.string().optional(),
 });
 
 export const ZonesSchema = z.array(SafariZoneSchema).min(1);

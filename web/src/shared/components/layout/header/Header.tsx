@@ -18,10 +18,11 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: "Jeep Safari", href: "/jeep-safari" },
+    { label: "Canter Safari", href: "/canter-safari" },
+    { label: "Safari Prices", href: "/safari-price" },
+    { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
     { label: "Safari Zones", href: "/#zones" },
-    { label: "Packages", href: "/#packages" },
-    { label: "Forest Rest Houses", href: "/#night-stays" },
-    { label: "Jeep vs Canter", href: "/#safari-types" },
     { label: "FAQ", href: "/#faq" },
   ];
 

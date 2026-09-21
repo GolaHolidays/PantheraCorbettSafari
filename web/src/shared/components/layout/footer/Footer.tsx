@@ -51,28 +51,33 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             </h3>
             <ul className="space-y-2 text-sm text-[#E8E0CC]/80">
               <li>
-                <Link href="/#packages" className="hover:text-white transition-colors">
-                  Corbett Tour Packages
+                <Link href="/jeep-safari" className="hover:text-white transition-colors">
+                  Jim Corbett Jeep Safari
                 </Link>
               </li>
               <li>
-                <Link href="/#night-stays" className="hover:text-white transition-colors">
-                  Dhikala FRH Night Stay
+                <Link href="/canter-safari" className="hover:text-white transition-colors">
+                  Dhikala Canter Safari
                 </Link>
               </li>
               <li>
-                <Link href="/#safari-types" className="hover:text-white transition-colors">
-                  Jeep vs Canter Safari
+                <Link href="/safari-price" className="hover:text-white transition-colors">
+                  Safari Prices 2025–26
                 </Link>
               </li>
               <li>
-                <Link href="/#secondary-services" className="hover:text-white transition-colors">
-                  Delhi to Ramnagar Cabs
+                <Link href="/delhi-to-jim-corbett-package" className="hover:text-white transition-colors">
+                  Delhi to Corbett Packages
+                </Link>
+              </li>
+              <li>
+                <Link href="/delhi-corbett-cab" className="hover:text-white transition-colors">
+                  Delhi to Ramnagar Cab
                 </Link>
               </li>
               <li>
                 <Link href="/#faq" className="hover:text-white transition-colors">
-                  Permit & Advance Booking Rules
+                  Permit &amp; Booking Rules
                 </Link>
               </li>
             </ul>

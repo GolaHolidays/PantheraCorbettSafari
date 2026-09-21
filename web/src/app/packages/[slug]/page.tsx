@@ -7,6 +7,7 @@ import {
   PackageRepository,
   SiteConfigRepository,
 } from "../../../core/database/repositories";
+import { SITE_URL } from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
 
@@ -25,9 +26,27 @@ export async function generateMetadata({
   const pkg = PackageRepository.getPackageBySlug(slug);
   if (!pkg) return { title: "Package Not Found" };
 
+  const title = pkg.seoTitle ?? `${pkg.title} | Jim Corbett Safari Package`;
+  const description = pkg.seoDescription ?? pkg.overview;
+  const canonical = `${SITE_URL}/packages/${slug}`;
+
   return {
-    title: `${pkg.title} | Corbett Safari Package`,
-    description: pkg.overview,
+    title,
+    description,
+    ...(pkg.seoKeywords?.length ? { keywords: pkg.seoKeywords } : {}),
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title,
+      description,
+      images: [{ url: pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

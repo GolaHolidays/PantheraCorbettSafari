@@ -39,6 +39,11 @@ export const zones = [
         "Pickup and drop at Ramnagar / Dhangarhi Gate",
       ],
     },
+    seoContent: `Dhikala zone canter safari booking is one of the most sought-after wildlife permits in India. Located 32 km inside Dhangarhi Gate, Dhikala is the largest and most celebrated core zone in Jim Corbett Tiger Reserve. Day visitors access Dhikala exclusively via the 16-person sharing Canter safari bus — the only entry option without an overnight Forest Rest House stay. The Dhikala canter safari price is ₹2,299 per person, all-inclusive: Dhikala core zone entry permit, confirmed seat on the open Canter bus, government-appointed wildlife guide and driver, and pickup or drop at Ramnagar or Dhangarhi Gate.
+
+Only 4 Canters are permitted inside Dhikala per shift, making this one of the most limited wildlife safari permits in India. Book your Dhikala canter safari at least 15 to 20 days in advance for confirmed availability. The open season runs from 15 November to 15 June — the zone closes during monsoon for wildlife breeding.
+
+For guests travelling on a Delhi to Jim Corbett package, Dhikala is the crown jewel of Corbett Tiger Reserve. The Dhikala Chaur open grasslands stretch along the Ramganga reservoir, creating prime conditions for tiger, wild elephant herd, and gharial sightings on every morning and afternoon shift. Jeep safaris inside Dhikala are reserved exclusively for guests staying overnight at the Dhikala or Gairal Forest Rest Houses.`,
   },
   {
     id: "bijrani",
@@ -78,6 +83,11 @@ export const zones = [
         "Complimentary pickup/drop within 10 km of Ramnagar (pre-booking >5 days)",
       ],
     },
+    seoContent: `Bijrani zone jeep safari is the most popular core zone booking for first-time visitors to Jim Corbett National Park. Located just 1 km past Amdanda Gate, Bijrani is the closest core zone to Ramnagar town and holds the highest consistent tiger sighting record (9.1/10) of any day-accessible zone in Corbett Tiger Reserve. Book your Bijrani jeep safari from ₹7,999/jeep (pre-booking, more than 5 days ahead) for up to 6 guests in an exclusive private 4x4 Gypsy. The all-inclusive price covers your Forest Department core entry permit, authorized government wildlife guide, personal jeep hire, and complimentary pickup/drop within 10 km of Ramnagar.
+
+Bijrani is open from 15 October to 30 June. The dense sal forest, small seasonal streams, and grassy clearings create ideal ambush cover for tigers — morning shifts are especially productive. Permit quota is capped at 30 jeeps per shift, so early booking is recommended during peak season (November to February).
+
+For Delhi to Jim Corbett weekend packages, Bijrani is the most recommended zone. The classic itinerary: arrive Friday evening, afternoon Bijrani safari, overnight resort stay, early morning Bijrani safari on Saturday, then back to Delhi after breakfast. Our Bijrani Weekend Package starts at ₹11,500/couple with resort stay, both safaris, and breakfast included.`,
   },
   {
     id: "jhirna",
@@ -116,6 +126,11 @@ export const zones = [
         "Complimentary pickup/drop within 10 km of Ramnagar (pre-booking >5 days)",
       ],
     },
+    seoContent: `Jhirna zone is the only Jim Corbett core zone open all 365 days a year — making it the premier choice for monsoon safari bookings, last-minute permits, and year-round wildlife travel. Located 20 km from Ramnagar at Dhela Gate, Jhirna was once a village; the secondary vegetation and bamboo groves that flourished after its relocation now support one of the highest sloth bear densities in Corbett Tiger Reserve. Jhirna jeep safari price is ₹7,999/jeep (pre-booking, more than 5 days ahead), with authorized guide, core entry permit, personal 4x4 Gypsy, and complimentary 10 km pickup/drop from Ramnagar included for up to 6 guests.
+
+Jhirna's active tiger corridors wind around year-round waterholes and bamboo groves, maintaining high sighting potential even during the hottest months. The zone has a sighting index of 8.7/10 and a permit quota of 30 jeeps per shift. For guests planning a Delhi to Jim Corbett trip between July and October when most core zones close, Jhirna and Dhela remain fully operational.
+
+Monsoon safaris in Jhirna are particularly atmospheric — dense green forests, full waterholes, and dramatically higher sloth bear and tiger activity as animals concentrate near permanent water sources during the dry season before rains.`,
   },
   {
     id: "dhela",
@@ -154,6 +169,11 @@ export const zones = [
         "Complimentary pickup/drop within 10 km of Ramnagar (pre-booking >5 days)",
       ],
     },
+    seoContent: `Dhela zone jeep safari offers one of the most private and intimate wildlife experiences in Jim Corbett, with strictly capped daily permits of just 15 jeeps per shift — the lowest quota of any core zone in Corbett Tiger Reserve. Located adjacent to Jhirna zone at Dhela Gate (20 km from Ramnagar), Dhela is an authorized core zone open all 365 days of the year, including the monsoon months. Its mixed forest canopy, natural wetlands, and seasonal waterholes attract wild elephant herds, tigers, leopards, and rare raptors on a regular basis. Dhela safari price is ₹7,999/jeep (pre-booking, more than 5 days ahead) for up to 6 guests, including authorized guide, Forest Department core entry permit, personal 4x4 Gypsy, and complimentary pickup/drop within 10 km of Ramnagar.
+
+The strict 15-jeep quota per shift ensures an uncrowded, unhurried forest experience — no convoy of vehicles at a sighting, no jostling for position. This makes Dhela particularly popular with serious wildlife photographers and repeat Corbett visitors who want a quieter alternative to the more heavily visited Bijrani and Garjiya zones.
+
+For Delhi to Jim Corbett travellers planning a second safari on a multi-day trip, Dhela combined with a Bijrani morning safari is one of our most recommended two-zone combinations.`,
   },
   {
     id: "garjiya",
@@ -193,6 +213,11 @@ export const zones = [
         "Complimentary pickup/drop within 10 km of Ramnagar (pre-booking >5 days)",
       ],
     },
+    seoContent: `Garjiya zone jeep safari delivers dramatic riverbed terrain and one of Jim Corbett's strongest tiger movement records (8.9/10 sighting index). Located just 12 km from Ramnagar at Garjiya Gate, the zone runs along the Kosi and Ringora riverbeds — a striking landscape of rocky boulders, sandy river flats, and mixed sal forest. Tigers regularly use these river passages to commute between forest ranges, creating frequent and photogenic sightings on both morning and afternoon shifts. Garjiya jeep safari price is ₹7,999/jeep (pre-booking, more than 5 days ahead) for up to 6 guests, including authorized guide, core entry permit, personal 4x4 Gypsy, and complimentary pickup/drop within 10 km of Ramnagar.
+
+Garjiya is open from 15 October to 30 June and has a permit quota of 30 jeeps per shift. Guests staying along the Dhikuli strip and Kosi river corridor find Garjiya the most accessible zone from their property. For Delhi to Jim Corbett package visitors planning a two-safari day, our Double Zone Day Safari combines a morning Bijrani safari with an afternoon Garjiya safari — covering two distinct terrains and maximising sighting chances in one day.
+
+The zone is close to the Garjiya Devi temple, one of Uttarakhand's important Shakti shrines, making it a popular combined wildlife and cultural visit.`,
   },
   {
     id: "durga-devi",
@@ -232,6 +257,11 @@ export const zones = [
         "Complimentary pickup/drop within 10 km of Ramnagar (pre-booking >5 days)",
       ],
     },
+    seoContent: `Durgadevi zone safari takes you to the dramatic northeastern edge of Jim Corbett Tiger Reserve, 28 km from Ramnagar at Durga Devi Gate. The landscape shifts from the riverine flatlands of Bijrani into steep Himalayan foothills, deep river gorges, and the confluence of the Mandal and Ramganga rivers — terrain unlike any other zone in Corbett. This topographical diversity makes Durgadevi a haven for birdwatchers: over 580 bird species have been recorded in this part of Corbett, including rare Himalayan raptors, fishing eagles, pied kingfishers, and winter migratory waterfowl. Durgadevi safari price is ₹7,999/jeep (pre-booking, more than 5 days ahead) for up to 6 guests, including authorized guide, Forest Department core entry permit, personal 4x4 Gypsy, and complimentary pickup/drop within 10 km of Ramnagar.
+
+The zone is open from 15 October to 15 June with a strict permit cap of 15 jeeps per shift. Mahseer angling in the Ramganga and Mandal confluence is a popular add-on for guests in the northeastern Corbett belt, combining wildlife sighting with river fishing. Tiger sightings occur regularly despite the hilly terrain — the sighting index stands at 7.8/10.
+
+For Delhi to Jim Corbett birding packages, Durgadevi combined with Jhirna (open all year) forms an excellent two-zone combination for serious bird photographers and nature enthusiasts.`,
   },
   {
     id: "phato",
@@ -270,6 +300,11 @@ export const zones = [
         "Complimentary pickup/drop from property or location up to 10 km radius from Ramnagar",
       ],
     },
+    seoContent: `Phato zone jeep safari operates all 365 days a year in the Mohan Nagar buffer belt, 26 km from Ramnagar at Phato Gate. It is one of the most visited buffer zones in Corbett Tiger Reserve, famous for its iconic forest treehouse rest station — a raised canopy platform where guests pause mid-safari for refreshments and panoramic forest views. Tiger and elephant encounters have grown steadily in Phato over recent seasons, maintaining a consistently high sighting index of 8.6/10. Phato safari price is a fixed ₹6,499/jeep for both pre-booking and same-day current booking — no premium rate for late bookings, unlike core zone jeep safaris. The all-inclusive price covers guide, forest permit, personal 4x4 Gypsy, and complimentary 10 km pickup/drop from Ramnagar for up to 6 guests.
+
+This flat, no-variable pricing structure and year-round access make Phato the top recommendation for last-minute Delhi to Jim Corbett travellers who book spontaneously. The permit quota allows up to 50 jeeps per shift, giving greater availability than strictly capped core zones. Phato's mixed forest canopy, open meadows, and seasonal waterholes attract tigers, leopards, wild boars, spotted deer, and resident elephant herds throughout the year.
+
+For Corbett visitors who have already done the popular Bijrani or Garjiya safari on a previous visit, Phato offers a fresh, unhurried forest circuit with the memorable treehouse stopover as a signature experience.`,
   },
   {
     id: "hathidangar",
@@ -309,6 +344,11 @@ export const zones = [
         "Complimentary pickup/drop from property or location up to 10 km radius from Ramnagar",
       ],
     },
+    seoContent: `Hathidangar zone — translating literally to "Elephant's Path" — is a premier eco-tourism safari zone in the Ampokhra range of Terai West Forest Division, located 15 km from Ramnagar. This picturesque corridor is named for its historic role as a seasonal migratory route for wild elephant herds moving between the Shivalik foothills and the Terai grasslands. Hathidangar jeep safari price is a fixed ₹6,499/jeep for up to 6 guests, including government-registered guide, forest permit, personal 4x4 Gypsy, and complimentary pickup/drop within 10 km of Ramnagar. The zone is open all 365 days of the year.
+
+Unlike the more crowded core zones, Hathidangar's permit quota is capped at 25 jeeps per shift — offering unhurried, intimate safari trails through pristine mixed forest canopy far from the core zone rush. Regular wildlife sightings include wild elephant herds, leopards, sloth bears, spotted deer, sambar, jungle cats, and a rich variety of Himalayan and Terai bird species. The zone's year-round availability and flat fixed pricing make it ideal for all-season visitors, families, senior travellers, and dedicated birders.
+
+For Delhi to Jim Corbett visitors who want a quiet, off-the-beaten-track safari experience away from the popular Bijrani weekend package crowd, Hathidangar offers a genuinely different forest atmosphere with consistently good wildlife activity and easy same-day permit availability.`,
   },
   {
     id: "sitabani",
@@ -353,5 +393,10 @@ export const zones = [
         "Complimentary pickup/drop from property or location up to 10 km radius from Ramnagar",
       ],
     },
+    seoContent: `Sitabani reserve forest safari is Jim Corbett's most flexible wildlife safari option — no strict daily quota cap, three separate entry gates catering to different itineraries, and open all 365 days including the monsoon. The reserve forest directly borders Corbett Tiger Reserve and is steeped in Valmiki Ramayana history: Sitabani is believed to be the forest where Sita took refuge after the exile, and the ancient Sita Bani temple inside the forest remains a landmark on every safari route. Sitabani jeep safari is available through three gates: Teda Gate and Bhandarpani Gate at ₹5,999/jeep, and Pawalgarh Gate at ₹6,499/jeep. All bookings include authorized guide, forest permit, personal 4x4 Gypsy, and complimentary pickup/drop within 10 km of Ramnagar for up to 6 guests.
+
+Easy same-day permit confirmation with no advance booking requirement makes Sitabani the top choice for spontaneous travellers and budget-conscious Delhi to Jim Corbett day visitors. For repeat Corbett visitors who have done the core zones previously, Sitabani's vast, undisturbed landscape offers a distinctly different experience — wider trails, fewer vehicles, and a sense of true wilderness.
+
+Wildlife sightings include tigers, leopards, elephants, spotted deer, wild boar, mugger crocodiles near seasonal streams, and over 500 bird species in the rich mixed sal and bhabhar forest. Sitabani's permit quota of 60 jeeps per shift gives the highest availability of any zone we operate.`,
   },
 ];

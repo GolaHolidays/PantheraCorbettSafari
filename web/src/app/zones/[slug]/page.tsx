@@ -157,6 +157,20 @@ export default async function ZoneDetailPage({
               </p>
             </div>
 
+            {/* SEO-rich long-form zone content — keyword dense prose */}
+            {zone.seoContent && (
+              <article className="space-y-4">
+                <h2 className="font-serif text-2xl font-bold text-[#17211A]">
+                  About {zone.name} Safari Booking
+                </h2>
+                {zone.seoContent.trim().split(/\n\n+/).map((para, idx) => (
+                  <p key={idx} className="text-sm text-[#17211A]/80 leading-relaxed">
+                    {para.trim()}
+                  </p>
+                ))}
+              </article>
+            )}
+
             {/* Highlights */}
             <div className="bg-[#E8E0CC]/40 p-6 rounded-[4px] border border-[#E8E0CC]">
               <h3 className="font-serif text-lg font-bold text-[#17211A] mb-3">
