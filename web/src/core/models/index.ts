@@ -24,5 +24,9 @@ export type {
   BlogPost,
   BlogCategory,
   ContentSection,
+  Resort,
+  ResortCategory,
+  ResortPriceRange,
+  ResortLocation,
 } from "../schemas";
 

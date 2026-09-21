@@ -19,6 +19,7 @@ import {
   FaqsSchema,
   TrustMetricsSchema,
   BlogPostsSchema,
+  ResortsSchema,
 } from "../schemas";
 
 import { siteConfig } from "@data/site-config";
@@ -31,6 +32,7 @@ import { testimonials } from "@data/testimonials";
 import { faqs } from "@data/faqs";
 import { trustMetrics } from "@data/trust-metrics";
 import { blogPosts } from "@data/blog-posts";
+import { resorts } from "@data/resorts";
 
 export type {
   SiteConfig,
@@ -45,6 +47,10 @@ export type {
   BlogPost,
   BlogCategory,
   ContentSection,
+  Resort,
+  ResortCategory,
+  ResortPriceRange,
+  ResortLocation,
 } from "../schemas";
 
 /**
@@ -90,6 +96,10 @@ class DataSourceClient {
 
   public getBlogPostsRaw() {
     return BlogPostsSchema.parse(blogPosts);
+  }
+
+  public getResortsRaw() {
+    return ResortsSchema.parse(resorts);
   }
 }
 

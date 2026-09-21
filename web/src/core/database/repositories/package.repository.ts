@@ -17,4 +17,10 @@ export class PackageRepository {
   public static getAvailableSlugs(): string[] {
     return this.getAllPackages().map((p) => p.slug);
   }
+
+  public static getResortsForPackage(pkg: SafariPackage): import("../../models").Resort[] {
+    if (!pkg.resortSlugs || pkg.resortSlugs.length === 0) return [];
+    const allResorts = dataSourceClient.getResortsRaw();
+    return allResorts.filter((r) => pkg.resortSlugs?.includes(r.slug));
+  }
 }

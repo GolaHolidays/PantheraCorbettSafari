@@ -26,6 +26,8 @@ export const SafariPackageSchema = z.object({
   seoDescription: z.string().optional(),
   /** Package-specific keyword array for metadata.keywords */
   seoKeywords: z.array(z.string()).optional(),
+  /** Optional linked resort slugs for packages with resort stays */
+  resortSlugs: z.array(z.string()).optional(),
 });
 
 export const PackagesSchema = z.array(SafariPackageSchema).min(1);
