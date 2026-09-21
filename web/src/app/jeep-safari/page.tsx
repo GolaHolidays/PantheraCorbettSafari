@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   SiteConfigRepository,
-  SafariRepository,
-  ZoneRepository,
   FaqRepository,
 } from "../../core/database/repositories";
 import {
@@ -13,7 +11,7 @@ import {
   buildFaqSchema,
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
-import { Button, Badge, SectionHeader, Card } from "../../shared";
+import { Button, Badge, SectionHeader } from "../../shared";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
@@ -216,7 +214,7 @@ export default function JeepSafariPage() {
             {/* Inclusions */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-[#17211A] mb-6">
-                What's Included in Every Jeep Safari
+                What&apos;s Included in Every Jeep Safari
               </h2>
               <ul className="space-y-3">
                 {INCLUSIONS.map((item, i) => (

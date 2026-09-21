@@ -2,7 +2,6 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ZoneRepository,
   SiteConfigRepository,
   FaqRepository,
 } from "../../core/database/repositories";
@@ -179,7 +178,7 @@ export default function SafariPricePage() {
 
           {/* Canter inclusions */}
           <div className="mt-6 p-5 bg-[#F4EFE6] border border-[#E8E0CC] rounded-[4px]">
-            <h3 className="font-serif font-bold text-sm text-[#37482E] uppercase mb-3">Canter Safari — What's Included</h3>
+            <h3 className="font-serif font-bold text-sm text-[#37482E] uppercase mb-3">Canter Safari — What&apos;s Included</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {INCLUSIONS_CANTER.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs text-[#17211A]/85">
@@ -242,7 +241,7 @@ export default function SafariPricePage() {
 
           {/* Jeep inclusions */}
           <div className="p-5 bg-white border border-[#E8E0CC] rounded-[4px]">
-            <h3 className="font-serif font-bold text-sm text-[#37482E] uppercase mb-3">Jeep Safari — What's Included in Every Booking</h3>
+            <h3 className="font-serif font-bold text-sm text-[#37482E] uppercase mb-3">Jeep Safari — What&apos;s Included in Every Booking</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {INCLUSIONS_JEEP.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs text-[#17211A]/85">

@@ -21,6 +21,17 @@ import { SiteConfigRepository } from "../database/repositories";
 
 export const SITE_URL = "https://pantheracorbettsafari.corbettcamp.com";
 
+/**
+ * Google Search Console Verification Token.
+ * Strips any accidental 'google-site-verification=' prefix.
+ */
+export const GOOGLE_SITE_VERIFICATION = (
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  "rYPhlIHHoOAKnrdK9TaSA7-JbxiDBwf67EQmnjFlepA"
+)
+  .replace(/^google-site-verification=/, "")
+  .trim();
+
 // ─── Master Keyword Taxonomy ──────────────────────────────────────────────────
 // Single array → spread into layout.tsx metadata. No duplication anywhere.
 

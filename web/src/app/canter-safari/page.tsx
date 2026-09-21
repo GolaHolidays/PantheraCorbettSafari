@@ -121,7 +121,7 @@ export default function CanterSafariPage() {
             Jim Corbett Canter Safari
           </h1>
           <p className="text-[#E8E0CC]/90 text-base sm:text-lg max-w-2xl leading-relaxed mb-3">
-            The only way day visitors see <strong className="text-white">Dhikala zone</strong> — India's most celebrated safari grassland, 32 km deep inside Corbett's core. A 16-person sharing open-roof Canter bus, departing from Ramnagar.
+            The only way day visitors see <strong className="text-white">Dhikala zone</strong> — India&apos;s most celebrated safari grassland, 32 km deep inside Corbett&apos;s core. A 16-person sharing open-roof Canter bus, departing from Ramnagar.
           </p>
           <p className="text-[#C99A3D] text-sm font-semibold mb-8">
             Season: 15 November – 15 June · ₹2,299/seat all-inclusive · Book 15–20 days ahead
@@ -271,7 +271,7 @@ export default function CanterSafariPage() {
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 bg-[#B84C1E]/5 border border-[#B84C1E]/20 rounded-[4px]">
               <p className="text-sm font-semibold text-[#B84C1E] mb-1">Choose Canter if…</p>
-              <p className="text-xs text-[#17211A]/80">Dhikala grasslands are your priority. You don't need a private vehicle. Season is Nov–Jun. You're comfortable with a shared bus experience.</p>
+              <p className="text-xs text-[#17211A]/80">Dhikala grasslands are your priority. You don&apos;t need a private vehicle. Season is Nov–Jun. You&apos;re comfortable with a shared bus experience.</p>
             </div>
             <div className="p-4 bg-[#37482E]/5 border border-[#37482E]/20 rounded-[4px]">
               <p className="text-sm font-semibold text-[#37482E] mb-1">Choose Jeep if…</p>

@@ -2,13 +2,11 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  PackageRepository,
   SiteConfigRepository,
   FaqRepository,
 } from "../../core/database/repositories";
 import {
   LANDING_PAGE_SEO,
-  SITE_URL,
   generatePageMetadata,
   buildFaqSchema,
   buildBreadcrumbSchema,
@@ -20,7 +18,6 @@ import {
   Card,
 } from "../../shared";
 import { HugeiconsIcon } from "@hugeicons/react";
-import Location01Icon from "@hugeicons/core-free-icons/Location01Icon";
 import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
 import Train01Icon from "@hugeicons/core-free-icons/Train01Icon";
 import Car01Icon from "@hugeicons/core-free-icons/Car01Icon";
@@ -407,7 +404,7 @@ export default function DelhiToJimCorbettPackagePage() {
             Ready to Plan Your Corbett Trip?
           </h2>
           <p className="text-[#8A9468] text-base mb-8">
-            WhatsApp us your dates, group size, and budget. We'll share availability and a quote within the hour.
+            WhatsApp us your dates, group size, and budget. We&apos;ll share availability and a quote within the hour.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="primary" size="lg" href={whatsAppLink} isExternal className="inline-flex items-center justify-center gap-2">

@@ -9,6 +9,7 @@ import { Header, Footer, StickyCallBar } from "../shared";
 import {
   SITE_URL,
   SITE_KEYWORDS,
+  GOOGLE_SITE_VERIFICATION,
   buildLocalBusinessSchema,
   buildParkAttractionSchema,
   buildWebSiteSchema,
@@ -72,6 +73,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: "/icon.jpg", type: "image/jpeg" }],
     apple: "/icon.jpg",
+  },
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION,
   },
   openGraph: {
     type: "website",
