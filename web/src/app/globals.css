@@ -42,3 +42,23 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── Hero video: slow Ken-Burns zoom (cinematic scale-in) ─────────────────── */
+/* Starts at scale(1) so the poster has zero jump on video-load               */
+/* Tops out at scale(1.08) — enough depth without nausea or edge-crop gaps     */
+@keyframes hero-video-scale-kf {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+.hero-video-scale {
+  animation: hero-video-scale-kf 20s ease-out forwards;
+  will-change: transform;
+}
+
+/* Respect reduced-motion user preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-scale {
+    animation: none;
+  }
+}

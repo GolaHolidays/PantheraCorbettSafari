@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../../shared/components/ui/button/Button";
+import { HeroVideoBackground } from "./HeroVideoBackground";
 
 interface HeroBannerProps {
   phoneDisplay: string;
@@ -16,17 +17,8 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   return (
     <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center justify-center bg-[#17211A] text-[#FBF8F0] overflow-hidden">
-      {/* Background Image with warm dusk light as per photography direction */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
-        style={{
-          backgroundImage:
-            "url('/image/photo-1561731216-c3a4d99437d5.jpg')",
-        }}
-      >
-        {/* Soft dark-to-transparent overlay (Ink at low opacity) as required by design guide */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#17211A] via-[#17211A]/65 to-[#17211A]/35" />
-      </div>
+      {/* ── Cinematic video background (client component, muted autoplay loop) ── */}
+      <HeroVideoBackground />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
