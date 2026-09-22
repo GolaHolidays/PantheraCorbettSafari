@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SafariPackage } from "../../../core/models";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
+import { trackPackageInquiry, trackWhatsAppClick } from "@/core/analytics/gtm";
 
 interface PackageCardProps {
   pkg: SafariPackage;
@@ -112,6 +115,10 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg, whatsAppLink }) =
             size="md"
             href={packageInquiryUrl}
             isExternal
+            onClick={() => {
+              trackPackageInquiry(pkg.title, pkg.priceDisplay);
+              trackWhatsAppClick(`Package Enquiry: ${pkg.title}`, { package_slug: pkg.slug });
+            }}
             className="w-full text-center"
           >
             Enquire This Package

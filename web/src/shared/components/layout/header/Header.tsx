@@ -8,6 +8,7 @@ import Menu01Icon from "@hugeicons/core-free-icons/Menu01Icon";
 import Cancel01Icon from "@hugeicons/core-free-icons/Cancel01Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 import { Button } from "../../ui/button/Button";
+import { trackPhoneCallClick, trackWhatsAppClick } from "@/core/analytics/gtm";
 
 interface HeaderProps {
   phoneDisplay: string;
@@ -97,13 +98,20 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href={`tel:${phoneRaw}`}
+              onClick={() => trackPhoneCallClick(phoneRaw, { source: "header_desktop" })}
               className="text-[12px] font-medium text-[#E8E0CC]/80 hover:text-white flex items-center gap-1.5 transition-colors whitespace-nowrap"
               aria-label={`Call: ${phoneDisplay}`}
             >
               <HugeiconsIcon icon={Call02Icon} size={12} className="text-[#C99A3D] flex-shrink-0" />
               <span className="font-tabular">{phoneDisplay}</span>
             </a>
-            <Button variant="primary" size="sm" href={whatsAppLink} isExternal>
+            <Button
+              variant="primary"
+              size="sm"
+              href={whatsAppLink}
+              isExternal
+              onClick={() => trackWhatsAppClick("Header Desktop Book Safari", { source: "header_desktop" })}
+            >
               Book Safari
             </Button>
           </div>
@@ -113,6 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Tablet phone link (sm to lg) */}
             <a
               href={`tel:${phoneRaw}`}
+              onClick={() => trackPhoneCallClick(phoneRaw, { source: "header_tablet" })}
               className="hidden sm:flex items-center gap-1.5 text-[12px] font-medium text-[#E8E0CC]/80 hover:text-white py-1.5 px-2.5 rounded-[var(--radius-chip)] bg-white/5 border border-white/10 transition-colors whitespace-nowrap"
               aria-label={`Call: ${phoneDisplay}`}
             >
@@ -123,6 +132,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile call button (< sm) */}
             <a
               href={`tel:${phoneRaw}`}
+              onClick={() => trackPhoneCallClick(phoneRaw, { source: "header_mobile" })}
               aria-label={`Call ${phoneDisplay}`}
               className="sm:hidden flex items-center gap-1 py-1.5 px-2.5 rounded-[var(--radius-chip)] text-[#FBF8F0] bg-[#B84C1E] spring-press"
             >
@@ -174,6 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("Header Drawer WhatsApp", { source: "header_drawer" })}
               className="spring-press flex items-center justify-center gap-1.5 h-10 rounded-none bg-gradient-to-b from-[#1E8A4E] to-[#156B3A] text-white text-[13px] font-semibold"
             >
               <HugeiconsIcon icon={WhatsappIcon} size={14} />
@@ -181,6 +192,7 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
             <a
               href={`tel:${phoneRaw}`}
+              onClick={() => trackPhoneCallClick(phoneRaw, { source: "header_drawer" })}
               className="spring-press flex items-center justify-center gap-1.5 h-10 rounded-none bg-gradient-to-b from-[#B84C1E] to-[#993A12] text-white text-[13px] font-semibold"
             >
               <HugeiconsIcon icon={Call02Icon} size={14} />
