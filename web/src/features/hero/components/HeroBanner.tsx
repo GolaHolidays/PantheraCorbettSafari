@@ -45,17 +45,26 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 
       {/*
        * Content block
-       * Mobile:  stacked below the video (no overlapping), clean padding, full readability
+       * Mobile:  pulls up slightly (-mt-7) into the deep video gradient fade for seamless blend
        * Desktop: left-anchored max-w-[520px], generous padding, full content
        */}
-      <div className="relative z-10 w-full px-5 pt-5 pb-9 sm:pt-0 sm:pb-0 sm:px-12 lg:px-20 xl:px-28 sm:py-32">
+      <div className="relative z-10 w-full px-5 pt-2 pb-9 sm:pt-0 sm:pb-0 sm:px-12 lg:px-20 xl:px-28 sm:py-32 -mt-7 sm:mt-0">
         <div className="max-w-[520px]">
+
+          {/* ── Expedition Horizon Telemetry — bridges video and typography ─── */}
+          <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
+            <span className="w-1.5 h-1.5 bg-[#C99A3D] animate-pulse flex-shrink-0" />
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.24em] text-[#C99A3D]/90 uppercase select-none">
+              29°32&apos;N 78°46&apos;E · RAMNAGAR CORBETT
+            </span>
+            <div className="h-[1px] flex-1 max-w-[120px] sm:max-w-[160px] bg-gradient-to-r from-[#C99A3D]/50 to-transparent" />
+          </div>
 
           {/* ── Pre-headline label ───────────────────────────────────────── */}
           {/* Mobile: short form; Desktop: full form */}
-          <p className="font-semibold tracking-[0.20em] uppercase text-[#C99A3D] mb-3 sm:mb-5"
+          <p className="font-semibold tracking-[0.20em] uppercase text-[#8A9468] mb-3 sm:mb-5"
              style={{ fontSize: "10px" }}>
-            <span className="sm:hidden">Official Permits · Jim Corbett</span>
+            <span className="sm:hidden">Official Forest Dept Permits</span>
             <span className="hidden sm:inline">Jim Corbett Tiger Reserve — Official Permits</span>
           </p>
 

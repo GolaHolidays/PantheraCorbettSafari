@@ -73,10 +73,16 @@ export const HeroVideoBackground: React.FC = () => {
       )}
 
       {/*
-       * ── MOBILE: Subtle bottom fade into the dark text section below ───
+       * ── MOBILE: Seamless multi-step bottom fade into dark section ─────
+       * Uses 112px height + bottom-[-2px] subpixel overlap to completely
+       * eliminate any video edge artifacts or hard cut lines.
        */}
       <div
-        className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#17211A] to-transparent sm:hidden pointer-events-none"
+        className="absolute -bottom-1 inset-x-0 h-28 sm:hidden pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to top, #17211A 0%, rgba(23,33,26,0.98) 35%, rgba(23,33,26,0.65) 65%, transparent 100%)",
+        }}
       />
 
       {/*
