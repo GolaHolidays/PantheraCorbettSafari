@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SiteConfig, SafariZone } from "@/core/models";
-import { GoogleMapEmbed } from "../ui/map-embed/GoogleMapEmbed";
+import { GoogleMapEmbed } from "../../ui/map-embed/GoogleMapEmbed";
 
 interface FooterProps {
   config: SiteConfig;
