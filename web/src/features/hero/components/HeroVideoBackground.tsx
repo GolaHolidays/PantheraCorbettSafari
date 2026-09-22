@@ -40,10 +40,10 @@ export const HeroVideoBackground: React.FC = () => {
     <div className="absolute inset-0 z-0 overflow-hidden" suppressHydrationWarning>
       {/* ── High-resolution poster fallback for SSR & initial paint ── */}
       <img
-        src="/image/photo-1561731216-c3a4d99437d5.jpg"
+        src="/hero_clip/hero_poster.jpg"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
       {/* ── Full-bleed cinematic clip (rendered post-mount to avoid extension hydration conflicts) ── */}
@@ -56,8 +56,8 @@ export const HeroVideoBackground: React.FC = () => {
       {mounted && (
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="/image/photo-1561731216-c3a4d99437d5.jpg"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          poster="/hero_clip/hero_poster.jpg"
           autoPlay
           muted
           loop
@@ -65,8 +65,8 @@ export const HeroVideoBackground: React.FC = () => {
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/hero_clip/panthera_corbett_safari.webm" type="video/webm" />
-          <source src="/hero_clip/panthera-corbett-safari.mp4" type="video/mp4" />
+          <source src="/hero_clip/panthera_corbett_safari.webm?v=3" type="video/webm" />
+          <source src="/hero_clip/panthera-corbett-safari.mp4?v=3" type="video/mp4" />
         </video>
       )}
 
@@ -77,7 +77,7 @@ export const HeroVideoBackground: React.FC = () => {
        * Hidden on sm+ screens.
        */}
       <div
-        className="absolute inset-0 sm:hidden"
+        className="absolute inset-0 sm:hidden pointer-events-none"
         style={{
           background:
             "linear-gradient(to top, rgba(23,33,26,0.97) 0%, rgba(23,33,26,0.88) 25%, rgba(23,33,26,0.45) 48%, rgba(23,33,26,0.10) 65%, transparent 80%)",
