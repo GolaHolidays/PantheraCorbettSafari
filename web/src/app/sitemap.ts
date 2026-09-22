@@ -65,6 +65,12 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
     changeFrequency: "weekly",
     priority: 0.85,
   },
+  {
+    url: `${SITE_URL}/contact`,
+    lastModified: new Date("2026-09-22"),
+    changeFrequency: "monthly",
+    priority: 0.80,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

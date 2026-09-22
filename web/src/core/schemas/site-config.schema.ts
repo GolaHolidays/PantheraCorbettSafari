@@ -26,6 +26,7 @@ export const SiteHoursSchema = z.object({
 
 export const SiteSocialSchema = z.object({
   googleBusinessProfile: z.url("Invalid Google Business Profile URL"),
+  googleMapsEmbed: z.string().optional(),
   instagram: z.url("Invalid Instagram URL"),
   facebook: z.url("Invalid Facebook URL"),
 });

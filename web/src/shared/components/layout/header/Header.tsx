@@ -40,6 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
     { label: "Zones", href: "/#zones" },
     { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (

@@ -469,9 +469,10 @@ export function buildLocalBusinessSchema(config: {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 29.3931,
-      longitude: 79.0506,
+      latitude: 29.4488845,
+      longitude: 79.2592105,
     },
+    hasMap: config.googleBusinessProfile,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

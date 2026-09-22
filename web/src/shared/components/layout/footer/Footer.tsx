@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SiteConfig, SafariZone } from "@/core/models";
+import { GoogleMapEmbed } from "../ui/map-embed/GoogleMapEmbed";
 
 interface FooterProps {
   config: SiteConfig;
@@ -76,6 +77,11 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
                 </Link>
               </li>
               <li>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact &amp; Desk Location
+                </Link>
+              </li>
+              <li>
                 <Link href="/#faq" className="hover:text-white transition-colors">
                   Permit &amp; Booking Rules
                 </Link>
@@ -126,6 +132,15 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
               <p className="text-xs text-[#8A9468]">
                 Desk Timings: {config.hours.bookingDesk}
               </p>
+
+              {/* Compact Google Map Embed */}
+              <div className="pt-2">
+                <GoogleMapEmbed
+                  variant="compact"
+                  mapsUrl={config.social.googleBusinessProfile}
+                  embedUrl={config.social.googleMapsEmbed}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -135,6 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas.
           </p>
           <div className="flex gap-4">
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/blog" className="hover:text-white transition-colors">Safari Blog</Link>
             <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
             <Link href="/safari-price" className="hover:text-white transition-colors">Safari Prices</Link>

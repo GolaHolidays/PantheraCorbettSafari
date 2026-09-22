@@ -30,7 +30,9 @@ export const siteConfig = {
     safariEveningShift: "02:00 PM – 05:30 PM",
   },
   social: {
-    googleBusinessProfile: "https://maps.google.com/?cid=panthera-corbett-safari",
+    googleBusinessProfile: "https://maps.app.goo.gl/YrBbDtW9tSNNbBKr8",
+    googleMapsEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34800.0!2d79.2592105!3d29.4488845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a0f9e35d709c5%3A0xff6fab1e5d016981!2sPanthera%20Corbett%20Safari!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
     instagram: "https://instagram.com/pantheracorbett",
     facebook: "https://facebook.com/pantheracorbett",
   },
