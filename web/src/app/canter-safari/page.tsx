@@ -98,7 +98,7 @@ export default function CanterSafariPage() {
         className="relative overflow-hidden bg-[#17211A] py-20 sm:py-28"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1600&q=80')",
+            "url('/image/photo-1549366021-9f761d450615.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center 50%",
         }}

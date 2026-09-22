@@ -21,7 +21,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=2000&q=85')",
+            "url('/image/photo-1561731216-c3a4d99437d5.jpg')",
         }}
       >
         {/* Soft dark-to-transparent overlay (Ink at low opacity) as required by design guide */}

@@ -28,7 +28,7 @@ export const restHouses = [
     permitWindow:
       "Booking opens exactly 45 days before the stay date for Indian citizens, 90 days for foreign nationals. Slots for December–March go in minutes. Set a reminder and book at midnight when the window opens.",
     image:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1549366021-9f761d450615.jpg",
     isFeatured: true,
   },
   {
@@ -52,7 +52,7 @@ export const restHouses = [
     ],
     permitWindow: "45-day advance booking via Uttarakhand Forest Department portal.",
     image:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1470071459604-3b5ec3a7fe05.jpg",
     isFeatured: true,
   },
   {
@@ -76,7 +76,7 @@ export const restHouses = [
     ],
     permitWindow: "45-day advance permit booking required through the Forest Department portal.",
     image:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1448375240586-882707db888b.jpg",
     isFeatured: false,
   },
 ];

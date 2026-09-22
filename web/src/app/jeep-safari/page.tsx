@@ -91,7 +91,7 @@ export default function JeepSafariPage() {
         className="relative overflow-hidden bg-[#17211A] py-20 sm:py-28"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80')",
+            "url('/image/photo-1547471080-7cc2caa01a7e.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center 35%",
         }}

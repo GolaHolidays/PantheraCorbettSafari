@@ -25,7 +25,7 @@ export const zones = [
     ],
     bestFor: ["Tiger and elephant sightings", "Photography", "Birding", "Day visitors & couples"],
     image:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1561731216-c3a4d99437d5.jpg",
     isFeatured: true,
     pricing: {
       perPersonPriceINR: 2299,
@@ -65,7 +65,7 @@ export const zones = [
     ],
     bestFor: ["First-time visitors", "Families", "Photographers", "Short trips from Delhi"],
     image:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1549366021-9f761d450615.jpg",
     isFeatured: true,
     pricing: {
       preBookingPriceINR: 7999,
@@ -180,7 +180,7 @@ export const zones = [
     ],
     bestFor: ["Photography", "Guests on Kosi river corridor", "Repeat Corbett visitors"],
     image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1518709268805-4e9042af9f23.jpg",
     isFeatured: true,
     pricing: {
       preBookingPriceINR: 7999,
@@ -219,7 +219,7 @@ export const zones = [
     ],
     bestFor: ["Serious birders", "Anglers", "Guests wanting hilly forest landscapes"],
     image:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1470071459604-3b5ec3a7fe05.jpg",
     isFeatured: false,
     pricing: {
       preBookingPriceINR: 7999,
@@ -296,7 +296,7 @@ export const zones = [
     ],
     bestFor: ["Elephant enthusiasts", "Quiet safari experience", "Families & birders", "All-year visits"],
     image:
-      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1557050543-4d5f4e07ef46.jpg",
     isFeatured: false,
     pricing: {
       preBookingPriceINR: 6499,
@@ -335,7 +335,7 @@ export const zones = [
     ],
     bestFor: ["Same-day & flexible plans", "Budget travelers", "Nature walks & birders"],
     image:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1448375240586-882707db888b.jpg",
     isFeatured: false,
     pricing: {
       preBookingPriceINR: 5999,
