@@ -87,7 +87,7 @@ For guests travelling on a Delhi to Jim Corbett package, Dhikala is the crown je
 
 Bijrani is open from 15 October to 30 June. The dense sal forest, small seasonal streams, and grassy clearings create ideal ambush cover for tigers — morning shifts are especially productive. Permit quota is capped at 30 jeeps per shift, so early booking is recommended during peak season (November to February).
 
-For Delhi to Jim Corbett weekend packages, Bijrani is the most recommended zone. The classic itinerary: arrive Friday evening, afternoon Bijrani safari, overnight resort stay, early morning Bijrani safari on Saturday, then back to Delhi after breakfast. Our Bijrani Weekend Package starts at ₹11,500/couple with resort stay, both safaris, and breakfast included.`,
+For Delhi to Jim Corbett weekend packages, Bijrani is the most recommended zone. The classic itinerary: arrive Friday evening, afternoon Bijrani safari, overnight resort stay, early morning Bijrani safari on Saturday, then back to Delhi after breakfast. Our Bijrani Weekend Package starts at ₹11,999/couple (ex-Ramnagar) or ₹20,999/couple with round-trip Delhi AC cab included.`,
   },
   {
     id: "jhirna",

@@ -76,7 +76,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Delhi to Jim Corbett Private Cab Service",
   description:
-    "Private cab booking from Delhi to Jim Corbett (Ramnagar). Sedan from ₹4,500, Innova Crysta from ₹6,500. Pickup from Delhi Airport, Gurgaon, Noida. Tolls included.",
+    "Private cab booking from Delhi to Jim Corbett (Ramnagar). Sedan from ₹4,500, Ertiga from ₹6,000, and Innova Crysta from ₹8,500. Pickup from Delhi Airport, Gurgaon, Noida. Tolls included.",
   provider: {
     "@type": "LocalBusiness",
     name: "Panthera Corbett Safari",
@@ -95,14 +95,21 @@ const serviceSchema = {
       name: "Sedan (Dzire / Etios) — Delhi to Ramnagar",
       price: "4500",
       priceCurrency: "INR",
-      description: "One-way, tolls and driver allowance included",
+      description: "One-way: ₹4,500 | Round-trip: ₹9,000. Tolls, state tax & driver allowance included.",
     },
     {
       "@type": "Offer",
-      name: "Innova Crysta (6+1) — Delhi to Ramnagar",
-      price: "6500",
+      name: "New Ertiga (6+1 MUV) — Delhi to Ramnagar",
+      price: "6000",
       priceCurrency: "INR",
-      description: "One-way, tolls and driver allowance included",
+      description: "One-way: ₹6,000 | Round-trip: ₹12,000. Dual AC, tolls & driver allowance included.",
+    },
+    {
+      "@type": "Offer",
+      name: "Innova Crysta (6+1 SUV) — Delhi to Ramnagar",
+      price: "8500",
+      priceCurrency: "INR",
+      description: "One-way: ₹8,500 | Round-trip: ₹17,000. Luxury SUV, tolls & driver allowance included.",
     },
   ],
 };
@@ -112,32 +119,47 @@ const serviceSchema = {
 const vehicleOptions = [
   {
     name: "Sedan",
-    subtitle: "Dzire / Etios / Similar",
-    capacity: "4 passengers",
+    subtitle: "Swift Dzire / Etios / Similar",
+    capacity: "4 passengers + driver",
     priceDisplay: "₹4,500",
-    priceNote: "One way — tolls & allowance included",
+    priceNote: "One-way (Round-trip: ₹9,000) — tolls & allowance included",
     features: [
       "AC cabin",
       "Spacious boot for 2–3 bags",
       "Ideal for 2–4 travellers",
-      "Toll included, no surprises",
+      "All highway tolls & driver fees included",
     ],
     badge: "Most Popular",
     badgeVariant: "forest" as const,
   },
   {
-    name: "Innova Crysta",
-    subtitle: "6+1 Seater SUV",
+    name: "New Ertiga",
+    subtitle: "6+1 Seater MUV",
     capacity: "6 passengers + driver",
-    priceDisplay: "₹6,500",
-    priceNote: "One way — tolls & allowance included",
+    priceDisplay: "₹6,000",
+    priceNote: "One-way (Round-trip: ₹12,000) — tolls & allowance included",
     features: [
-      "Full AC, premium cabin",
-      "Large boot — luggage for 5–6 people",
-      "Ideal for families & groups",
-      "Toll included, no surprises",
+      "Dual AC with rear blower",
+      "Spacious 6-passenger cabin",
+      "Ideal for families & small groups",
+      "All highway tolls & driver fees included",
     ],
-    badge: "Best for Groups",
+    badge: "Best for Families",
+    badgeVariant: "moss" as const,
+  },
+  {
+    name: "Innova Crysta",
+    subtitle: "6+1 Luxury SUV",
+    capacity: "6 passengers + driver",
+    priceDisplay: "₹8,500",
+    priceNote: "One-way (Round-trip: ₹17,000) — tolls & allowance included",
+    features: [
+      "Premium captain seats & luxury ride",
+      "Large boot space for 4–5 suitcases",
+      "Superior highway stability & legroom",
+      "All highway tolls & driver fees included",
+    ],
+    badge: "Premium Comfort",
     badgeVariant: "gold" as const,
   },
   {
@@ -147,10 +169,10 @@ const vehicleOptions = [
     priceDisplay: "On Request",
     priceNote: "Price depends on departure point and group size",
     features: [
-      "Ideal for large group tours",
-      "AC available",
-      "Sufficient luggage space",
-      "Driver experienced on Corbett route",
+      "Ideal for large group tours & corporate outings",
+      "Push-back seats & full AC",
+      "Dedicated luggage carrier",
+      "Driver experienced on Delhi–Corbett highway",
     ],
     badge: "Group Travel",
     badgeVariant: "moss" as const,
@@ -411,23 +433,25 @@ export default function DelhiCorbettCabPage() {
               hotel or resort in Ramnagar, the gateway town to Jim Corbett National Park.
             </p>
             <p>
-              We offer a sedan cab (Dzire, Etios, or similar) from ₹4,500 one-way, and an Innova
-              Crysta from ₹6,500 one-way. All toll charges on the Delhi–Ramnagar route and the
-              driver night allowance are included in the fixed price. For groups of 8 to 16
-              passengers, a Tempo Traveller is available on request. All vehicles are well-maintained,
-              air-conditioned, and driven by experienced drivers who know the Corbett route well.
+              We offer a sedan cab (Dzire, Etios, or similar) from ₹4,500 one-way (₹9,000 round-trip), an
+              Ertiga MUV from ₹6,000 one-way (₹12,000 round-trip), and an Innova Crysta from ₹8,500 one-way
+              (₹17,000 round-trip). All toll charges on the Delhi–Ramnagar route, state taxes, and driver allowances
+              are included in the fixed price. For groups of 8 to 16 passengers, a Tempo Traveller is available
+              on request. All vehicles are well-maintained, air-conditioned, and driven by experienced drivers who
+              know the Corbett route well.
             </p>
             <p>
               For guests arriving by air or train, we also offer Pantnagar Airport transfer and
-              Kathgodam Station pickup from ₹1,800 — your driver waits with a name board at arrival
+              Kathgodam Station pickup from ₹2,000 — your driver waits with a name board at arrival
               and brings you directly to your Ramnagar resort. This is the easiest way to begin a
               Jim Corbett safari trip without navigating unfamiliar public transport.
             </p>
             <p>
-              Our Delhi to Jim Corbett packages often combine the cab service with safari bookings —
+              Our Delhi to Jim Corbett packages combine doorstep cab service with resort stay and safari bookings —
               making us a single-point contact for your entire Corbett trip from Delhi. Many guests
-              choose our Bijrani Weekend Package (resort + safari from ₹11,500/couple) and add the
-              cab service for a completely hassle-free door-to-door experience.
+              choose our Delhi to Jim Corbett All-Inclusive Package (from ₹20,999/couple with round-trip cab,
+              resort stay &amp; core safari) or our Bijrani Weekend Package (from ₹11,999/couple ex-Ramnagar)
+              for a completely hassle-free door-to-door experience.
             </p>
           </div>
         </section>

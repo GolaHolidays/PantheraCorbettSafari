@@ -912,7 +912,7 @@ export const blogPosts: BlogPost[] = [
     title: "Jim Corbett Weekend Trip from Delhi — Perfect 2N3D Itinerary (2025)",
     metaTitle: "Jim Corbett Weekend Trip from Delhi | 2N3D Itinerary 2025",
     metaDescription:
-      "Plan the perfect Jim Corbett weekend trip from Delhi — 2 nights 3 days itinerary, when to leave, which zones to safari, where to stay. ₹11,500/couple onwards.",
+      "Plan the perfect Jim Corbett weekend trip from Delhi — 2 nights 3 days itinerary, when to leave, which zones to safari, where to stay. From ₹11,999/couple (ex-Ramnagar) or ₹20,999/couple with Delhi round-trip cab.",
     excerpt:
       "A Jim Corbett weekend from Delhi is completely doable in 2 nights 3 days. Here is the exact itinerary our guests use — departure times, zone choices, and what to expect.",
     category: "Packages & Trips",
@@ -954,7 +954,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "This is our Bijrani Weekend Package — ₹11,500/couple including one night at a 4-star jungle resort, two private Bijrani jeep safaris, resort breakfast and dinner, and all safari permits. It is the most popular Delhi-to-Corbett package we offer.",
+        text: "This is our Bijrani Weekend Package — from ₹11,999/couple including one night at a 3-star jungle resort, private Bijrani core jeep safari, resort breakfast and dinner, and all safari permits (or ₹19,999 for 2 safaris; ₹20,999 all-inclusive with Delhi round-trip cab). It is the most popular Delhi-to-Corbett package we offer.",
       },
       { type: "h2", text: "Option B: The Extended 2N3D Dhikala Package" },
       {
@@ -972,7 +972,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "This 2-night, 3-day itinerary covers three zones and two vehicle types — the ideal combination for a comprehensive first visit to Jim Corbett. It is based on our Dhikala FRH Immersion Package (₹28,500/couple for FRH stay) or a resort-based custom package (from ₹15,000/couple).",
+        text: "This 2-night, 3-day itinerary covers three zones and two vehicle types — the ideal combination for a comprehensive first visit to Jim Corbett. It is based on our Dhikala FRH Immersion Package (₹35,000/couple for FRH stay) or our Delhi to Jim Corbett 2N3D All-Inclusive Package (from ₹24,999/couple with private cab).",
       },
       { type: "h2", text: "When Should You Leave Delhi?" },
       {
@@ -999,10 +999,10 @@ export const blogPosts: BlogPost[] = [
         type: "table",
         headers: ["Package", "Duration", "Price", "Includes"],
         rows: [
-          ["Bijrani Weekend", "1N / 2D", "₹11,500/couple", "1 resort night + 2 Bijrani safaris + meals"],
-          ["Double Zone Day Safari", "Day trip", "₹12,800/jeep", "2 zone safaris, no stay"],
-          ["Dhikala FRH Immersion", "2N / 3D", "₹28,500/couple", "4 safaris + FRH stay + all meals"],
-          ["Custom 2N3D Resort Package", "2N / 3D", "From ₹15,000/couple", "3–4 zone safaris + resort + meals"],
+          ["Delhi to Jim Corbett Package", "1N / 2D (or 2N3D)", "From ₹20,999/couple", "Round-trip Delhi AC cab + resort stay + core safari + meals"],
+          ["Bijrani Weekend Safari", "1N / 2D", "From ₹11,999/couple", "1 resort night + 1 Bijrani core safari + meals (2 safaris ₹19,999)"],
+          ["Double Zone Day Safari", "Day trip", "₹15,999/jeep", "2 core zone safaris (Bijrani + Garjiya), no stay"],
+          ["Dhikala FRH Immersion", "2N / 3D", "₹35,000/couple", "4 private safaris + FRH stay + all meals"],
         ],
       },
       {
