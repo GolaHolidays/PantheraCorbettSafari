@@ -28,12 +28,24 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 bg-[#17211A] text-[#FBF8F0] border-b border-[#37482E]">
-      {/* Top trust strip */}
-      <div className="bg-[#37482E]/60 border-b border-[#37482E] py-1.5 px-4 text-center text-xs text-[#E8E0CC] flex items-center justify-center gap-2">
-        <span className="inline-block w-2 h-2 rounded-full bg-[#C99A3D] animate-pulse"></span>
-        <span className="font-semibold text-white">Forest Dept Authorized Booking Desk</span>
-        <span className="hidden sm:inline text-[#8A9468]">|</span>
-        <span className="hidden sm:inline">Daily Core Zone Gypsy Quota Capped at 30 Jeeps</span>
+      {/*
+       * ── Trust strip — mobile-first, single line ──────────────────────
+       * Mobile: truncated to one line (py-1.5 ≈ 24px total height)
+       * Desktop: full text with separator
+       */}
+      <div className="bg-[#0f1a12] border-b border-[#37482E]/70 py-1.5 px-4 text-center">
+        {/* Mobile: shortest possible trust signal — one line, no wrap */}
+        <p className="sm:hidden text-[10px] text-[#8A9468] tracking-[0.12em] uppercase leading-none truncate">
+          <span className="text-[#C99A3D] font-semibold">Forest Dept Authorized</span>
+          <span className="mx-1.5 text-[#37482E]">·</span>
+          <span className="text-[#E8E0CC]/60">30 Jeeps / Zone · Official Permits</span>
+        </p>
+        {/* Desktop: full text */}
+        <p className="hidden sm:block text-[11px] text-[#8A9468] tracking-[0.14em] uppercase">
+          <span className="text-[#C99A3D] font-semibold">Forest Dept Authorized</span>
+          <span className="mx-2.5 text-[#37482E]">·</span>
+          <span className="text-[#E8E0CC]/70">Daily Core Zone Gypsy Quota Capped at 30 Jeeps Per Shift</span>
+        </p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
