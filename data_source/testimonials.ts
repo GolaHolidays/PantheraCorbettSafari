@@ -4,7 +4,7 @@ export const testimonials = [
     name: "Dr. Rohit Mathur",
     location: "New Delhi",
     safariZone: "Bijrani Zone, Morning Shift",
-    date: "December 2024",
+    date: "March 2025",
     rating: 5,
     quote:
       "Within 45 minutes of entering Bijrani gate, we were watching a tigress walk alongside our Gypsy for nearly 20 minutes. Our guide was reading her movement from the alarm calls before we even saw her. Permit booking with Panthera was completely hassle-free.",
@@ -28,7 +28,7 @@ export const testimonials = [
     name: "Marcus Lindqvist",
     location: "Stockholm, Sweden",
     safariZone: "Dhikala Canter + Jhirna Jeep",
-    date: "November 2024",
+    date: "April 2025",
     rating: 5,
     quote:
       "Getting wildlife permits as a foreign national felt complicated from home. Panthera sorted everything — passport copies, permits, transfers, guide. We just showed up and it all worked. Very professional team.",

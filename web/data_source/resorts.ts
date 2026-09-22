@@ -56,7 +56,7 @@ export const resorts: Resort[] = [
     rating: 4.1,
     reviewCount: 380,
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1566073771259-6a8506099945.jpg",
     isFeatured: true,
     seoTitle: "Serenity Corbett Resort Dhikuli — 3-Star Jungle Stay | Rates & Safari Packages",
     seoDescription:
@@ -121,7 +121,7 @@ export const resorts: Resort[] = [
     rating: 4.0,
     reviewCount: 420,
     image:
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1582719508461-905c673771fd.jpg",
     isFeatured: false,
     seoTitle: "Wildlife Stayz by Corbett Treff — Dhikuli Resort Near Garjiya Gate",
     seoDescription:
@@ -186,7 +186,7 @@ export const resorts: Resort[] = [
     rating: 4.2,
     reviewCount: 310,
     image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1540555700478-4be289fbecef.jpg",
     isFeatured: false,
     seoTitle: "Arch The Baakhli Resort Corbett — Traditional Kumaoni Heritage Stay",
     seoDescription:
@@ -251,7 +251,7 @@ export const resorts: Resort[] = [
     rating: 4.1,
     reviewCount: 290,
     image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1571896349842-33c89424de2d.jpg",
     isFeatured: false,
     seoTitle: "Aura By Xprience Corbett — Mud Cottages Near Jhirna & Dhela Gate",
     seoDescription:
@@ -318,7 +318,7 @@ export const resorts: Resort[] = [
     rating: 3.9,
     reviewCount: 240,
     image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1590490360182-c33d57733427.jpg",
     isFeatured: false,
     seoTitle: "La Savana Resort & Spa Dhikuli — Budget-Friendly Corbett Stay",
     seoDescription:
@@ -387,7 +387,7 @@ export const resorts: Resort[] = [
     rating: 4.3,
     reviewCount: 680,
     image:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1520250497591-112f2f40a3f4.jpg",
     isFeatured: true,
     seoTitle: "La Perle River Resort Jim Corbett — 4-Star Kosi Riverfront Stay",
     seoDescription:
@@ -452,7 +452,7 @@ export const resorts: Resort[] = [
     rating: 4.5,
     reviewCount: 520,
     image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1542314831-068cd1dbfeeb.jpg",
     isFeatured: true,
     seoTitle: "River Heritage Resort Dhikuli — Luxury Kosi Riverfront Property",
     seoDescription:
@@ -517,7 +517,7 @@ export const resorts: Resort[] = [
     rating: 4.4,
     reviewCount: 750,
     image:
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1571003123894-1f0594d2b5d9.jpg",
     isFeatured: true,
     seoTitle: "AVN Sarovar Portico Corbett Dhikuli — 4-Star Luxury Resort",
     seoDescription:
@@ -582,7 +582,7 @@ export const resorts: Resort[] = [
     rating: 4.3,
     reviewCount: 490,
     image:
-      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1596394516093-501ba68a0ba6.jpg",
     isFeatured: false,
     seoTitle: "The Banyan Retreat Jim Corbett — Wooden Log Huts in Chhoi",
     seoDescription:
@@ -646,7 +646,7 @@ export const resorts: Resort[] = [
     rating: 4.2,
     reviewCount: 460,
     image:
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1578683010236-d716f9a3f461.jpg",
     isFeatured: false,
     seoTitle: "Pratiksha River Retreat Dhikuli — Riverside Cottages in Jim Corbett",
     seoDescription:
@@ -716,7 +716,7 @@ export const resorts: Resort[] = [
     rating: 4.6,
     reviewCount: 610,
     image:
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1584132967334-10e028bd69f7.jpg",
     isFeatured: true,
     seoTitle: "Debu's The Fern Resort & Spa Corbett — 5-Star Eco Luxury in Patkote",
     seoDescription:
@@ -781,7 +781,7 @@ export const resorts: Resort[] = [
     rating: 4.6,
     reviewCount: 480,
     image:
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1618773928121-c32242e63f39.jpg",
     isFeatured: true,
     seoTitle: "Vandhara Sarovar Premiere Resort Patkote — 5-Star Luxury Corbett",
     seoDescription:
@@ -847,7 +847,7 @@ export const resorts: Resort[] = [
     rating: 4.8,
     reviewCount: 1450,
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1566073771259-6a8506099945.jpg",
     isFeatured: true,
     seoTitle: "Taj Corbett Resort & Spa Dhikuli — 5-Star Luxury Wilderness Resort",
     seoDescription:
@@ -914,7 +914,7 @@ export const resorts: Resort[] = [
     rating: 4.8,
     reviewCount: 920,
     image:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1551882547-ff40c63fe5fa.jpg",
     isFeatured: true,
     seoTitle: "Jim Corbett Marriott Resort & Spa Dhikuli — 5-Star Luxury Hotel",
     seoDescription:
@@ -980,7 +980,7 @@ export const resorts: Resort[] = [
     rating: 4.6,
     reviewCount: 1100,
     image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1582719478250-c89cae4dc85b.jpg",
     isFeatured: true,
     seoTitle: "The Solluna Resort Marchula — 5-Star Ramganga Riverfront Resort",
     seoDescription:

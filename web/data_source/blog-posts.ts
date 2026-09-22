@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 7,
     featuredImage:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1561731216-c3a4d99437d5.jpg",
     featuredImageAlt: "Dhikala zone canter safari bus in Jim Corbett Tiger Reserve",
     keywords: [
       "how to book dhikala canter safari",
@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 9,
     featuredImage:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1448375240586-882707db888b.jpg",
     featuredImageAlt: "Jim Corbett National Park forest landscape in different seasons",
     keywords: [
       "best time to visit jim corbett",
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 8,
     featuredImage:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1549366021-9f761d450615.jpg",
     featuredImageAlt: "Jim Corbett zone comparison — Dhikala, Bijrani, Jhirna",
     keywords: [
       "dhikala vs bijrani zone",
@@ -350,7 +350,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 6,
     featuredImage:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1518709268805-4e9042af9f23.jpg",
     featuredImageAlt: "Jim Corbett safari jeep with price details",
     keywords: [
       "jim corbett safari price",
@@ -453,7 +453,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 7,
     featuredImage:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1470071459604-3b5ec3a7fe05.jpg",
     featuredImageAlt: "Road to Jim Corbett from Delhi — highway through Uttarakhand forests",
     keywords: [
       "delhi to jim corbett distance",
@@ -557,7 +557,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 6,
     featuredImage:
-      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1557050543-4d5f4e07ef46.jpg",
     featuredImageAlt: "Jeep safari vs canter safari in Jim Corbett comparison",
     keywords: [
       "jeep safari vs canter safari jim corbett",
@@ -642,7 +642,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 10,
     featuredImage:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1561731216-c3a4d99437d5.jpg",
     featuredImageAlt: "All Jim Corbett safari zones — complete zone guide",
     keywords: [
       "jim corbett safari zones",
@@ -741,7 +741,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 5,
     featuredImage:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1448375240586-882707db888b.jpg",
     featuredImageAlt: "Jim Corbett forest in monsoon — lush green landscape",
     keywords: [
       "jim corbett open in monsoon",
@@ -827,7 +827,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 5,
     featuredImage:
-      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1557050543-4d5f4e07ef46.jpg",
     featuredImageAlt: "Jim Corbett safari packing essentials laid out",
     keywords: [
       "what to carry for jim corbett safari",
@@ -921,7 +921,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-09-01",
     readTimeMinutes: 8,
     featuredImage:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1518709268805-4e9042af9f23.jpg",
     featuredImageAlt: "Jim Corbett weekend trip from Delhi — jungle resort and safari jeep",
     keywords: [
       "jim corbett weekend trip from delhi",

@@ -32,7 +32,7 @@ export const packages = [
       "Day 3: Sunrise drive, breakfast at canteen, checkout and exit by Dhangarhi Gate",
     ],
     image:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1549366021-9f761d450615.jpg",
     isFeatured: true,
     seoTitle: "Dhikala Forest Rest House Package — 2 Night 3 Day | Jim Corbett",
     seoDescription:
@@ -74,7 +74,7 @@ export const packages = [
       "Day 2: Morning Bijrani safari (6:00–9:30 AM), breakfast, check-out and return",
     ],
     image:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1561731216-c3a4d99437d5.jpg",
     isFeatured: true,
     seoTitle: "Bijrani Weekend Safari Package — 1 Night | Delhi to Jim Corbett",
     seoDescription:
@@ -125,7 +125,7 @@ export const packages = [
       "1:45 PM: Pickup for afternoon safari in second zone",
     ],
     image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+      "/image/photo-1518709268805-4e9042af9f23.jpg",
     isFeatured: false,
     seoTitle: "Jim Corbett Double Zone Day Safari | Bijrani + Garjiya | ₹12,800/Jeep",
     seoDescription:

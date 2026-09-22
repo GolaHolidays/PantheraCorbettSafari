@@ -168,7 +168,7 @@ export default function DelhiToJimCorbettPackagePage() {
         className="relative overflow-hidden bg-[#17211A] py-20 sm:py-28"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1623159350808-54c8ce62d0b2?auto=format&fit=crop&w=1600&q=80')",
+            "url('/image/photo-1549366021-9f761d450615.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
         }}

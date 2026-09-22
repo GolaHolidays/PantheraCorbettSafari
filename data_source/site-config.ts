@@ -4,11 +4,11 @@ export const siteConfig = {
   shortName: "Panthera Corbett",
   tagline: "Jim Corbett Safari Permits & Forest Rest House Bookings — Ramnagar",
   description:
-    "We handle safari permit bookings and overnight forest rest house stays inside Jim Corbett Tiger Reserve. Licensed by the Uttarakhand Forest Department, operating since 2009 with 28 jeeps and 34 registered guides across all zones.",
-  foundedYear: 2009,
-  experienceYears: 15,
-  licenseNumber: "UK-FOREST-CTR-2009-8842",
-  registeredAuthority: "Uttarakhand Forest Department / CTR Division",
+    "We provide safari permit assistance and overnight forest rest house bookings inside Jim Corbett Tiger Reserve. Verified 4x4 Gypsies and registered nature guides across all Corbett zones.",
+  foundedYear: 2025,
+  experienceYears: 1,
+  licenseNumber: "CTR-TOUR-RAMNAGAR",
+  registeredAuthority: "Corbett Tiger Reserve / Ramnagar Division",
   contact: {
     phone: "+91 99974 88004",
     phoneDisplay: "+91 99974 88004",
