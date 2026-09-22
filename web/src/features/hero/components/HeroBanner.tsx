@@ -38,18 +38,17 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   return (
     <section
-      className="relative flex flex-col justify-end sm:flex-row sm:items-center bg-[#17211A] text-[#FBF8F0] overflow-hidden"
-      style={{ minHeight: "100dvh" }}
+      className="relative flex flex-col sm:flex-row sm:items-center bg-[#17211A] text-[#FBF8F0] sm:min-h-[100dvh] overflow-hidden"
     >
-      {/* Full-bleed video + responsive overlay layers */}
+      {/* Dedicated landscape video on mobile, full-bleed cinematic background on desktop */}
       <HeroVideoBackground />
 
       {/*
        * Content block
-       * Mobile:  w-full, padded from left + bottom, compact
+       * Mobile:  stacked below the video (no overlapping), clean padding, full readability
        * Desktop: left-anchored max-w-[520px], generous padding, full content
        */}
-      <div className="relative z-10 w-full px-5 sm:px-12 lg:px-20 xl:px-28 pb-9 sm:pb-0 sm:py-32">
+      <div className="relative z-10 w-full px-5 pt-5 pb-9 sm:pt-0 sm:pb-0 sm:px-12 lg:px-20 xl:px-28 sm:py-32">
         <div className="max-w-[520px]">
 
           {/* ── Pre-headline label ───────────────────────────────────────── */}
@@ -109,12 +108,12 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
               Check Permit Availability
             </Button>
 
-            {/* Call CTA — hidden on mobile, sticky bar handles it */}
+            {/* Call CTA */}
             <Button
               variant="outline"
               size="lg"
               href={`tel:${phoneRaw}`}
-              className="hidden sm:flex text-[#FBF8F0] border-[#FBF8F0]/25 hover:border-[#FBF8F0]/50 hover:bg-[#FBF8F0]/8 backdrop-blur-sm"
+              className="flex text-[#FBF8F0] border-[#FBF8F0]/25 hover:border-[#FBF8F0]/50 hover:bg-[#FBF8F0]/8 backdrop-blur-sm"
             >
               <svg
                 className="w-3.5 h-3.5 mr-2 text-[#C99A3D] flex-shrink-0"

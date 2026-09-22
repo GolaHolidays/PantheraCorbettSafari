@@ -31,13 +31,15 @@ export const HeroVideoBackground: React.FC = () => {
     if (!mounted) return;
     const video = videoRef.current;
     if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
     video.play().catch(() => {
       /* Silently swallow — poster image covers any autoplay failure */
     });
   }, [mounted]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden" suppressHydrationWarning>
+    <div className="relative w-full aspect-video sm:aspect-auto sm:absolute sm:inset-0 sm:h-full z-0 overflow-hidden" suppressHydrationWarning>
       {/* ── High-resolution poster fallback for SSR & initial paint ── */}
       <img
         src="/hero_clip/hero_poster.jpg"
@@ -71,17 +73,10 @@ export const HeroVideoBackground: React.FC = () => {
       )}
 
       {/*
-       * ── MOBILE: Bottom-to-top gradient ───────────────────────────────
-       * Dark at base (text zone) → transparent at top (video zone).
-       * Portrait screen: user sees wildlife at the top, reads text below.
-       * Hidden on sm+ screens.
+       * ── MOBILE: Subtle bottom fade into the dark text section below ───
        */}
       <div
-        className="absolute inset-0 sm:hidden pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(23,33,26,0.97) 0%, rgba(23,33,26,0.88) 25%, rgba(23,33,26,0.45) 48%, rgba(23,33,26,0.10) 65%, transparent 80%)",
-        }}
+        className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#17211A] to-transparent sm:hidden pointer-events-none"
       />
 
       {/*
