@@ -1,10 +1,10 @@
 export const trustMetrics = {
   rating: 4.9,          // kept in schema for future use, not displayed
   reviewCount: 0,        // not displayed
-  safarisCompleted: "12,500+",
+  safarisCompleted: "Daily Shifts",
   licensedGypsies: 28,
   registeredGuides: 34,
-  yearsServing: 7,      // Panthera founded in 2018
+  yearsServing: 1,      // Panthera opened 2025 — not a displayed USP
   trustHighlights: [
     {
       title: "Forest Dept Authorized",
@@ -17,8 +17,8 @@ export const trustMetrics = {
       badge: "Every Zone",
     },
     {
-      title: "28 Licensed Jeeps",
-      subtitle: "34 registered Forest Dept guides",
+      title: "28 Licensed Gypsies",
+      subtitle: "Forest Dept registered drivers & 34 guides",
       badge: "Licensed Fleet",
     },
     {

@@ -5,8 +5,8 @@ export const siteConfig = {
   tagline: "Jim Corbett Safari Permits & Forest Rest House Bookings — Ramnagar",
   description:
     "We provide safari permit assistance and overnight forest rest house bookings inside Jim Corbett Tiger Reserve. Verified 4x4 Gypsies and registered nature guides across all Corbett zones.",
-  foundedYear: 2018,
-  experienceYears: 7,
+  foundedYear: 2025,
+  experienceYears: 1,
   licenseNumber: "CTR-TOUR-RAMNAGAR",
   registeredAuthority: "Corbett Tiger Reserve / Ramnagar Division",
   contact: {

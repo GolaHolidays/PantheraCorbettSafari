@@ -11,26 +11,26 @@ export const TrustRow: React.FC<TrustRowProps> = ({ metrics }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
 
-          {/* Stat 1 — Safaris completed */}
+          {/* Stat 1 — Ramnagar Local Desk */}
           <div className="border-r border-[#37482E]/60 last:border-r-0 px-2">
-            <div className="text-2xl sm:text-3xl font-bold font-serif text-[#C99A3D] font-tabular">
-              {metrics.safarisCompleted}
+            <div className="text-2xl sm:text-3xl font-bold font-serif text-[#C99A3D]">
+              Ramnagar
             </div>
             <div className="text-xs sm:text-sm font-medium text-[#FBF8F0] mt-0.5">
-              Safaris Completed
+              Local Booking Desk
             </div>
             <div className="text-[11px] text-[#8A9468] hidden sm:block">
-              Across all Corbett zones
+              Native drivers &amp; trackers
             </div>
           </div>
 
-          {/* Stat 2 — Licensed jeeps */}
+          {/* Stat 2 — Licensed Gypsies */}
           <div className="border-r border-[#37482E]/60 last:border-r-0 px-2">
             <div className="text-2xl sm:text-3xl font-bold font-serif text-[#FBF8F0] font-tabular">
               {metrics.licensedGypsies}
             </div>
             <div className="text-xs sm:text-sm font-medium text-[#FBF8F0] mt-0.5">
-              Licensed Jeeps
+              Licensed Gypsies
             </div>
             <div className="text-[11px] text-[#8A9468] hidden sm:block">
               {metrics.registeredGuides} registered guides
@@ -46,7 +46,7 @@ export const TrustRow: React.FC<TrustRowProps> = ({ metrics }) => {
               All Corbett Zones
             </div>
             <div className="text-[11px] text-[#8A9468] hidden sm:block">
-              Core, buffer & eco-corridors
+              Core, buffer &amp; landscape
             </div>
           </div>
 
