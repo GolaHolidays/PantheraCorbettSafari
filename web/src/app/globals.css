@@ -14,14 +14,40 @@
   --font-serif: var(--font-fraunces), serif;
   --font-sans: var(--font-inter), sans-serif;
 
-  --radius-structure: 3px;
-  --radius-secondary: 6px;
-  --radius-pill: 9999px;
+  /* ── Strictly Sharp Minimalist Edge Tokens (0px) ── */
+  --radius-structure: 0px;
+  --radius-secondary: 0px;
+  --radius-pill: 0px;
+
+  --radius-chip: 0px;        /* Inline info chips, small badges        */
+  --radius-card: 0px;        /* Zone / Package / Rest-house cards      */
+  --radius-modal: 0px;       /* Sheets, drawers, floating panels       */
+  --radius-btn-lg: 0px;      /* Large CTA buttons                      */
+  --radius-btn-md: 0px;      /* Medium buttons                         */
+  --radius-btn-sm: 0px;      /* Small buttons                          */
+
+  /* ── Spring physics timing curves ── */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);       /* Natural sheet / modal spring    */
+  --ease-spring-fast: cubic-bezier(0.25, 1, 0.5, 1);   /* Quick snappy element snap       */
+  --ease-spring-bounce: cubic-bezier(0.34, 1.4, 0.64, 1); /* Slight bounce (badges, chips) */
+  --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);    /* Hover lifts, parallax           */
 }
 
 :root {
   --bg-primary: #FBF8F0;
   --text-primary: #17211A;
+
+  /* ── Forest Glass Material (Dark Ink Frosted Surface) ── */
+  --glass-forest-bg: rgba(23, 33, 26, 0.86);
+  --glass-forest-border: rgba(255, 255, 255, 0.10);
+  --glass-forest-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  --glass-forest-shadow: 0 -4px 24px rgba(0, 0, 0, 0.45);
+
+  /* ── Dark Card Surface (Bento Grid tiles on Ink background) ── */
+  --card-dark-bg: #1C2920;
+  --card-dark-border: rgba(255, 255, 255, 0.09);
+  --card-dark-hover-border: rgba(255, 255, 255, 0.20);
+  --card-dark-rim: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
 }
 
 body {
@@ -32,15 +58,126 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Tabular figures for prices and numbers as per design guide */
+/* ─────────────────────────────────────────────────────────────────────────────
+   TABULAR FIGURES — Prices, dates, zone codes
+───────────────────────────────────────────────────────────────────────────── */
 .font-tabular {
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums;
 }
 
-/* Custom smooth scroll */
+/* Custom smooth scroll and global optical scale */
 html {
   scroll-behavior: smooth;
+  font-size: 93.75%; /* 15px base (was 16px) — tighter Apple-grade optical density */
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 96.875%; /* 15.5px */
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   OPTICAL TYPOGRAPHY
+   Apple-grade display heading optical correction.
+   Apply to any <h1> / <h2> display text above 32px.
+   "section-heading" applies to sub-sections (h2 on content pages).
+───────────────────────────────────────────────────────────────────────────── */
+.display-heading {
+  letter-spacing: -0.022em;
+  line-height: 1.06;
+}
+
+.section-heading {
+  letter-spacing: -0.016em;
+  line-height: 1.12;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SPRING TACTILE PRESS
+   Single-source spring micro-press class — replaces scattered active:scale-[0.97].
+   Apply to any interactive card or button that needs haptic-like feedback.
+   Mobile-first: touch events fire faster than mouse, so 100ms feels instant.
+───────────────────────────────────────────────────────────────────────────── */
+.spring-press {
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-spring);
+  will-change: transform;
+}
+.spring-press:active {
+  transform: scale3d(0.968, 0.968, 1);
+  transition-duration: 100ms;
+  transition-timing-function: var(--ease-spring-fast);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FOREST GLASS MATERIAL
+   True Apple-grade frosted glass — NOT a flat rgba wash.
+   Layers: backdrop diffusion + saturation boost + top specular rim + shadow.
+   Apply to: StickyCallBar, Header (scrolled), floating panels.
+───────────────────────────────────────────────────────────────────────────── */
+.glass-forest {
+  background: var(--glass-forest-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid var(--glass-forest-border);
+  box-shadow: var(--glass-forest-highlight), var(--glass-forest-shadow);
+}
+
+/* Header variant — opaque luxury frosted shield so scrolled content cannot bleed through */
+.glass-forest-nav {
+  background: rgba(13, 22, 16, 0.96);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--glass-forest-highlight), 0 4px 24px rgba(0, 0, 0, 0.50);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DARK CARD — Bento tile surface on Ink backgrounds
+   Apply to: ZoneCard (dark variant), any card on #17211A sections.
+───────────────────────────────────────────────────────────────────────────── */
+.card-dark {
+  background: var(--card-dark-bg);
+  border: 1px solid var(--card-dark-border);
+  border-radius: var(--radius-card);
+  transition: border-color 0.3s var(--ease-spring),
+              transform 0.3s var(--ease-spring),
+              box-shadow 0.3s var(--ease-spring);
+}
+.card-dark:hover {
+  border-color: var(--card-dark-hover-border);
+  transform: translateY(-3px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SPECULAR RIM LIGHT — Top edge highlight for dark cards and glass surfaces
+   Usage: add a sibling <div className="card-rim" /> as the first child of card.
+───────────────────────────────────────────────────────────────────────────── */
+.card-rim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--card-dark-rim);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HOVER LIFT — Universal smooth lift for interactive cards on light backgrounds
+───────────────────────────────────────────────────────────────────────────── */
+.hover-lift {
+  transition: transform 0.3s var(--ease-out-smooth),
+              box-shadow 0.3s var(--ease-out-smooth),
+              border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(23, 33, 26, 0.10);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -52,26 +189,3 @@ html {
   transform: scale(1);
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   HERO SCROLL CUE
-   Fades in after 2 s (headline has time to read), fades out when user scrolls.
-───────────────────────────────────────────────────────────────────────────── */
-@keyframes hero-scroll-cue-fadein {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-scroll-cue {
-  opacity: 0;
-  animation: hero-scroll-cue-fadein 0.6s ease-out 2s forwards;
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   ACCESSIBILITY — Respect reduced-motion preference
-───────────────────────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .hero-scroll-cue {
-    animation: none;
-    opacity: 1;
-  }
-}
