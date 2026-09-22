@@ -118,19 +118,19 @@ export const faqs = [
     category: "Delhi Packages",
     question: "Do you offer 2 night 3 day Jim Corbett packages from Delhi?",
     answer:
-      "Yes. Our Dhikala FRH Immersion Package is 2 nights / 3 days — 4 private Gypsy safaris, all meals, and Forest Rest House stay inside the core zone, from ₹28,500/couple. For a resort-based 2N3D stay with Bijrani or Garjiya safaris, we customize packages from approximately ₹15,000/couple. WhatsApp us for a tailored itinerary.",
+      "Yes. Our Delhi to Jim Corbett 2N/3D Package starts at ₹24,999/couple all-inclusive — doorstep round-trip private AC cab (Swift Dzire), 2 nights at a 3-star jungle resort, daily breakfast & dinner, and private 4x4 Gypsy core safari. For core-stay enthusiasts, our Dhikala FRH Immersion Package (2N/3D) starts from ₹35,000/couple with 4 private safaris and FRH stay inside the core zone. WhatsApp us for a tailored quote.",
   },
   {
     category: "Delhi Packages",
     question: "What are the best Jim Corbett packages from Delhi?",
     answer:
-      "Our most popular packages: (1) Bijrani Weekend Package — 1 night resort + 2 jeep safaris from ₹11,500/couple, perfect for a Delhi weekend. (2) Dhikala FRH Immersion — 2 nights inside the core zone + 4 private Gypsies from ₹28,500/couple. (3) Double Zone Day Safari — 2 safaris in different zones, same day, from ₹12,800/jeep. All include permits, guide, and jeep. Delhi to Ramnagar is 250 km, about 5–6 hours by road.",
+      "Our most popular packages: (1) Delhi to Jim Corbett All-Inclusive Package — round-trip Delhi AC cab + 1-night resort stay + core safari from ₹20,999/couple (2N/3D from ₹24,999). (2) Bijrani Weekend Safari — 1 night resort + 1 core safari from ₹11,999/couple ex-Ramnagar (2 safaris from ₹19,999). (3) Dhikala FRH Immersion — 2 nights inside the core zone + 4 private Gypsies from ₹35,000/couple. (4) Double Zone Day Safari — 2 core safaris (Bijrani + Garjiya) on the same day from ₹15,999/jeep. Delhi to Ramnagar is 250 km, about 5–6 hours by road.",
   },
   {
     category: "Delhi Packages",
     question: "Do you offer honeymoon packages for Jim Corbett?",
     answer:
-      "Yes. Our Bijrani Weekend Package and Dhikala FRH Immersion Package are popular with couples. The FRH stay is especially memorable — after 4:30 PM, day visitors leave and you have the Dhikala core zone to yourselves, with the Ramganga flowing below and the jungle settling into night. We also arrange river-view resort stays with private safaris, candlelight dinners, and room decoration on request.",
+      "Yes. Our Delhi to Jim Corbett All-Inclusive Package and Dhikala FRH Immersion Package are widely popular with couples. The FRH stay is especially memorable — after 4:30 PM, day visitors leave and you have the Dhikala core zone to yourselves, with the Ramganga flowing below and the jungle settling into night. We also arrange riverfront resort stays with private safaris, candlelight dinners, and room decoration on request.",
   },
   // ─── Zones ────────────────────────────────────────────────────────────────
   {

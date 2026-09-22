@@ -24,6 +24,7 @@ export interface SiteHours {
 
 export interface SiteSocial {
   googleBusinessProfile: string;
+  googleMapsEmbed?: string;
   instagram: string;
   facebook: string;
 }

@@ -22,7 +22,6 @@ import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
 import Train01Icon from "@hugeicons/core-free-icons/Train01Icon";
 import Car01Icon from "@hugeicons/core-free-icons/Car01Icon";
 import Bus01Icon from "@hugeicons/core-free-icons/Bus01Icon";
-import Airplane01Icon from "@hugeicons/core-free-icons/Airplane01Icon";
 import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
 import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
@@ -47,33 +46,75 @@ export const metadata: Metadata = generatePageMetadata({
 const JOURNEY_FACTS = [
   { label: "Distance", value: "~250–260 km", icon: MapPinIcon },
   { label: "Drive Time", value: "5–6 hours", icon: Clock01Icon },
-  { label: "Train Option", value: "Overnight Ramnagar Express", icon: Train01Icon },
-  { label: "Cab (Sedan)", value: "₹4,500 one-way", icon: Car01Icon },
-  { label: "Cab (Innova)", value: "₹6,500 one-way", icon: Bus01Icon },
-  { label: "Nearest Airport", value: "Pantnagar (70 km)", icon: Airplane01Icon },
+  { label: "Train Option", value: "Ranikhet Express", icon: Train01Icon },
+  { label: "Cab (Sedan)", value: "₹4,500 (Round: ₹9,000)", icon: Car01Icon },
+  { label: "Cab (Ertiga)", value: "₹6,000 (Round: ₹12,000)", icon: Bus01Icon },
+  { label: "Cab (Innova)", value: "₹8,500 (Round: ₹17,000)", icon: Car01Icon },
 ];
 
 const PACKAGES_HIGHLIGHTS = [
   {
-    id: "weekend-bijrani",
+    id: "delhi-all-inclusive",
     badge: "Most Popular",
     badgeVariant: "ember" as const,
-    title: "Bijrani Weekend Package",
-    duration: "1 Night / 2 Days",
-    price: "From ₹11,500",
+    title: "Delhi to Corbett Package",
+    duration: "1 Night / 2 Days (or 2N3D)",
+    price: "From ₹20,999",
     priceSuffix: "/couple",
-    safaris: "2 Jeep Safaris",
-    zone: "Bijrani Core Zone",
-    tag: "Best Delhi Weekend Trip",
+    safaris: "1 Core Jeep Safari",
+    zone: "Bijrani / Garjiya Core Zone",
+    tag: "All-Inclusive from Delhi NCR",
     highlights: [
-      "Morning + evening jeep safari in Bijrani",
-      "River-view jungle resort stay",
-      "All meals: dinner + breakfast included",
-      "Delhi to Ramnagar cab option available",
-      "Guide, permit & private 4x4 Gypsy included",
+      "Round-trip private AC Sedan cab (Swift Dzire) from Delhi doorstep",
+      "1 night 3-star jungle resort stay (2N3D from ₹24,999)",
+      "1 private 4x4 Gypsy safari in Bijrani/Garjiya core zone",
+      "Resort breakfast and dinner (MAP plan) included",
+      "All highway tolls, state permits, driver allowance & parking",
+    ],
+    ctaSlug: "delhi-to-corbett-tour",
+    isPopular: true,
+  },
+  {
+    id: "weekend-bijrani",
+    badge: "Best Value",
+    badgeVariant: "forest" as const,
+    title: "Bijrani Weekend (Ex-Ramnagar)",
+    duration: "1 Night / 2 Days",
+    price: "From ₹11,999",
+    priceSuffix: "/couple",
+    safaris: "1 Core Jeep Safari",
+    zone: "Bijrani Core Zone",
+    tag: "For Train & Personal Car Travellers",
+    highlights: [
+      "1 night stay at a 3-star jungle resort near Ramnagar",
+      "1 private Gypsy safari in Bijrani core (2nd safari add-on ₹7,999)",
+      "Resort breakfast & dinner included",
+      "Complimentary pickup/drop from resort to safari gate",
+      "Registered naturalist guide & core permit included",
     ],
     ctaSlug: "bijrani-weekend-safari",
-    isPopular: true,
+    isPopular: false,
+  },
+  {
+    id: "double-zone",
+    badge: "Max Sightings",
+    badgeVariant: "moss" as const,
+    title: "Double Zone Day Safari",
+    duration: "Day Trip / 1 Day",
+    price: "From ₹15,999",
+    priceSuffix: "/jeep",
+    safaris: "2 Core Safaris, 2 Zones",
+    zone: "Bijrani + Garjiya",
+    tag: "Maximum Sighting Odds",
+    highlights: [
+      "Morning safari in Bijrani core (highest tiger index)",
+      "Afternoon safari in Garjiya core (Kosi riverbed)",
+      "Private 4x4 Gypsy for up to 6 guests (~₹2,666/person)",
+      "Two distinct ecosystems covered in a single day",
+      "Both zone permits, gate fees & guides included",
+    ],
+    ctaSlug: "corbett-double-zone-safari",
+    isPopular: false,
   },
   {
     id: "dhikala-2n3d",
@@ -81,40 +122,19 @@ const PACKAGES_HIGHLIGHTS = [
     badgeVariant: "gold" as const,
     title: "Dhikala FRH Immersion",
     duration: "2 Nights / 3 Days",
-    price: "From ₹28,500",
+    price: "From ₹35,000",
     priceSuffix: "/couple",
     safaris: "4 Private Gypsy Safaris",
     zone: "Dhikala Core Zone",
     tag: "Overnight Inside the Core Zone",
     highlights: [
-      "Stay inside Dhikala Forest Rest House",
-      "4 private Gypsy safaris — morning & evening",
-      "All meals at FRH canteen included",
-      "After 4:30 PM — no day visitors, only you",
-      "Ramganga reservoir at your doorstep",
+      "2 nights stay inside Dhikala or Gairal Forest Rest House",
+      "4 private Gypsy safaris with dedicated naturalist",
+      "All vegetarian meals at FRH canteen included",
+      "After 4:30 PM — no day visitors, only FRH guests",
+      "Ramganga reservoir & grasslands at your doorstep",
     ],
     ctaSlug: "dhikala-frh-2n-3d",
-    isPopular: false,
-  },
-  {
-    id: "double-zone",
-    badge: "Best Value",
-    badgeVariant: "moss" as const,
-    title: "Double Zone Safari",
-    duration: "Day Trip / 1 Day",
-    price: "From ₹12,800",
-    priceSuffix: "/jeep",
-    safaris: "2 Safaris, 2 Zones",
-    zone: "Bijrani + Garjiya",
-    tag: "Maximum Sighting Odds",
-    highlights: [
-      "Morning safari in Bijrani (highest tiger index)",
-      "Afternoon safari in Garjiya (Kosi riverbed)",
-      "Private 4x4 Gypsy for your group",
-      "Two different ecosystems, same day",
-      "Ideal if you can only do 1 full day in Corbett",
-    ],
-    ctaSlug: "corbett-double-zone-safari",
     isPopular: false,
   },
 ];
@@ -213,9 +233,9 @@ export default function DelhiToJimCorbettPackagePage() {
           {/* Quick stats strip */}
           <div className="mt-10 grid grid-cols-3 sm:grid-cols-3 gap-4 max-w-lg">
             {[
-              { val: "₹11,500", sub: "Starting price / couple" },
+              { val: "₹11,999", sub: "Starting price (Ex-Ramnagar)" },
+              { val: "₹20,999", sub: "With Delhi AC Cab" },
               { val: "2N 3D", sub: "Most popular duration" },
-              { val: "9 Zones", sub: "Corbett-wide access" },
             ].map((stat) => (
               <div key={stat.val} className="text-center">
                 <div className="font-serif text-2xl font-bold text-[#FBF8F0] font-tabular">{stat.val}</div>
@@ -228,14 +248,14 @@ export default function DelhiToJimCorbettPackagePage() {
 
       {/* ─── PACKAGES ─────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#FBF8F0]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Jim Corbett Packages from Delhi"
             subtitle="Choose by trip length and zone. All include permits, guide, and private 4x4 Gypsy."
             badgeText="Select Your Package"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PACKAGES_HIGHLIGHTS.map((pkg) => (
               <Card
                 key={pkg.id}

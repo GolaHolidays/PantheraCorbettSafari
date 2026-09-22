@@ -18,7 +18,7 @@ export const PackageGrid: React.FC<PackageGridProps> = ({ packages, whatsAppLink
           badgeText="All-Inclusive Wildlife Packages"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {packages.map((pkg) => (
             <PackageCard
               key={pkg.id}

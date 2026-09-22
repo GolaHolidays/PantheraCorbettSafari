@@ -32,6 +32,15 @@ export const GOOGLE_SITE_VERIFICATION = (
   .replace(/^google-site-verification=/, "")
   .trim();
 
+/**
+ * Google Tag Manager Container ID.
+ * Defaults to production container GTM-MG83DM7K; can be overridden via NEXT_PUBLIC_GTM_ID.
+ */
+export const GOOGLE_TAG_MANAGER_ID = (
+  process.env.NEXT_PUBLIC_GTM_ID ||
+  "GTM-MG83DM7K"
+).trim();
+
 // ─── Master Keyword Taxonomy ──────────────────────────────────────────────────
 // Single array → spread into layout.tsx metadata. No duplication anywhere.
 
@@ -241,7 +250,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
   "delhi-to-jim-corbett-package": {
     title: "Delhi to Jim Corbett Package | 2N3D & Weekend Tour",
     description:
-      "Book Delhi to Jim Corbett tour packages from ₹11,500/couple. 2 night 3 day & weekend packages with jeep safari included. Family, honeymoon & group packages. Private Delhi to Ramnagar cab available. Call +91 99974 88004.",
+      "Book Delhi to Jim Corbett tour packages from ₹20,999/couple with private round-trip cab, or weekend packages from ₹11,999/couple ex-Ramnagar. 1N/2D & 2N/3D options with core jeep safari, resort stay & meals included. Call +91 99974 88004.",
     keywords: [
       "delhi to jim corbett package",
       "jim corbett package from delhi",
@@ -460,9 +469,10 @@ export function buildLocalBusinessSchema(config: {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 29.3931,
-      longitude: 79.0506,
+      latitude: 29.4488845,
+      longitude: 79.2592105,
     },
+    hasMap: config.googleBusinessProfile,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -537,9 +547,9 @@ export function buildServiceListSchema(): object {
         {
           "@type": "Offer",
           itemOffered: { "@type": "Service", name: "Delhi to Jim Corbett Package" },
-          price: "11500",
+          price: "20999",
           priceCurrency: "INR",
-          description: "All-inclusive tour package from Delhi with safari and accommodation",
+          description: "All-inclusive tour package from Delhi with private AC cab, core safari and resort accommodation",
         },
       ],
     },

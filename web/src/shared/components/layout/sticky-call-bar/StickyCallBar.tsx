@@ -4,6 +4,7 @@ import React from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
+import { trackPhoneCallClick, trackWhatsAppClick } from "@/core/analytics/gtm";
 
 interface StickyCallBarProps {
   phoneRaw: string;
@@ -64,6 +65,7 @@ export const StickyCallBar: React.FC<StickyCallBarProps> = ({
             {/* Call Action */}
             <a
               href={`tel:${phoneRaw}`}
+              onClick={() => trackPhoneCallClick(phoneRaw, { source: "sticky_call_bar" })}
               aria-label={`Call safari desk at ${phoneDisplay}`}
               className="spring-press flex-1 flex items-center justify-center gap-2 sm:gap-2.5 h-11 sm:h-12 px-3 sm:px-4 rounded-none bg-gradient-to-b from-[#B84C1E] to-[#993A12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_8px_rgba(184,76,30,0.32)] border border-[#C8592A]/40 transition-all group"
             >
@@ -83,6 +85,7 @@ export const StickyCallBar: React.FC<StickyCallBarProps> = ({
             {/* WhatsApp Action */}
             <a
               href={whatsAppLink}
+              onClick={() => trackWhatsAppClick("Sticky Call Bar WhatsApp", { source: "sticky_call_bar" })}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp for instant safari booking"

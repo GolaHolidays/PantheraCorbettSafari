@@ -6,3 +6,4 @@ export * from "./components/layout/container/Container";
 export * from "./components/layout/header/Header";
 export * from "./components/layout/footer/Footer";
 export * from "./components/layout/sticky-call-bar/StickyCallBar";
+export * from "./components/ui/map-embed/GoogleMapEmbed";
