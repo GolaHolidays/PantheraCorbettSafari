@@ -1,7 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import Menu01Icon from "@hugeicons/core-free-icons/Menu01Icon";
+import Cancel01Icon from "@hugeicons/core-free-icons/Cancel01Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 import { Button } from "../../ui/button/Button";
 
 interface HeaderProps {
@@ -16,127 +21,174 @@ export const Header: React.FC<HeaderProps> = ({
   whatsAppLink,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 48);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
     { label: "Jeep Safari", href: "/jeep-safari" },
     { label: "Canter Safari", href: "/canter-safari" },
     { label: "Safari Prices", href: "/safari-price" },
     { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
-    { label: "Safari Zones", href: "/#zones" },
+    { label: "Zones", href: "/#zones" },
     { label: "Blog", href: "/blog" },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#17211A] text-[#FBF8F0] border-b border-[#37482E]">
-      {/*
-       * ── Trust strip — mobile-first, single line ──────────────────────
-       * Mobile: truncated to one line (py-1.5 ≈ 24px total height)
-       * Desktop: full text with separator
-       */}
-      <div className="bg-[#0f1a12] border-b border-[#37482E]/70 py-1.5 px-4 text-center">
-        {/* Mobile: shortest possible trust signal — one line, no wrap */}
-        <p className="sm:hidden text-[10px] text-[#8A9468] tracking-[0.12em] uppercase leading-none truncate">
-          <span className="text-[#C99A3D] font-semibold">Forest Dept Authorized</span>
-          <span className="mx-1.5 text-[#37482E]">·</span>
-          <span className="text-[#E8E0CC]/60">30 Jeeps / Zone · Official Permits</span>
-        </p>
-        {/* Desktop: full text */}
-        <p className="hidden sm:block text-[11px] text-[#8A9468] tracking-[0.14em] uppercase">
-          <span className="text-[#C99A3D] font-semibold">Forest Dept Authorized</span>
-          <span className="mx-2.5 text-[#37482E]">·</span>
-          <span className="text-[#E8E0CC]/70">Daily Core Zone Gypsy Quota Capped at 30 Jeeps Per Shift</span>
+    <header
+      className={[
+        "sticky top-0 z-40 text-[#FBF8F0]",
+        "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300",
+        isScrolled
+          ? "glass-forest-nav"
+          : "bg-[#0D1610]",
+      ].join(" ")}
+    >
+
+      {/* ── Announcement bar — hairline thin with solid background ──────── */}
+      <div className="bg-[#080E0A] border-b border-[#37482E]/50 py-1 px-4 text-center overflow-hidden">
+        <p className="text-[9px] sm:text-[10px] font-medium tracking-[0.18em] uppercase text-[#8A9468]/90 whitespace-nowrap overflow-hidden text-ellipsis leading-none">
+          <span className="text-[#C99A3D]/90">Authorized</span>
+          <span className="mx-2 text-[#37482E]">·</span>
+          <span>30 Jeeps / Zone</span>
+          <span className="mx-2 text-[#37482E]">·</span>
+          <span className="hidden sm:inline">Official Forest Dept Permits</span>
+          <span className="sm:hidden">Official Permits</span>
+          <span className="mx-2 text-[#37482E] hidden sm:inline">·</span>
+          <span className="hidden sm:inline">Ramnagar Booking Desk</span>
         </p>
       </div>
 
+      {/* ── Main nav row ──────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo — text only, no box/icon */}
-          <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-serif text-lg sm:text-xl font-bold text-[#FBF8F0] tracking-tight">
+        <div className="flex items-center justify-between h-12 sm:h-14">
+
+          {/* Logo — single line on all breakpoints */}
+          <Link href="/" className="flex-shrink-0 flex flex-col leading-none min-w-0">
+            <span className="font-serif text-[15px] sm:text-[17px] lg:text-[18px] font-bold text-[#FBF8F0] tracking-[-0.01em] whitespace-nowrap">
               Panthera Corbett Safari
             </span>
-            <span className="text-[10px] font-sans text-[#8A9468] tracking-widest uppercase mt-0.5">
+            <span className="text-[9px] font-sans text-[#8A9468] tracking-[0.16em] uppercase mt-[2px] leading-none">
               Jim Corbett · Ramnagar
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Desktop nav links — lg+ only */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-[#E8E0CC]/80 hover:text-white transition-colors"
+                className="text-[13px] font-medium text-[#E8E0CC]/75 hover:text-[#FBF8F0] transition-colors duration-150 whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right actions */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop right actions — lg+ */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href={`tel:${phoneRaw}`}
-              className="text-sm font-medium text-[#E8E0CC] hover:text-white flex items-center gap-1.5 transition-colors"
+              className="text-[12px] font-medium text-[#E8E0CC]/80 hover:text-white flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              aria-label={`Call: ${phoneDisplay}`}
             >
-              <svg className="w-3.5 h-3.5 text-[#C99A3D]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
-              </svg>
-              {phoneDisplay}
+              <HugeiconsIcon icon={Call02Icon} size={12} className="text-[#C99A3D] flex-shrink-0" />
+              <span className="font-tabular">{phoneDisplay}</span>
             </a>
             <Button variant="primary" size="sm" href={whatsAppLink} isExternal>
               Book Safari
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <Button
-              variant="primary"
-              size="sm"
+          {/* Mobile & Tablet right actions — lg:hidden ────────────────────────── */}
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
+            {/* Tablet phone link (sm to lg) */}
+            <a
               href={`tel:${phoneRaw}`}
-              className="sm:hidden text-xs px-3"
+              className="hidden sm:flex items-center gap-1.5 text-[12px] font-medium text-[#E8E0CC]/80 hover:text-white py-1.5 px-2.5 rounded-[var(--radius-chip)] bg-white/5 border border-white/10 transition-colors whitespace-nowrap"
+              aria-label={`Call: ${phoneDisplay}`}
             >
-              Call Now
-            </Button>
+              <HugeiconsIcon icon={Call02Icon} size={13} className="text-[#C99A3D] flex-shrink-0" />
+              <span className="font-tabular">{phoneDisplay}</span>
+            </a>
+
+            {/* Mobile call button (< sm) */}
+            <a
+              href={`tel:${phoneRaw}`}
+              aria-label={`Call ${phoneDisplay}`}
+              className="sm:hidden flex items-center gap-1 py-1.5 px-2.5 rounded-[var(--radius-chip)] text-[#FBF8F0] bg-[#B84C1E] spring-press"
+            >
+              <HugeiconsIcon icon={Call02Icon} size={13} />
+              <span className="text-[11px] font-semibold leading-none">Call</span>
+            </a>
+
+            {/* Hamburger (mobile & tablet) */}
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-[4px] text-[#E8E0CC] hover:bg-[#37482E] focus:outline-none"
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              className="p-2 rounded-[var(--radius-chip)] text-[#E8E0CC] hover:bg-white/10 focus:outline-none transition-colors"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen
+                ? <HugeiconsIcon icon={Cancel01Icon} size={20} />
+                : <HugeiconsIcon icon={Menu01Icon} size={20} />
+              }
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#17211A] border-b border-[#37482E] px-4 pt-3 pb-6 space-y-1">
+      {/* ── Mobile Drawer ─────────────────────────────────────────────────── */}
+      <div
+        className={[
+          "lg:hidden overflow-hidden",
+          "transition-[max-height,opacity] duration-300",
+          mobileMenuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0",
+        ].join(" ")}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div className="bg-[#0D1610] border-t border-[#37482E]/60 px-4 pt-2 pb-5 space-y-0">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2.5 text-base font-medium text-[#E8E0CC] hover:text-white border-b border-[#37482E]/50"
+              onClick={closeMenu}
+              className="flex items-center py-2.5 text-[14px] font-medium text-[#E8E0CC]/90 hover:text-white border-b border-[#37482E]/30 transition-colors last:border-b-0"
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-4 flex flex-col gap-2">
-            <Button variant="primary" size="md" href={whatsAppLink} isExternal className="w-full text-center">
-              WhatsApp Booking
-            </Button>
+
+          {/* Drawer CTAs */}
+          <div className="pt-4 grid grid-cols-2 gap-2.5">
+            <a
+              href={whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="spring-press flex items-center justify-center gap-1.5 h-10 rounded-none bg-gradient-to-b from-[#1E8A4E] to-[#156B3A] text-white text-[13px] font-semibold"
+            >
+              <HugeiconsIcon icon={WhatsappIcon} size={14} />
+              WhatsApp
+            </a>
+            <a
+              href={`tel:${phoneRaw}`}
+              className="spring-press flex items-center justify-center gap-1.5 h-10 rounded-none bg-gradient-to-b from-[#B84C1E] to-[#993A12] text-white text-[13px] font-semibold"
+            >
+              <HugeiconsIcon icon={Call02Icon} size={14} />
+              {phoneDisplay}
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };

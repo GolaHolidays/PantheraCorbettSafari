@@ -35,7 +35,7 @@ export const SecondaryServicesSection: React.FC<SecondaryServicesSectionProps> =
             return (
               <div
                 key={service.id}
-                className="bg-[#F4EFE6] border border-[#E8E0CC] rounded-[4px] p-6 flex flex-col justify-between hover:border-[#8A9468] transition-all"
+                className="bg-[#F4EFE6] border border-[#E8E0CC] rounded-none p-6 flex flex-col justify-between hover:border-[#8A9468] transition-all"
               >
                 <div>
                   <Badge variant="moss" size="sm" className="mb-3">
@@ -55,7 +55,7 @@ export const SecondaryServicesSection: React.FC<SecondaryServicesSectionProps> =
                       Available Options:
                     </span>
                     {service.vehicleOptions.map((opt, idx) => (
-                      <span key={idx} className="inline-block mr-2 text-[11px] bg-white/70 px-2 py-0.5 rounded border border-[#E8E0CC]">
+                      <span key={idx} className="inline-block mr-2 text-[11px] bg-white/70 px-2 py-0.5 rounded-none border border-[#E8E0CC]">
                         {opt}
                       </span>
                     ))}

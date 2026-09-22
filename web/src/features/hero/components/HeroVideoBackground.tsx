@@ -17,15 +17,18 @@
  * VIDEO: No CSS transforms. Plays at native 1:1 scale. No zoom.
  */
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useSyncExternalStore } from "react";
+import Image from "next/image";
+
+const subscribe = () => () => {};
 
 export const HeroVideoBackground: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
     if (!mounted) return;
@@ -41,11 +44,14 @@ export const HeroVideoBackground: React.FC = () => {
   return (
     <div className="relative w-full aspect-video sm:aspect-auto sm:absolute sm:inset-0 sm:h-full z-0 overflow-hidden" suppressHydrationWarning>
       {/* ── High-resolution poster fallback for SSR & initial paint ── */}
-      <img
+      <Image
         src="/hero_clip/hero_poster.jpg"
         alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
       {/* ── Full-bleed cinematic clip (rendered post-mount to avoid extension hydration conflicts) ── */}
@@ -73,10 +79,16 @@ export const HeroVideoBackground: React.FC = () => {
       )}
 
       {/*
-       * ── MOBILE: Subtle bottom fade into the dark text section below ───
+       * ── MOBILE: Seamless multi-step bottom fade into dark section ─────
+       * Uses 112px height + bottom-[-2px] subpixel overlap to completely
+       * eliminate any video edge artifacts or hard cut lines.
        */}
       <div
-        className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#17211A] to-transparent sm:hidden pointer-events-none"
+        className="absolute -bottom-1 inset-x-0 h-28 sm:hidden pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to top, #17211A 0%, rgba(23,33,26,0.98) 35%, rgba(23,33,26,0.65) 65%, transparent 100%)",
+        }}
       />
 
       {/*

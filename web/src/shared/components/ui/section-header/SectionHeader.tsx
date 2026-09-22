@@ -9,6 +9,15 @@ export interface SectionHeaderProps {
   className?: string;
 }
 
+/**
+ * SectionHeader
+ *
+ * Optical typography system:
+ *   - h2 uses .section-heading CSS class (letter-spacing: -0.016em, line-height: 1.12)
+ *     defined in globals.css — single source, applied uniformly site-wide.
+ *   - Badge eyebrow uses tracked uppercase at 11px — Apple editorial pattern.
+ *   - Mobile-first: 28px base → clamps up to 48px on large screens.
+ */
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   title,
   subtitle,
@@ -22,32 +31,35 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   return (
     <div
-      className={`mb-10 sm:mb-14 ${isCenter ? "text-center mx-auto max-w-3xl" : "max-w-3xl"} ${className}`}
+      className={`mb-8 sm:mb-11 ${isCenter ? "text-center mx-auto max-w-3xl" : "max-w-3xl"} ${className}`}
     >
       {badgeText && (
-        <div className="mb-3">
+        <p className="mb-2.5">
           <span
-            className={`inline-block text-xs font-semibold px-3 py-1 rounded-full border ${
+            className={`inline-block text-[11px] font-semibold tracking-[0.16em] uppercase px-3 py-0.5 rounded-none border ${
               isDark
-                ? "bg-[#37482E] text-[#E8E0CC] border-[#8A9468]/40"
-                : "bg-[#E8E0CC]/60 text-[#37482E] border-[#8A9468]/30"
+                ? "text-[#C99A3D] border-[#C99A3D]/30 bg-[#C99A3D]/10"
+                : "text-[#37482E] border-[#8A9468]/30 bg-[#E8E0CC]/60"
             }`}
           >
             {badgeText}
           </span>
-        </div>
+        </p>
       )}
+
+      {/* section-heading: optical CSS class from globals.css */}
       <h2
-        className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15] ${
+        className={`section-heading font-serif text-[1.55rem] sm:text-[2.05rem] lg:text-[2.6rem] font-semibold ${
           isDark ? "text-[#FBF8F0]" : "text-[#17211A]"
         }`}
       >
         {title}
       </h2>
+
       {subtitle && (
         <p
-          className={`mt-3.5 text-base sm:text-lg leading-relaxed ${
-            isDark ? "text-[#E8E0CC]/80" : "text-[#17211A]/80"
+          className={`mt-2.5 sm:mt-3 text-sm sm:text-base leading-relaxed ${
+            isDark ? "text-[#E8E0CC]/80" : "text-[#17211A]/75"
           }`}
         >
           {subtitle}
