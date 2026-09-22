@@ -23,7 +23,7 @@ export const TestimonialSection: React.FC<TestimonialSectionProps> = ({
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="bg-[#FBF8F0] border border-[#E8E0CC] rounded-[4px] p-6 flex flex-col justify-between hover:border-[#8A9468] transition-all"
+              className="bg-[#FBF8F0] border border-[#E8E0CC] rounded-none p-6 flex flex-col justify-between hover:border-[#8A9468] transition-all"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">

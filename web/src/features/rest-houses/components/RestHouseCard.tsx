@@ -20,9 +20,9 @@ export const RestHouseCard: React.FC<RestHouseCardProps> = ({
   )}`;
 
   return (
-    <div className="bg-[#17211A] text-[#FBF8F0] border border-[#37482E] rounded-[4px] overflow-hidden flex flex-col justify-between hover:border-[#8A9468] transition-all duration-200">
+    <div className="hover-lift bg-[#17211A] text-[#FBF8F0] border border-[#37482E] rounded-[var(--radius-card)] overflow-hidden flex flex-col justify-between">
       <div>
-        <div className="relative h-56 w-full overflow-hidden">
+        <div className="relative h-[44vw] sm:h-56 w-full overflow-hidden flex-shrink-0">
           <Image
             src={lodge.image}
             alt={lodge.name}
@@ -42,7 +42,7 @@ export const RestHouseCard: React.FC<RestHouseCardProps> = ({
             <span className="text-xs text-[#C99A3D] font-semibold tracking-wide uppercase">
               {lodge.zone}
             </span>
-            <h3 className="font-serif text-2xl font-bold text-[#FBF8F0] mt-0.5">
+            <h3 className="font-serif text-2xl font-bold text-[#FBF8F0] mt-0.5 section-heading">
               {lodge.name}
             </h3>
           </div>
@@ -62,7 +62,7 @@ export const RestHouseCard: React.FC<RestHouseCardProps> = ({
             ))}
           </div>
 
-          <div className="p-2.5 rounded-[3px] bg-[#37482E]/50 border border-[#37482E] text-xs text-[#E8E0CC]">
+          <div className="p-2.5 rounded-[var(--radius-chip)] bg-[#37482E]/50 border border-[#37482E] text-xs text-[#E8E0CC]">
             <span className="text-[#C99A3D] font-semibold block">Permit Window:</span>
             <span>{lodge.permitWindow}</span>
           </div>

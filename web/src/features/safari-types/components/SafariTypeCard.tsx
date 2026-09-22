@@ -18,7 +18,7 @@ export const SafariTypeCard: React.FC<SafariTypeCardProps> = ({
   )}`;
 
   return (
-    <div className="bg-[#FBF8F0] border border-[#E8E0CC] rounded-[4px] p-6 sm:p-8 flex flex-col justify-between hover:border-[#8A9468] transition-all duration-200">
+    <div className="hover-lift bg-[#FBF8F0] border border-[#E8E0CC] rounded-[var(--radius-card)] p-6 sm:p-8 flex flex-col justify-between">
       <div>
         <div className="flex items-center justify-between gap-4 mb-4">
           <Badge variant="moss" size="sm">
@@ -29,7 +29,7 @@ export const SafariTypeCard: React.FC<SafariTypeCardProps> = ({
           </span>
         </div>
 
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mb-3">
+        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mb-3 section-heading">
           {safari.name}
         </h3>
 
@@ -38,7 +38,7 @@ export const SafariTypeCard: React.FC<SafariTypeCardProps> = ({
         </p>
 
         {/* Shift Timings */}
-        <div className="mb-6 space-y-2 bg-[#E8E0CC]/40 p-4 rounded-[3px] border border-[#E8E0CC]">
+        <div className="mb-6 space-y-2 bg-[#E8E0CC]/40 p-4 rounded-[var(--radius-chip)] border border-[#E8E0CC]">
           <span className="text-xs font-bold text-[#37482E] uppercase tracking-wider block">
             Permitted Daily Shifts
           </span>

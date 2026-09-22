@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
   return (
-    <footer className="bg-[#17211A] text-[#E8E0CC] border-t border-[#37482E] pb-24 sm:pb-12 pt-16">
+    <footer className="bg-[#17211A] text-[#E8E0CC] border-t border-[#37482E] pb-28 sm:pb-28 xl:pb-12 pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#37482E]">
           {/* Brand & Authority */}

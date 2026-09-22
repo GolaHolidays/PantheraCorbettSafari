@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button } from "../../ui/button/Button";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
+import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 
 interface StickyCallBarProps {
   phoneRaw: string;
@@ -9,42 +11,98 @@ interface StickyCallBarProps {
   whatsAppLink: string;
 }
 
+/**
+ * StickyCallBar — Apple iOS Floating Action Dock.
+ *
+ * Design features:
+ * - Floating capsule: Detached from screen edge, inset with safe-area spacing.
+ * - Deep forest glassmorphism: Backdrop blur with specular rim highlight.
+ * - Mature, refined color palette:
+ *   - Call: Deep satin Ember gradient with inner specular bevel.
+ *   - WhatsApp: Rich emerald forest gradient with crisp white typography.
+ * - Tablet ('tab') optimized:
+ *   - Live official desk indicator badge on tablet (sm/md/lg).
+ *   - Wide, balanced dual action pills with generous hit targets.
+ * - Active motion: .spring-press micro-interaction.
+ * - Responsive visibility: xl:hidden (visible on phone and tablet up to 1279px).
+ */
 export const StickyCallBar: React.FC<StickyCallBarProps> = ({
   phoneRaw,
+  phoneDisplay,
   whatsAppLink,
 }) => {
   return (
     <aside
-      aria-label="Quick Booking Bar"
-      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0f1a12]/90 backdrop-blur-xl border-t border-[#37482E]/60 px-3 py-2.5 shadow-2xl safe-area-pb"
+      aria-label="Instant safari booking and assistance"
+      className="xl:hidden fixed bottom-[calc(10px+env(safe-area-inset-bottom,0px))] inset-x-3 sm:inset-x-6 z-50 pointer-events-none"
     >
-      <div className="max-w-md mx-auto grid grid-cols-2 gap-2.5">
-        {/* Call Desk — primary variant, transparent ember border */}
-        <Button
-          variant="primary"
-          size="md"
-          href={`tel:${phoneRaw}`}
-          className="w-full"
-        >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
-          </svg>
-          <span>Call Desk</span>
-        </Button>
+      <div className="max-w-md sm:max-w-2xl mx-auto pointer-events-auto">
+        <div className="flex items-center gap-2 p-1.5 sm:p-2 rounded-none bg-[#111913]/92 backdrop-blur-2xl border border-white/[0.12] shadow-[0_16px_40px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.16)]">
 
-        {/* WhatsApp — whatsapp variant, transparent green border */}
-        <Button
-          variant="whatsapp"
-          size="md"
-          href={whatsAppLink}
-          isExternal
-          className="w-full"
-        >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
-          </svg>
-          <span>WhatsApp</span>
-        </Button>
+          {/* ── Tablet Branding & Live Status (sm+ only) ────────────────── */}
+          <div className="hidden sm:flex items-center gap-3 pl-3 pr-3.5 border-r border-white/10 flex-shrink-0">
+            <div className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-[#25D366] opacity-75" />
+              <span className="relative inline-flex rounded-none h-2.5 w-2.5 bg-[#25D366]" />
+            </div>
+            <div className="text-left">
+              <div className="text-[12px] font-semibold text-[#FBF8F0] tracking-tight leading-tight flex items-center gap-1.5">
+                <span>Ramnagar Desk</span>
+                <span className="text-[9px] px-1.5 py-0.5 rounded-none bg-[#C99A3D]/20 text-[#E8B84A] font-semibold uppercase tracking-wider">
+                  Official
+                </span>
+              </div>
+              <p className="text-[10px] text-[#8A9468] tracking-wider uppercase font-medium leading-tight mt-0.5">
+                Corbett Safari Quotas
+              </p>
+            </div>
+          </div>
+
+          {/* ── Actions Container ────────────────────────────────────────── */}
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-1 min-w-0">
+
+            {/* Call Action */}
+            <a
+              href={`tel:${phoneRaw}`}
+              aria-label={`Call safari desk at ${phoneDisplay}`}
+              className="spring-press flex-1 flex items-center justify-center gap-2 sm:gap-2.5 h-11 sm:h-12 px-3 sm:px-4 rounded-none bg-gradient-to-b from-[#B84C1E] to-[#993A12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_8px_rgba(184,76,30,0.32)] border border-[#C8592A]/40 transition-all group"
+            >
+              <div className="w-7 h-7 rounded-none bg-black/20 flex items-center justify-center flex-shrink-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform">
+                <HugeiconsIcon icon={Call02Icon} size={15} className="text-white" />
+              </div>
+              <div className="text-left min-w-0">
+                <div className="text-[12px] sm:text-[13px] font-bold text-white leading-tight tracking-tight whitespace-nowrap">
+                  Call Desk
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-white/80 font-medium font-tabular leading-none whitespace-nowrap mt-0.5">
+                  {phoneDisplay}
+                </div>
+              </div>
+            </a>
+
+            {/* WhatsApp Action */}
+            <a
+              href={whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp for instant safari booking"
+              className="spring-press flex-1 flex items-center justify-center gap-2 sm:gap-2.5 h-11 sm:h-12 px-3 sm:px-4 rounded-none bg-gradient-to-b from-[#1E8A4E] to-[#156B3A] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_8px_rgba(21,107,58,0.32)] border border-[#2EB26A]/40 transition-all group"
+            >
+              <div className="w-7 h-7 rounded-none bg-black/20 flex items-center justify-center flex-shrink-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform">
+                <HugeiconsIcon icon={WhatsappIcon} size={15} className="text-white" />
+              </div>
+              <div className="text-left min-w-0">
+                <div className="text-[12px] sm:text-[13px] font-bold text-white leading-tight tracking-tight whitespace-nowrap">
+                  WhatsApp
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-white/80 font-medium leading-none whitespace-nowrap mt-0.5">
+                  Instant Reply
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
       </div>
     </aside>
   );

@@ -10,6 +10,34 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   className?: string;
 }
 
+/**
+ * Button Design Principles
+ * ─────────────────────────────────────────────────────────────────────────
+ * SHAPE:
+ *   Uses CSS custom property radii from globals.css @theme tokens.
+ *   --radius-btn-lg / --radius-btn-md / --radius-btn-sm.
+ *   Not pill (generic SaaS), not sharp (legacy enterprise) — confident & modern.
+ *
+ * PRIMARY (mobile-first conversion CTA):
+ *   Solid filled ember (#B84C1E) — this IS the safari booking button.
+ *   It must feel weighty, warm, and irresistible on a thumb-scrolling mobile.
+ *   Hover: subtle lift + glow bloom. Letterform: slightly tight tracking.
+ *
+ * SECONDARY: Forest green bordered — editorial authority signal.
+ * OUTLINE:   Thin white border for dark/video overlay contexts.
+ * GHOST:     Fully transparent — light page secondary actions.
+ * WHATSAPP:  Solid green — instant recognition on mobile.
+ *
+ * SPRING PHYSICS:
+ *   All buttons use .spring-press CSS class (defined in globals.css).
+ *   This replaces the scattered active:scale-[0.97] inline Tailwind pattern.
+ *   Result: haptic-like 96.8% scale compression → spring snap-back.
+ *
+ * TOUCH TARGETS:
+ *   sm: min-h 36px  md: min-h 44px  lg: min-h 48px
+ *   44px is Apple HIG minimum for mobile tap targets.
+ */
+
 export const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
@@ -19,113 +47,83 @@ export const Button: React.FC<ButtonProps> = ({
   className = "",
   ...props
 }) => {
-  /**
-   * Premium button system — informed by Linear, Vercel, Stripe, Apple HIG
-   *
-   * SHAPE: rounded-xl (12px) — not pill, not sharp.
-   *   Pill = generic SaaS. Sharp = legacy enterprise. rounded-xl = confident & modern.
-   *
-   * PRIMARY:
-   *   - Gradient fill: top-to-bottom warm ember (lighter → darker)
-   *   - 1px inner border (via box-shadow inset) creates depth without border flicker
-   *   - Hover: subtle lift (translateY -1px) + shadow bloom
-   *   - letter-spacing: slightly tight — premium brands don't scream
-   *
-   * OUTLINE / GHOST (for hero overlay context):
-   *   - Thin 1px border, no fill, slight backdrop-blur
-   *   - Hover: barely-there fill + border brightens
-   *   - Avoids the "input-field" look of full-dark-pill outlines
-   *
-   * SECONDARY: muted forest green fill — editorial, not loud
-   *
-   * WHATSAPP: flat #25D366 with lifted hover, slightly rounded
-   *
-   * SIZE: sm / md / lg with consistent min-height tap targets (40 / 44 / 50px)
-   *   44px is Apple's recommended minimum tap target for mobile.
-   */
-
+  // ── Base — shared across all variants ──────────────────────────────────────
+  // spring-press: CSS class from globals.css (replaces inline active:scale-[0.97]).
+  // transition covers non-transform properties (color, shadow, bg); transform is
+  // handled exclusively by .spring-press so the two don't conflict.
   const baseStyles = [
-    "inline-flex items-center justify-center",
-    "font-semibold tracking-[-0.01em] leading-none",
-    "transition-all duration-200 ease-out",
+    "inline-flex items-center justify-center gap-2",
+    "font-semibold tracking-[-0.012em] leading-none",
+    "transition-[background-color,border-color,box-shadow,color] duration-200",
     "select-none cursor-pointer",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B84C1E]/60",
-    "active:scale-[0.97] active:translate-y-0",
+    "spring-press",
   ].join(" ");
 
+  // ── Sizes — optical radii from CSS token layer (@theme in globals.css) ──────
   const sizeStyles: Record<string, string> = {
-    sm: "h-9 px-4 text-[12px] gap-1.5 rounded-[10px]",
-    md: "h-11 px-5 text-[13px] gap-2 rounded-xl",
-    lg: "h-12 px-6 text-[14px] gap-2 rounded-xl",
+    sm: "h-9 min-w-[80px] px-4 text-[12px]  rounded-[var(--radius-btn-sm)]",
+    md: "h-11 min-w-[100px] px-5 text-[13px] rounded-[var(--radius-btn-md)]",
+    lg: "h-12 min-w-[120px] px-6 text-[14px] rounded-[var(--radius-btn-lg)]",
   };
 
+  // ── Variants ─────────────────────────────────────────────────────────────────
   const variantStyles: Record<string, string> = {
     /**
-     * PRIMARY — Ember border + ember text on transparent bg.
-     * Hover: barely-there ember wash (8% opacity) bleeds in.
-     * Lift + subtle glow on hover for tactile feedback.
+     * PRIMARY — Solid filled ember. The safari booking CTA.
+     * Must feel weighty and irresistible on a thumb-scrolling mobile screen.
+     * Hover: subtle glow bloom + 1px lift.
      */
     primary: [
-      "bg-transparent",
-      "text-[#C75420]",
-      "border border-[#C75420]/70",
-      "hover:bg-[#C75420]/8",
-      "hover:border-[#C75420]",
-      "hover:-translate-y-[1px]",
-      "hover:shadow-[0_4px_16px_rgba(199,84,32,0.18)]",
-      "backdrop-blur-sm",
+      "bg-[#B84C1E] text-white",
+      "shadow-[0_2px_8px_rgba(184,76,30,0.25)]",
+      "hover:bg-[#9E4019]",
+      "hover:-translate-y-px",
+      "hover:shadow-[0_6px_20px_rgba(184,76,30,0.35)]",
     ].join(" "),
 
     /**
-     * SECONDARY — Forest green border + sand text on transparent bg.
+     * SECONDARY — Forest green bordered, sand text.
+     * Authority signal — editorial, not loud.
      */
     secondary: [
-      "bg-transparent",
-      "text-[#8A9468]",
+      "bg-transparent text-[#8A9468]",
       "border border-[#37482E]/70",
-      "hover:bg-[#37482E]/10",
-      "hover:border-[#37482E]",
-      "hover:-translate-y-[1px]",
+      "hover:bg-[#37482E]/10 hover:border-[#37482E]",
+      "hover:-translate-y-px",
     ].join(" "),
 
     /**
-     * OUTLINE — White border + white text, for dark/video backgrounds.
-     * Hover: barely-there white wash (10%).
+     * OUTLINE — Thin white border + white text.
+     * For dark/video backgrounds (hero overlay, dark sections).
      */
     outline: [
-      "bg-transparent",
-      "text-[#FBF8F0]",
+      "bg-transparent text-[#FBF8F0]",
       "border border-white/30",
-      "hover:bg-white/10",
-      "hover:border-white/55",
-      "hover:-translate-y-[1px]",
-      "backdrop-blur-sm",
+      "hover:bg-white/10 hover:border-white/55",
+      "hover:-translate-y-px backdrop-blur-sm",
     ].join(" "),
 
     /**
-     * GHOST — Fully transparent, minimal. For light page backgrounds.
+     * GHOST — Fully transparent. Light page secondary actions.
      */
     ghost: [
-      "bg-transparent",
-      "text-[#37482E]",
+      "bg-transparent text-[#37482E]",
       "border border-transparent",
       "hover:bg-[#E8E0CC]/60",
-      "rounded-[10px]",
     ].join(" "),
 
     /**
-     * WHATSAPP — WhatsApp green border + green text on transparent bg.
-     * Hover: subtle green wash.
+     * WHATSAPP — Solid green. Instant recognition on mobile.
+     * Solid fill (not bordered) because on the sticky bar it competes with
+     * a solid ember call button — symmetry matters for the eye.
      */
     whatsapp: [
-      "bg-transparent",
-      "text-[#1DB954]",
-      "border border-[#1DB954]/60",
-      "hover:bg-[#1DB954]/10",
-      "hover:border-[#1DB954]",
-      "hover:-translate-y-[1px]",
-      "hover:shadow-[0_4px_16px_rgba(29,185,84,0.18)]",
-      "backdrop-blur-sm",
+      "bg-[#25D366] text-black",
+      "shadow-[0_2px_8px_rgba(37,211,102,0.20)]",
+      "hover:bg-[#1EBE5D]",
+      "hover:-translate-y-px",
+      "hover:shadow-[0_6px_20px_rgba(37,211,102,0.30)]",
     ].join(" "),
   };
 

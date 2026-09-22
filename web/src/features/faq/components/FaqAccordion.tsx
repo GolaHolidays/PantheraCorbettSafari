@@ -33,7 +33,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({ faqs, whatsAppLink }
             return (
               <div
                 key={idx}
-                className="border border-[#E8E0CC] rounded-[4px] bg-[#F4EFE6]/60 overflow-hidden transition-all"
+                className="border border-[#E8E0CC] rounded-none bg-[#F4EFE6]/60 overflow-hidden transition-all"
               >
                 <button
                   type="button"

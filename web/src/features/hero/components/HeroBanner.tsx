@@ -60,9 +60,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </p>
 
           {/* ── Headline ─────────────────────────────────────────────────── */}
-          {/* Mobile: 2.1rem; Desktop: scales up to 4.5rem                   */}
+          {/*
+            display-heading CSS class from globals.css:
+            letter-spacing: -0.022em + line-height: 1.06
+            Optical correction — large display text must track tight.
+          */}
           <h1
-            className="font-serif font-bold text-[#FBF8F0] leading-[1.05] tracking-tight text-[2.1rem] sm:text-[3.75rem] lg:text-[4.5rem]"
+            className="display-heading font-serif font-bold text-[#FBF8F0] text-[1.85rem] sm:text-[3.25rem] lg:text-[4rem]"
             style={{
               textShadow:
                 "0 2px 20px rgba(23,33,26,0.70), 0 1px 4px rgba(23,33,26,0.45)",
@@ -72,12 +76,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           </h1>
 
           {/* ── Thin gold rule ───────────────────────────────────────────── */}
-          <div className="mt-4 sm:mt-6 mb-4 sm:mb-6 w-8 h-[1.5px] bg-[#C99A3D]" />
+          <div className="mt-3.5 sm:mt-5 mb-3.5 sm:mb-5 w-8 h-[1.5px] bg-[#C99A3D]" />
 
           {/* ── Body copy — HIDDEN on mobile ────────────────────────────── */}
-          {/* On mobile the text would block the video; sticky bar has CTA   */}
           <p
-            className="hidden sm:block text-[1.0625rem] text-[#E8E0CC]/85 font-normal leading-[1.75]"
+            className="hidden sm:block text-[1rem] text-[#E8E0CC]/85 font-normal leading-[1.7]"
             style={{ textShadow: "0 1px 8px rgba(23,33,26,0.55)" }}
           >
             Official Forest Department jeep permits and heritage night stays
@@ -85,10 +88,15 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             native trackers and registered nature guides.
           </p>
 
-          {/* ── Scarcity note — HIDDEN on mobile ────────────────────────── */}
+          {/* ── Scarcity note — desktop full, mobile compact chip ────────── */}
           <p className="hidden sm:block mt-3 text-xs text-[#8A9468] tracking-wide">
             {scarcityWarning}
           </p>
+          {/* Mobile: single-line scarcity chip — enough to create urgency */}
+          <p className="sm:hidden mt-2.5 text-[10px] text-[#8A9468]/90 font-medium leading-tight">
+            ⚠ {scarcityWarning}
+          </p>
+
 
           {/* ── CTAs ─────────────────────────────────────────────────────── */}
           {/*
@@ -97,13 +105,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
            *   bottom of the page handles the phone conversion on mobile.
            * Desktop: two inline CTAs side by side.
            */}
-          <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3">
+          <div className="mt-4 sm:mt-7 flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3">
             <Button
               variant="primary"
               size="lg"
               href={whatsAppLink}
               isExternal
-              className="text-sm font-semibold tracking-wide shadow-lg px-6 sm:px-8 py-3 sm:py-3.5"
+              className="text-sm font-semibold tracking-wide shadow-lg px-5 sm:px-7 py-2.5 sm:py-3"
             >
               Check Permit Availability
             </Button>
