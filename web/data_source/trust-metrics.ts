@@ -4,7 +4,7 @@ export const trustMetrics = {
   safarisCompleted: "12,500+",
   licensedGypsies: 28,
   registeredGuides: 34,
-  yearsServing: 15,      // kept in schema, not displayed in trust row
+  yearsServing: 7,      // Panthera founded in 2018
   trustHighlights: [
     {
       title: "Forest Dept Authorized",

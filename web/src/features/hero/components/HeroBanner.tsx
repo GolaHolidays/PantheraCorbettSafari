@@ -46,7 +46,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 
         {/* Subtitle */}
         <p className="mt-6 text-base sm:text-xl text-[#E8E0CC]/90 max-w-2xl mx-auto font-normal leading-relaxed">
-          Official Forest Department jeep permits and heritage night stays inside Dhikala, Bijrani, and Jhirna core zones. Guided by native trackers with 15+ years on the trails.
+          Official Forest Department jeep permits and heritage night stays inside Dhikala, Bijrani, and Jhirna core zones. Guided by native trackers and registered nature guides.
         </p>
 
         {/* Conversion Action Buttons */}
