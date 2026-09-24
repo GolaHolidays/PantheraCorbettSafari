@@ -70,7 +70,8 @@ export const HeroVideoBackground: React.FC = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          tabIndex={-1}
           aria-hidden="true"
         >
           <source src="/hero_clip/panthera_corbett_safari.webm?v=3" type="video/webm" />

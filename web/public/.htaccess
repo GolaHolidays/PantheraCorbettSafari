@@ -24,8 +24,69 @@ ErrorDocument 404 /404.html
   RewriteRule ^(.*)$ $1/index.html [L]
 </IfModule>
 
-# ─── MIME Types & Caching ───────────────────────────────────────────────────
+# ─── MIME Types ─────────────────────────────────────────────────────────────
 <IfModule mod_mime.c>
   AddType text/plain .txt
   AddType application/xml .xml
+  AddType video/webm .webm
+  AddType video/mp4 .mp4
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+
+# ─── Browser Caching (Expires) ───────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML, Text & XML: Short cache / must revalidate
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/plain "access plus 1 hour"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType application/json "access plus 0 seconds"
+
+  # Static images & Icons: 1 year (immutable)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Web Fonts: 1 year
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+
+  # Scripts & CSS: 1 year (hashed chunks)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Video & Audio: 1 year
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType audio/mpeg "access plus 1 year"
+</IfModule>
+
+# ─── HTTP Header Caching (Cache-Control) ─────────────────────────────────────
+<IfModule mod_headers.c>
+  # 1 year cache for static assets and media files
+  <FilesMatch "\.(ico|jpe?g|png|gif|webp|avif|svg|woff2?|ttf|otf|eot|css|js|webm|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML documents and sitemaps: fresh
+  <FilesMatch "\.(html|htm|xml|txt)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ─── Gzip Compression (mod_deflate) ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
 </IfModule>

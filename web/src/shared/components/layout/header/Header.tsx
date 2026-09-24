@@ -163,9 +163,10 @@ export const Header: React.FC<HeaderProps> = ({
         className={[
           "lg:hidden overflow-hidden",
           "transition-[max-height,opacity] duration-300",
-          mobileMenuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0",
+          mobileMenuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0 pointer-events-none invisible",
         ].join(" ")}
         aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
       >
         <div className="bg-[#0D1610] border-t border-[#37482E]/60 px-4 pt-2 pb-5 space-y-0">
           {navLinks.map((link) => (
