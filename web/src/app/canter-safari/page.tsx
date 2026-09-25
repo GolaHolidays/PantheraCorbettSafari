@@ -85,7 +85,7 @@ export default function CanterSafariPage() {
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Canter Safari", href: "/canter-safari" },
+    { name: "Canter Safari", href: "/canter-safari/" },
   ]);
 
   return (

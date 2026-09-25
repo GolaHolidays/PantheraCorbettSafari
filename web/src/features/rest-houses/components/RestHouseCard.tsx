@@ -80,7 +80,7 @@ export const RestHouseCard: React.FC<RestHouseCardProps> = ({
             </span>
           </div>
           <Link
-            href={`/forest-rest-houses/${lodge.slug}`}
+            href={`/forest-rest-houses/${lodge.slug}/`}
             className="text-xs font-semibold text-[#C99A3D] hover:underline"
           >
             Lodge Rules →

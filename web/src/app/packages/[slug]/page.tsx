@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   const title = pkg.seoTitle ?? `${pkg.title} | Jim Corbett Safari Package`;
   const description = pkg.seoDescription ?? pkg.overview;
-  const canonical = `${SITE_URL}/packages/${slug}`;
+  const canonical = `${SITE_URL}/packages/${slug}/`;
 
   return {
     title,
@@ -83,7 +83,7 @@ export default async function PackageDetailPage({
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Tour Packages", href: "/#packages" },
-    { name: pkg.title, href: `/packages/${slug}` },
+    { name: pkg.title, href: `/packages/${slug}/` },
   ]);
 
   const packageResorts = PackageRepository.getResortsForPackage(pkg);

@@ -174,7 +174,7 @@ export default function DelhiToJimCorbettPackagePage() {
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Delhi to Jim Corbett Package", href: "/delhi-to-jim-corbett-package" },
+    { name: "Delhi to Jim Corbett Package", href: "/delhi-to-jim-corbett-package/" },
   ]);
 
   return (

@@ -84,7 +84,7 @@ export default function SafariPricePage() {
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Safari Price", href: "/safari-price" },
+    { name: "Safari Price", href: "/safari-price/" },
   ]);
 
   return (
