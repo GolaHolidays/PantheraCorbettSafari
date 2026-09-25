@@ -31,7 +31,7 @@ export async function generateMetadata({
   const lodge = RestHouseRepository.getRestHouseBySlug(slug);
   if (!lodge) return { title: "Lodge Not Found" };
 
-  const canonical = `${SITE_URL}/forest-rest-houses/${slug}`;
+  const canonical = `${SITE_URL}/forest-rest-houses/${slug}/`;
   const ogImage = lodge.image.startsWith("http") ? lodge.image : `${SITE_URL}${lodge.image}`;
 
   // Rich, keyword-dense titles per FRH
@@ -111,7 +111,7 @@ export default async function RestHouseDetailPage({
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Forest Rest Houses", href: "/#night-stays" },
-    { name: lodge.name, href: `/forest-rest-houses/${slug}` },
+    { name: lodge.name, href: `/forest-rest-houses/${slug}/` },
   ]);
 
   return (

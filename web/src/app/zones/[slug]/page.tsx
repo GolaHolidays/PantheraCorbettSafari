@@ -39,7 +39,7 @@ export async function generateMetadata({
     keywords: [`${zone.name.toLowerCase()} booking`, "jim corbett safari booking"],
   };
 
-  const canonical = `${SITE_URL}/zones/${zone.slug}`;
+  const canonical = `${SITE_URL}/zones/${zone.slug}/`;
   const ogImage = zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`;
 
   return {
@@ -85,7 +85,7 @@ export default async function ZoneDetailPage({
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Safari Zones", href: "/#zones" },
-    { name: zone.name, href: `/zones/${zone.slug}` },
+    { name: zone.name, href: `/zones/${zone.slug}/` },
   ]);
 
   return (

@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
               {zones.map((zone) => (
                 <li key={zone.id}>
                   <Link
-                    href={`/zones/${zone.slug}`}
+                    href={`/zones/${zone.slug}/`}
                     className="hover:text-white transition-colors flex items-center justify-between"
                   >
                     <span>{zone.name}</span>
@@ -52,32 +52,32 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             </h3>
             <ul className="space-y-2 text-sm text-[#E8E0CC]/80">
               <li>
-                <Link href="/jeep-safari" className="hover:text-white transition-colors">
+                <Link href="/jeep-safari/" className="hover:text-white transition-colors">
                   Jim Corbett Jeep Safari
                 </Link>
               </li>
               <li>
-                <Link href="/canter-safari" className="hover:text-white transition-colors">
+                <Link href="/canter-safari/" className="hover:text-white transition-colors">
                   Dhikala Canter Safari
                 </Link>
               </li>
               <li>
-                <Link href="/safari-price" className="hover:text-white transition-colors">
+                <Link href="/safari-price/" className="hover:text-white transition-colors">
                   Safari Prices 2025–26
                 </Link>
               </li>
               <li>
-                <Link href="/delhi-to-jim-corbett-package" className="hover:text-white transition-colors">
+                <Link href="/delhi-to-jim-corbett-package/" className="hover:text-white transition-colors">
                   Delhi to Corbett Packages
                 </Link>
               </li>
               <li>
-                <Link href="/delhi-corbett-cab" className="hover:text-white transition-colors">
+                <Link href="/delhi-corbett-cab/" className="hover:text-white transition-colors">
                   Delhi to Ramnagar Cab
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact/" className="hover:text-white transition-colors">
                   Contact &amp; Desk Location
                 </Link>
               </li>
@@ -150,10 +150,10 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             © {new Date().getFullYear()} {config.name}. All safari permits subject to Uttarakhand Forest Department quotas.
           </p>
           <div className="flex gap-4">
-            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-            <Link href="/blog" className="hover:text-white transition-colors">Safari Blog</Link>
+            <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="/blog/" className="hover:text-white transition-colors">Safari Blog</Link>
             <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
-            <Link href="/safari-price" className="hover:text-white transition-colors">Safari Prices</Link>
+            <Link href="/safari-price/" className="hover:text-white transition-colors">Safari Prices</Link>
           </div>
         </div>
       </div>

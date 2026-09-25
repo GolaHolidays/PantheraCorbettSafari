@@ -9,10 +9,10 @@ import { Badge } from "../../shared/components/ui/badge/Badge";
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Delhi to Jim Corbett Cab Service | Private Car ₹4,500 | Panthera Corbett",
+  title: "Delhi to Jim Corbett Cab Service | Private Car from ₹4,500",
   description:
     "Book Delhi to Jim Corbett (Ramnagar) private cab from ₹4,500. Sedan or Innova Crysta. Pickup from Delhi Airport, Gurgaon, Noida & Ghaziabad. Tolls & driver allowance included. Fixed price, no hidden costs.",
-  canonicalPath: "/delhi-corbett-cab",
+  canonicalPath: "/delhi-corbett-cab/",
   keywords: [
     "delhi to jim corbett cab",
     "delhi to ramnagar taxi",
@@ -33,7 +33,7 @@ export const metadata: Metadata = generatePageMetadata({
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Home", href: "/" },
   { name: "Services", href: "/#secondary-services" },
-  { name: "Delhi to Jim Corbett Cab", href: "/delhi-corbett-cab" },
+  { name: "Delhi to Jim Corbett Cab", href: "/delhi-corbett-cab/" },
 ]);
 
 const cabFaqs = [

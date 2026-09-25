@@ -15,7 +15,7 @@ export const metadata: Metadata = generatePageMetadata({
   title: "Jim Corbett Safari Blog — Wildlife, Booking & Travel Guides",
   description:
     "Expert guides on Jim Corbett National Park — zone comparisons, safari booking tips, best time to visit, season guide, and Delhi to Corbett travel advice from on-ground naturalists.",
-  canonicalPath: "/blog",
+  canonicalPath: "/blog/",
   keywords: [
     "jim corbett safari blog",
     "jim corbett travel guide",
@@ -29,7 +29,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Home", href: "/" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/blog/" },
 ]);
 
 const collectionPageSchema = {
@@ -38,7 +38,7 @@ const collectionPageSchema = {
   name: "Jim Corbett Safari Blog",
   description:
     "Expert guides on Jim Corbett National Park — zone comparisons, safari booking tips, best time to visit, and Delhi travel advice.",
-  url: `${SITE_URL}/blog`,
+  url: `${SITE_URL}/blog/`,
   publisher: {
     "@type": "Organization",
     name: "Panthera Corbett Safari",
@@ -65,7 +65,7 @@ function PostCard({ post }: { post: BlogPost }) {
   const catClass = CATEGORY_COLORS[post.category] ?? "bg-[#37482E] text-[#FBF8F0]";
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.slug}/`}
       className="group flex flex-col bg-white border border-[#E8E0CC] rounded-[4px] overflow-hidden hover:shadow-md transition-shadow"
     >
       <div className="relative h-48 overflow-hidden bg-[#E8E0CC]">
@@ -115,7 +115,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
   const catClass = CATEGORY_COLORS[post.category] ?? "bg-[#37482E] text-[#FBF8F0]";
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.slug}/`}
       className="group relative overflow-hidden rounded-[4px] bg-[#17211A] min-h-[400px] flex flex-col justify-end"
     >
       <Image

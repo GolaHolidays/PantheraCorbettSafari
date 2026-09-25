@@ -34,13 +34,13 @@ export const Header: React.FC<HeaderProps> = ({
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
-    { label: "Jeep Safari", href: "/jeep-safari" },
-    { label: "Canter Safari", href: "/canter-safari" },
-    { label: "Safari Prices", href: "/safari-price" },
-    { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
+    { label: "Jeep Safari", href: "/jeep-safari/" },
+    { label: "Canter Safari", href: "/canter-safari/" },
+    { label: "Safari Prices", href: "/safari-price/" },
+    { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package/" },
     { label: "Zones", href: "/#zones" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Blog", href: "/blog/" },
+    { label: "Contact", href: "/contact/" },
   ];
 
   return (

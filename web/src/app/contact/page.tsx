@@ -27,7 +27,7 @@ export const metadata: Metadata = generatePageMetadata({
   title: "Contact Panthera Corbett Safari | Official Ramnagar Desk & Office Map",
   description:
     "Contact Panthera Corbett Safari official booking desk in Ramnagar. Call +91 99974 88004 or WhatsApp for instant Jim Corbett jeep & canter permits, packages, and resort stays. Patkote, Ramnagar office map & directions.",
-  canonicalPath: "/contact",
+  canonicalPath: "/contact/",
   keywords: [
     "panthera corbett safari contact",
     "jim corbett safari booking office ramnagar",
@@ -44,7 +44,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Home", href: "/" },
-  { name: "Contact Us", href: "/contact" },
+  { name: "Contact Us", href: "/contact/" },
 ]);
 
 const contactFaqs = [

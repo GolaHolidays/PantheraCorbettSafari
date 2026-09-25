@@ -10,6 +10,18 @@ ErrorDocument 404 /404.html
   # Security: Deny access to hidden files
   RewriteRule ^\.(?!well-known) - [F]
 
+  # ─── HTTPS Enforcement ───────────────────────────────────────────────────────
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ─── Trailing Slash Enforcement (Canonical 301) ─────────────────────────────
+  # Ensures non-slash URLs redirect with 301 to trailing-slash URLs
+  # Matches next.config.ts trailingSlash: true — eliminates duplicate content
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/\.well-known
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
   # If the exact file or directory exists, serve it directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

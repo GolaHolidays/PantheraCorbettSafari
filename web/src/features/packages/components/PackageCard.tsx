@@ -103,7 +103,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg, whatsAppLink }) =
               </span>
             </div>
             <Link
-              href={`/packages/${pkg.slug}`}
+              href={`/packages/${pkg.slug}/`}
               className="text-xs font-semibold text-[#37482E] hover:underline"
             >
               View Itinerary →

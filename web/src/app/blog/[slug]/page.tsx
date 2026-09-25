@@ -27,7 +27,7 @@ export async function generateMetadata({
   const post = BlogRepository.getPostBySlug(slug);
   if (!post) return { title: "Article Not Found" };
 
-  const canonical = `${SITE_URL}/blog/${slug}`;
+  const canonical = `${SITE_URL}/blog/${slug}/`;
 
   return {
     title: post.metaTitle,
@@ -87,7 +87,7 @@ function buildArticleSchema(post: BlogPost) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/blog/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}/`,
     },
     keywords: post.keywords.join(", "),
   };
@@ -372,8 +372,8 @@ export default async function BlogPostPage({
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Blog", href: "/blog" },
-    { name: post.title, href: `/blog/${slug}` },
+    { name: "Blog", href: "/blog/" },
+    { name: post.title, href: `/blog/${slug}/` },
   ]);
   const articleSchema = buildArticleSchema(post);
 

@@ -263,7 +263,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
       "delhi to corbett national park package",
       "jim corbett package with safari from delhi",
     ],
-    canonicalPath: "/delhi-to-jim-corbett-package",
+    canonicalPath: "/delhi-to-jim-corbett-package/",
   },
   "jeep-safari": {
     title: "Jim Corbett Jeep Safari Booking | Private 4x4 Gypsy | From ₹5,999",
@@ -282,7 +282,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
       "jim corbett jeep safari timing",
       "morning jeep safari jim corbett",
     ],
-    canonicalPath: "/jeep-safari",
+    canonicalPath: "/jeep-safari/",
   },
   "canter-safari": {
     title: "Jim Corbett Canter Safari | Dhikala Zone Booking | ₹2,299/Seat",
@@ -299,7 +299,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
       "book dhikala canter safari online",
       "canter safari vs jeep safari jim corbett",
     ],
-    canonicalPath: "/canter-safari",
+    canonicalPath: "/canter-safari/",
   },
   "safari-price": {
     title: "Jim Corbett Safari Price 2025–26 | All Zone Fees & Inclusions",
@@ -317,7 +317,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
       "jim corbett national park entry fee",
       "corbett national park permit fee",
     ],
-    canonicalPath: "/safari-price",
+    canonicalPath: "/safari-price/",
   },
 };
 
@@ -345,11 +345,12 @@ export function generatePageMetadata({
   ogType = "website",
 }: PageMetadataProps): Metadata {
   const config = SiteConfigRepository.getConfig();
-  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const cleanPath = canonicalPath === "/" ? "" : canonicalPath.endsWith("/") ? canonicalPath : `${canonicalPath}/`;
+  const canonicalUrl = `${SITE_URL}${cleanPath}`;
   const resolvedImage = ogImage ?? `${SITE_URL}/og-image.jpg`;
 
   return {
-    title: `${title} | ${config.shortName}`,
+    title,
     description,
     ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: canonicalUrl },
@@ -400,12 +401,17 @@ export function buildBreadcrumbSchema(crumbs: BreadcrumbItem[]): object {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: crumbs.map((crumb, idx) => ({
-      "@type": "ListItem",
-      position: idx + 1,
-      name: crumb.name,
-      item: crumb.href.startsWith("http") ? crumb.href : `${SITE_URL}${crumb.href}`,
-    })),
+    itemListElement: crumbs.map((crumb, idx) => {
+      const itemUrl = crumb.href.startsWith("http")
+        ? crumb.href
+        : `${SITE_URL}${crumb.href === "/" || crumb.href.endsWith("/") || crumb.href.includes("#") || crumb.href.includes(".") ? crumb.href : `${crumb.href}/`}`;
+      return {
+        "@type": "ListItem",
+        position: idx + 1,
+        name: crumb.name,
+        item: itemUrl,
+      };
+    }),
   };
 }
 
@@ -416,7 +422,7 @@ export function buildZoneSchema(zone: SafariZone): object {
     "@type": "TouristAttraction",
     name: `${zone.name} — Jim Corbett Tiger Reserve`,
     description: zone.description,
-    url: `${SITE_URL}/zones/${zone.slug}`,
+    url: `${SITE_URL}/zones/${zone.slug}/`,
     image: zone.image.startsWith("http") ? zone.image : `${SITE_URL}${zone.image}`,
     address: {
       "@type": "PostalAddress",
@@ -576,7 +582,7 @@ export function buildPackageSchema(pkg: {
     name: pkg.title,
     description: pkg.overview,
     image: imageUrl,
-    url: `${SITE_URL}/packages/${pkg.slug}`,
+    url: `${SITE_URL}/packages/${pkg.slug}/`,
     provider: {
       "@type": "Organization",
       name: "Panthera Corbett Safari",
@@ -617,7 +623,7 @@ export function buildRestHouseSchema(lodge: {
     name: lodge.name,
     description: lodge.description,
     image: imageUrl,
-    url: `${SITE_URL}/forest-rest-houses/${lodge.slug}`,
+    url: `${SITE_URL}/forest-rest-houses/${lodge.slug}/`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Jim Corbett Tiger Reserve",

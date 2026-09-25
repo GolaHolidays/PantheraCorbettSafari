@@ -78,7 +78,7 @@ export default function JeepSafariPage() {
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Jeep Safari", href: "/jeep-safari" },
+    { name: "Jeep Safari", href: "/jeep-safari/" },
   ]);
 
   return (

@@ -132,7 +132,7 @@ export const ZoneCard: React.FC<ZoneCardProps> = ({ zone, whatsAppLink, hero = f
               </div>
             </div>
             <Link
-              href={`/zones/${zone.slug}`}
+              href={`/zones/${zone.slug}/`}
               className="text-xs font-semibold text-[#C99A3D] hover:text-[#E8B84A] transition-colors"
             >
               Zone Details →
