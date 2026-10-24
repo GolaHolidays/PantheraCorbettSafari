@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   SiteConfigRepository,
   FaqRepository,
+  SafariTimingRepository,
 } from "../../core/database/repositories";
 import {
   LANDING_PAGE_SEO,
@@ -12,10 +13,12 @@ import {
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
 import { Button, Badge, SectionHeader } from "../../shared";
+import { SafariGateTimingsWidget } from "../../features/safari-types";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
+import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -50,31 +53,13 @@ const INCLUSIONS = [
   "Complimentary pickup/drop up to 10 km from Ramnagar (pre-bookings)",
 ];
 
-const SHIFTS = [
-  {
-    label: "Morning Shift",
-    winter: "06:00 AM – 09:30 AM",
-    summer: "05:45 AM – 09:15 AM",
-    tip: "Best for tiger sightings — animals are active at dawn",
-    recommended: true,
-  },
-  {
-    label: "Evening Shift",
-    winter: "02:00 PM – 05:30 PM",
-    summer: "03:00 PM – 06:30 PM",
-    tip: "Excellent for predators hunting before dark",
-    recommended: false,
-  },
-];
-
-// ─── Page Component ───────────────────────────────────────────────────────────
-
 export default function JeepSafariPage() {
   const contact = SiteConfigRepository.getContact();
   const whatsAppLink = SiteConfigRepository.getWhatsAppLink(
     "Hello Panthera Corbett! I want to book a Jim Corbett jeep safari. Please share availability and pricing."
   );
   const faqs = FaqRepository.getByCategory("Safari Types");
+  const activeSchedule = SafariTimingRepository.getActiveSchedule();
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
@@ -226,37 +211,71 @@ export default function JeepSafariPage() {
               </ul>
             </div>
 
-            {/* Shift timings */}
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-[#17211A] mb-6">
-                Safari Shift Timings
-              </h2>
-              <div className="space-y-4">
-                {SHIFTS.map((shift) => (
-                  <div
-                    key={shift.label}
-                    className={`p-5 rounded-[4px] border ${shift.recommended ? "bg-[#17211A] border-[#37482E] text-[#FBF8F0]" : "bg-white border-[#E8E0CC] text-[#17211A]"}`}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className={`font-serif font-bold text-base ${shift.recommended ? "text-[#FBF8F0]" : "text-[#17211A]"}`}>
-                        {shift.label}
-                      </span>
-                      {shift.recommended && (
-                        <Badge variant="ember" size="sm">Recommended</Badge>
-                      )}
-                    </div>
-                    <div className={`text-xs space-y-0.5 ${shift.recommended ? "text-[#E8E0CC]/80" : "text-[#8A9468]"}`}>
-                      <p>Winter: {shift.winter}</p>
-                      <p>Summer: {shift.summer}</p>
-                    </div>
-                    <p className={`text-xs mt-2 italic ${shift.recommended ? "text-[#8A9468]" : "text-[#8A9468]"}`}>
-                      {shift.tip}
-                    </p>
-                  </div>
-                ))}
+            {/* Quick Live Shift Glance */}
+            <div className="bg-white border border-[#E8E0CC] rounded-xl p-6 shadow-sm">
+              <div className="flex items-center gap-2 mb-2 text-[#37482E]">
+                <HugeiconsIcon icon={Clock01Icon} size={18} className="text-[#C99A3D]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#8A9468]">
+                  Current Season Shift Timings
+                </span>
               </div>
+              <h3 className="font-serif font-bold text-xl text-[#17211A] mb-4">
+                Active Gate Shifts ({activeSchedule.label})
+              </h3>
+              <div className="space-y-3 mb-5">
+                <div className="p-3.5 rounded-lg bg-[#FBF8F0] border border-[#E8E0CC]">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-xs font-bold text-[#17211A] uppercase tracking-wide">
+                      Morning Shift
+                    </span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#37482E]/10 text-[#37482E]">
+                      Recommended
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold font-tabular text-[#17211A]">
+                    {activeSchedule.morning.shiftSummary}
+                  </div>
+                  <div className="text-[11px] text-[#8A9468] mt-1 font-medium">
+                    Gate Opens: {activeSchedule.morning.gateOpens} • Cutoff: {activeSchedule.morning.lastEntry} • Exit: {activeSchedule.morning.mandatoryExit}
+                  </div>
+                </div>
+
+                <div className="p-3.5 rounded-lg bg-[#FBF8F0] border border-[#E8E0CC]">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-xs font-bold text-[#17211A] uppercase tracking-wide">
+                      Afternoon Shift
+                    </span>
+                  </div>
+                  <div className="text-sm font-bold font-tabular text-[#17211A]">
+                    {activeSchedule.afternoon.shiftSummary}
+                  </div>
+                  <div className="text-[11px] text-[#8A9468] mt-1 font-medium">
+                    Gate Opens: {activeSchedule.afternoon.gateOpens} • Cutoff: {activeSchedule.afternoon.lastEntry} • Exit: {activeSchedule.afternoon.mandatoryExit}
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="#official-gate-timings"
+                className="text-xs font-bold text-[#B84C1E] hover:underline inline-flex items-center gap-1.5"
+              >
+                <span>View All 4 Seasonal Schedules &amp; Cutoff Rules</span>
+                <span>↓</span>
+              </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── OFFICIAL GATE TIMINGS & POLICIES ──────────────────────────────── */}
+      <section id="official-gate-timings" className="py-14 sm:py-20 bg-[#FBF8F0] border-b border-[#E8E0CC]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Official Safari Gate Timings & Policies"
+            subtitle="Live Uttarakhand Forest Department schedule for Jim Corbett safari gates with automated entry cutoffs."
+            badgeText="Government Schedule"
+          />
+          <SafariGateTimingsWidget showCanterSection={true} />
         </div>
       </section>
 

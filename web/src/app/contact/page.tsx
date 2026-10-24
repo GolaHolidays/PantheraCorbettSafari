@@ -9,7 +9,10 @@ import MapPinIcon from "@hugeicons/core-free-icons/MapPinIcon";
 import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
 import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
 
-import { SiteConfigRepository } from "../../core/database/repositories";
+import {
+  SiteConfigRepository,
+  SafariTimingRepository,
+} from "../../core/database/repositories";
 import {
   generatePageMetadata,
   SITE_URL,
@@ -81,6 +84,7 @@ const faqSchema = buildFaqSchema(contactFaqs);
 export default function ContactPage() {
   const config = SiteConfigRepository.getConfig();
   const contact = config.contact;
+  const activeSchedule = SafariTimingRepository.getActiveSchedule();
 
   const contactPageSchema = {
     "@context": "https://schema.org",
@@ -347,9 +351,14 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               {/* Timing Card */}
               <div className="bg-white border border-[#E8E0CC] rounded-[var(--radius-card)] p-6 shadow-sm">
-                <div className="flex items-center gap-2 text-[#17211A] font-serif font-bold text-lg mb-3">
-                  <HugeiconsIcon icon={Clock01Icon} size={18} className="text-[#C99A3D]" />
-                  <span>Safari &amp; Desk Timings</span>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2 text-[#17211A] font-serif font-bold text-lg">
+                    <HugeiconsIcon icon={Clock01Icon} size={18} className="text-[#C99A3D]" />
+                    <span>Safari &amp; Desk Timings</span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#37482E]/10 text-[#37482E] border border-[#37482E]/20">
+                    {activeSchedule.label}
+                  </span>
                 </div>
                 <ul className="space-y-3 text-xs sm:text-sm text-[#17211A]">
                   <li className="flex justify-between py-1.5 border-b border-[#E8E0CC]/60">
@@ -357,18 +366,32 @@ export default function ContactPage() {
                     <span className="font-bold">{config.hours.bookingDesk}</span>
                   </li>
                   <li className="flex justify-between py-1.5 border-b border-[#E8E0CC]/60">
-                    <span className="text-[#8A9468] font-medium">Morning Safari Shift</span>
-                    <span className="font-bold">{config.hours.safariMorningShift}</span>
+                    <div>
+                      <span className="text-[#8A9468] font-medium block">Morning Safari Shift</span>
+                      <span className="text-[11px] text-[#B84C1E] font-medium">Gate closes {activeSchedule.morning.lastEntry}</span>
+                    </div>
+                    <span className="font-bold text-right font-tabular">{activeSchedule.morning.shiftSummary}</span>
                   </li>
                   <li className="flex justify-between py-1.5 border-b border-[#E8E0CC]/60">
-                    <span className="text-[#8A9468] font-medium">Evening Safari Shift</span>
-                    <span className="font-bold">{config.hours.safariEveningShift}</span>
+                    <div>
+                      <span className="text-[#8A9468] font-medium block">Evening Safari Shift</span>
+                      <span className="text-[11px] text-[#B84C1E] font-medium">Gate closes {activeSchedule.afternoon.lastEntry}</span>
+                    </div>
+                    <span className="font-bold text-right font-tabular">{activeSchedule.afternoon.shiftSummary}</span>
                   </li>
                   <li className="flex justify-between py-1.5">
                     <span className="text-[#8A9468] font-medium">FRH Check-in / Out</span>
                     <span className="font-bold">12:00 PM / 10:00 AM</span>
                   </li>
                 </ul>
+                <div className="mt-4 pt-3 border-t border-[#E8E0CC]/60">
+                  <Link
+                    href="/jeep-safari/#official-gate-timings"
+                    className="text-xs font-bold text-[#37482E] hover:text-[#B84C1E] transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>View all 4 season gate schedules &amp; cutoffs →</span>
+                  </Link>
+                </div>
               </div>
 
               {/* Important Forest Rules Card */}

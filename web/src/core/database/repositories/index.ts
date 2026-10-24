@@ -10,4 +10,5 @@ export * from "./trust-metrics.repository";
 export * from "./blog.repository";
 export * from "./resort.repository";
 export * from "./cab-transfer.repository";
+export * from "./safari-timing.repository";
 

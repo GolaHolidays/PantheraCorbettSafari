@@ -1,3 +1,7 @@
+import { getActiveSafariSchedule, dhikalaCanterSchedule } from "./safari-timings";
+
+const activeSchedule = getActiveSafariSchedule();
+
 export const safariTypes = [
   {
     id: "jeep-safari",
@@ -22,12 +26,12 @@ export const safariTypes = [
       "You get the whole jeep to yourselves. The open-top Gypsy lets you stand, turn around, and shoot in any direction without disturbing the people next to you. Your guide reads the jungle — alarm calls from deer, pugmarks in the mud, birds flushing suddenly — and positions the vehicle accordingly. The permit restricts how many jeeps can enter each zone per shift, which keeps the experience from feeling like a traffic jam.",
     shifts: [
       {
-        name: "Morning Shift",
-        timing: "06:00 AM – 09:30 AM (winter) / 05:45 AM – 09:15 AM (summer)",
+        name: `Morning Shift (${activeSchedule.label})`,
+        timing: `${activeSchedule.morning.shiftSummary} (Gate opens ${activeSchedule.morning.gateOpens})`,
       },
       {
-        name: "Afternoon Shift",
-        timing: "02:00 PM – 05:30 PM (winter) / 03:00 PM – 06:30 PM (summer)",
+        name: `Afternoon Shift (${activeSchedule.label})`,
+        timing: `${activeSchedule.afternoon.shiftSummary} (Gate opens ${activeSchedule.afternoon.gateOpens})`,
       },
     ],
     inclusions: [
@@ -55,8 +59,14 @@ export const safariTypes = [
     description:
       "The Canter is the authorized way day visitors can enter the Dhikala core zone — the deepest and most celebrated part of Corbett (open 15 November to 15 June). You travel on an open 16-person sharing safari bus with pickup and drop at Ramnagar or Dhangarhi Gate. Only 4 canters are permitted per shift, so seats fill quickly. Book at least 15 to 20 days in advance for confirmed seat availability.",
     shifts: [
-      { name: "Morning Shift", timing: "05:45 AM – 10:30 AM" },
-      { name: "Afternoon Shift", timing: "11:30 AM – 04:30 PM" },
+      {
+        name: "Morning Shift",
+        timing: `${dhikalaCanterSchedule.winter.morning} (Winter) / ${dhikalaCanterSchedule.summer.morning} (Summer)`,
+      },
+      {
+        name: "Afternoon Shift",
+        timing: `${dhikalaCanterSchedule.winter.afternoon} (Winter) / ${dhikalaCanterSchedule.summer.afternoon} (Summer)`,
+      },
     ],
     inclusions: [
       "Dhikala core zone entry permit",

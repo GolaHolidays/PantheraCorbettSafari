@@ -73,7 +73,7 @@ export const faqs = [
     category: "Safari Types",
     question: "What are Jim Corbett safari timings for morning and evening shifts?",
     answer:
-      "Morning shift: 06:00 AM – 09:30 AM (winter) or 05:45 AM – 09:15 AM (summer). Evening shift: 02:00 PM – 05:30 PM (winter) or 03:00 PM – 06:30 PM (summer). Dhikala Canter morning shift: 05:45 AM – 10:30 AM; afternoon shift: 11:30 AM – 04:30 PM. Pickup is arranged 30–45 minutes before gate opening time.",
+      "Jim Corbett safaris follow the official Uttarakhand Forest Department schedule across 4 seasonal windows: (1) Oct 01 – Nov 14: Morning 06:30 AM – 10:30 AM (Last entry 08:00 AM) | Afternoon 02:00 PM – 06:00 PM (Last entry 03:30 PM); (2) Nov 15 – Feb 15 (Winter): Morning 06:30 AM – 10:30 AM | Afternoon 01:30 PM – 05:30 PM (Last entry 03:00 PM); (3) Feb 16 – Apr 15 (Spring): Morning 06:15 AM – 10:15 AM | Afternoon 02:00 PM – 06:00 PM; (4) Apr 16 onwards (Summer): Morning 05:30 AM – 09:30 AM | Afternoon 03:00 PM – 07:00 PM. Dhikala Canter runs: Winter 06:00 AM – 11:30 AM & 12:00 PM – 06:00 PM; Summer 05:30 AM – 11:00 AM & 12:30 PM – 06:30 PM. Gates close strictly at last entry.",
   },
   // ─── Seasons ──────────────────────────────────────────────────────────────
   {

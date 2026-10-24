@@ -1,4 +1,8 @@
 
+import { getFormattedLiveShifts } from "./safari-timings";
+
+const liveShifts = getFormattedLiveShifts();
+
 export const siteConfig = {
   name: "Panthera Corbett Safari",
   shortName: "Panthera Corbett",
@@ -26,8 +30,8 @@ export const siteConfig = {
   },
   hours: {
     bookingDesk: "6:00 AM – 9:30 PM (IST) Daily",
-    safariMorningShift: "06:00 AM – 09:30 AM",
-    safariEveningShift: "02:00 PM – 05:30 PM",
+    safariMorningShift: liveShifts.morning,
+    safariEveningShift: liveShifts.afternoon,
   },
   social: {
     googleBusinessProfile: "https://maps.app.goo.gl/YrBbDtW9tSNNbBKr8",

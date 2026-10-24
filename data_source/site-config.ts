@@ -26,8 +26,8 @@ export const siteConfig = {
   },
   hours: {
     bookingDesk: "6:00 AM – 9:30 PM (IST) Daily",
-    safariMorningShift: "06:00 AM – 09:30 AM",
-    safariEveningShift: "02:00 PM – 05:30 PM",
+    safariMorningShift: "06:30 AM – 10:30 AM",
+    safariEveningShift: "02:00 PM – 06:00 PM",
   },
   social: {
     googleBusinessProfile: "https://maps.app.goo.gl/YrBbDtW9tSNNbBKr8",
