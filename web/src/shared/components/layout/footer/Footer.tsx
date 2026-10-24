@@ -23,6 +23,15 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
             <p className="text-sm text-[#E8E0CC]/80 leading-relaxed">
               {config.tagline}
             </p>
+
+            {/* Compact Office Location Map below Brand */}
+            <div className="pt-2">
+              <GoogleMapEmbed
+                variant="compact"
+                mapsUrl={config.social.googleBusinessProfile}
+                embedUrl={config.social.googleMapsEmbed}
+              />
+            </div>
           </div>
 
           {/* Corbett Safari Zones */}
@@ -132,15 +141,6 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
               <p className="text-xs text-[#8A9468]">
                 Desk Timings: {config.hours.bookingDesk}
               </p>
-
-              {/* Compact Google Map Embed */}
-              <div className="pt-2">
-                <GoogleMapEmbed
-                  variant="compact"
-                  mapsUrl={config.social.googleBusinessProfile}
-                  embedUrl={config.social.googleMapsEmbed}
-                />
-              </div>
             </div>
           </div>
         </div>
