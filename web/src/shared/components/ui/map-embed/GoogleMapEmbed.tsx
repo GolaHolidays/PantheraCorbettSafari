@@ -39,28 +39,28 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
   height,
 }) => {
   if (variant === "compact") {
-    const compactHeight = height ?? 160;
+    const compactHeight = height ?? 145;
 
     return (
       <div
-        className={`group relative overflow-hidden rounded-[var(--radius-card)] border border-[#37482E]/80 bg-[#111913] ${className}`}
+        className={`group relative overflow-hidden border border-[#37482E]/50 bg-[#17211A] transition-colors hover:border-[#8A9468]/60 ${className}`}
       >
-        {/* Compact Header Strip */}
-        <div className="flex items-center justify-between px-3 py-2 bg-[#0D1610] border-b border-[#37482E]/60 text-xs">
-          <div className="flex items-center gap-1.5 text-[#E8E0CC] font-medium truncate">
+        {/* Compact Header Strip: Sleek, integrated with dark footer palette */}
+        <div className="flex items-center justify-between px-3 py-1.5 bg-[#141C16] border-b border-[#37482E]/40 text-xs">
+          <div className="flex items-center gap-1.5 text-[#E8E0CC]/80 font-mono text-[10px] uppercase tracking-wider truncate">
             <HugeiconsIcon
               icon={MapPinIcon}
-              size={13}
-              className="text-[#C99A3D] flex-shrink-0"
+              size={12}
+              className="text-[#8A9468] flex-shrink-0"
             />
-            <span className="truncate text-[11px]">Patkote, Ramnagar</span>
+            <span className="truncate">Desk • Patkote, Ramnagar</span>
           </div>
           {showDirectionsButton && (
             <a
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] uppercase font-semibold tracking-wider text-[#C99A3D] hover:text-white transition-colors flex-shrink-0"
+              className="text-[10px] font-mono uppercase tracking-wider text-[#C99A3D] hover:text-[#FBF8F0] transition-colors flex-shrink-0"
               aria-label="Open Panthera Corbett Safari location in Google Maps"
             >
               Directions ↗
@@ -68,8 +68,8 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
           )}
         </div>
 
-        {/* Map iframe */}
-        <div className="relative w-full" style={{ height: compactHeight }}>
+        {/* Map iframe: muted contrast to blend into dark footer */}
+        <div className="relative w-full overflow-hidden bg-[#141C16]" style={{ height: compactHeight }}>
           <iframe
             src={embedUrl}
             title={title}
@@ -79,7 +79,7 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
+            className="w-full h-full opacity-75 group-hover:opacity-95 transition-all duration-500 [filter:invert(90%)_hue-rotate(180deg)_contrast(85%)] group-hover:[filter:none]"
           />
         </div>
       </div>
