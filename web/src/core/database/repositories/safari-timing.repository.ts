@@ -1,6 +1,4 @@
 import {
-  safariGateSchedules,
-  dhikalaCanterSchedule,
   gateDeadlineProtocol,
   getActiveSafariSchedule,
   getSafariScheduleById,
