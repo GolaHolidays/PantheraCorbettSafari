@@ -56,9 +56,13 @@
 ## Essential Booking Rules & Tiger Reserve Guidelines
 1. **Government Identity Proof:** Original government photo ID (Aadhaar Card, Passport, or Voter ID) is strictly mandatory for booking and park entry. The exact ID provided during booking must be carried physically during safari.
 2. **Non-Transferable & Non-Refundable:** As per Corbett Tiger Reserve guidelines, safari permits once issued by the Forest Department are strictly non-transferable and non-refundable under any circumstances.
-3. **Daily Shift Timings:**
-   - Morning Shift: 06:00 AM – 09:30 AM (Entry closes ~06:30 AM)
-   - Evening Shift: 02:00 PM – 05:30 PM (Entry closes ~02:30 PM)
+3. **Daily Shift Timings (Official Uttarakhand Forest Department Schedule):**
+   - Oct 01 – Nov 14: Morning 06:30 AM – 10:30 AM (Last entry 08:00 AM) | Afternoon 02:00 PM – 06:00 PM (Last entry 03:30 PM)
+   - Nov 15 – Feb 15 (Winter): Morning 06:30 AM – 10:30 AM (Last entry 08:00 AM) | Afternoon 01:30 PM – 05:30 PM (Last entry 03:00 PM)
+   - Feb 16 – Apr 15 (Spring): Morning 06:15 AM – 10:15 AM (Last entry 07:30 AM) | Afternoon 02:00 PM – 06:00 PM (Last entry 03:30 PM)
+   - Apr 16 onwards (Summer): Morning 05:30 AM – 09:30 AM (Last entry 07:00 AM) | Afternoon 03:00 PM – 07:00 PM (Last entry 04:30 PM)
+   - Dhikala Canter: Winter 06:00 AM – 11:30 AM & 12:00 PM – 06:00 PM | Summer 05:30 AM – 11:00 AM & 12:30 PM – 06:30 PM
+   - Gate Deadline: Automated strict cutoff at last entry time; late vehicles cannot enter.
 4. **Advance Reservation Timelines:**
    - Dhikala Canter Safari: Recommended 15–20 days ahead (only 4 buses per shift).
    - Core Zone Jeep Safari (Bijrani, Jhirna, Dhela, Garjiya): Recommended 30–45 days ahead.

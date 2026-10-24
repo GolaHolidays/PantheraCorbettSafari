@@ -16,4 +16,5 @@ export * from "./trust-metrics.schema";
 export * from "./blog.schema";
 export * from "./resort.schema";
 export * from "./cab-transfer.schema";
+export * from "./safari-timing.schema";
 

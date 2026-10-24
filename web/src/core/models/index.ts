@@ -32,5 +32,9 @@ export type {
   CabPriceRange,
   CabVehicleFare,
   CabTransferRoute,
+  GateShiftDetails,
+  SafariGateSchedule,
+  DhikalaCanterSchedule,
+  GateDeadlineProtocol,
 } from "../schemas";
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   SiteConfigRepository,
   FaqRepository,
+  SafariTimingRepository,
 } from "../../core/database/repositories";
 import {
   LANDING_PAGE_SEO,
@@ -12,6 +13,7 @@ import {
   buildBreadcrumbSchema,
 } from "../../core/utils/seo";
 import { Button, Badge, SectionHeader } from "../../shared";
+import { SafariGateTimingsWidget } from "../../features/safari-types";
 import { HugeiconsIcon } from "@hugeicons/react";
 import AlertCircleIcon from "@hugeicons/core-free-icons/AlertCircleIcon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
@@ -38,19 +40,23 @@ const CANTER_INCLUSIONS = [
   "Dhangarhi Gate entry pass and all park fees",
 ];
 
+const dhikalaSchedule = SafariTimingRepository.getDhikalaSchedule();
+
 const CANTER_SHIFTS = [
   {
-    name: "Morning Shift",
-    time: "05:45 AM – 10:30 AM",
-    duration: "~4.5 hrs",
-    note: "Best for tiger and elephant sightings in Dhikala chaur grasslands",
+    name: "Morning Expedition",
+    winterTime: dhikalaSchedule.winter.morning,
+    summerTime: dhikalaSchedule.summer.morning,
+    duration: dhikalaSchedule.winter.tag,
+    note: "Best for tiger and elephant sightings in Dhikala chaur grasslands. Early dawn departure.",
     highlight: true,
   },
   {
-    name: "Afternoon Shift",
-    time: "11:30 AM – 04:30 PM",
-    duration: "~5 hrs",
-    note: "Longer, quieter — great for birding and Ramganga river views",
+    name: "Afternoon Expedition",
+    winterTime: dhikalaSchedule.winter.afternoon,
+    summerTime: dhikalaSchedule.summer.afternoon,
+    duration: "6.0h Loop",
+    note: "Longer, quieter — excellent for wild elephant herds crossing Ramganga river and birding.",
     highlight: false,
   },
 ];
@@ -60,7 +66,7 @@ const BOOKING_STEPS = [
   { step: "02", title: "We check quota", detail: "We verify Canter seat availability on the Forest Department portal in real-time" },
   { step: "03", title: "Pay advance", detail: "Partial advance via UPI or NEFT confirms your seat in your name" },
   { step: "04", title: "Written confirmation", detail: "Receive permit details and pickup time confirmation on WhatsApp" },
-  { step: "05", title: "Safari day", detail: "Reach Ramnagar / Dhangarhi Gate at pickup time (usually 05:15 AM for morning shift)" },
+  { step: "05", title: "Safari day", detail: "Reach Ramnagar / Dhangarhi Gate at pickup time (around 05:30 AM for morning shift)" },
 ];
 
 const COMPARISON_ROWS = [
@@ -168,11 +174,11 @@ export default function CanterSafariPage() {
             subtitle="Two shifts daily. Morning shift highly recommended for tiger and elephant activity in the chaur grasslands."
             badgeText="Shift Schedule"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
             {CANTER_SHIFTS.map((shift) => (
               <div
                 key={shift.name}
-                className={`p-6 rounded-[4px] border ${shift.highlight ? "bg-[#17211A] border-[#37482E]" : "bg-[#F4EFE6] border-[#E8E0CC]"}`}
+                className={`p-6 rounded-xl border ${shift.highlight ? "bg-[#17211A] border-[#37482E]" : "bg-white border-[#E8E0CC]"}`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className={`font-serif font-bold text-lg ${shift.highlight ? "text-[#FBF8F0]" : "text-[#17211A]"}`}>
@@ -180,10 +186,25 @@ export default function CanterSafariPage() {
                   </span>
                   {shift.highlight && <Badge variant="ember" size="sm">Recommended</Badge>}
                 </div>
-                <div className={`text-2xl font-tabular font-bold mb-1 ${shift.highlight ? "text-[#FBF8F0]" : "text-[#17211A]"}`}>
-                  {shift.time}
+                <div className="space-y-1.5 mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className={`text-xs font-semibold ${shift.highlight ? "text-[#E8E0CC]/80" : "text-[#8A9468]"}`}>
+                      Winter (Nov 15 – Mar 31):
+                    </span>
+                    <span className={`text-base font-tabular font-bold ${shift.highlight ? "text-[#FBF8F0]" : "text-[#17211A]"}`}>
+                      {shift.winterTime}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-baseline">
+                    <span className={`text-xs font-semibold ${shift.highlight ? "text-[#E8E0CC]/80" : "text-[#8A9468]"}`}>
+                      Summer (Apr 01 – Jun 15):
+                    </span>
+                    <span className={`text-base font-tabular font-bold ${shift.highlight ? "text-[#FBF8F0]" : "text-[#17211A]"}`}>
+                      {shift.summerTime}
+                    </span>
+                  </div>
                 </div>
-                <div className={`text-xs ${shift.highlight ? "text-[#8A9468]" : "text-[#8A9468]"}`}>
+                <div className={`text-xs font-semibold ${shift.highlight ? "text-[#C99A3D]" : "text-[#37482E]"}`}>
                   Duration: {shift.duration}
                 </div>
                 <p className={`text-xs mt-3 italic ${shift.highlight ? "text-[#E8E0CC]/70" : "text-[#8A9468]"}`}>
@@ -192,6 +213,8 @@ export default function CanterSafariPage() {
               </div>
             ))}
           </div>
+
+          <SafariGateTimingsWidget showCanterSection={true} />
         </div>
       </section>
 

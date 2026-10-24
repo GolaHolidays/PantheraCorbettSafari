@@ -18,3 +18,8 @@ export {
   getCabTransferFare,
   calculatePackageWithCab,
 } from "./cab-transfers";
+export {
+  safariGateSchedules,
+  dhikalaCanterSchedule,
+  gateDeadlineProtocol,
+} from "./safari-timings";
