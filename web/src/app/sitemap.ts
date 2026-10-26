@@ -25,49 +25,49 @@ export const dynamic = "force-static";
 const STATIC_PAGES: MetadataRoute.Sitemap = [
   {
     url: `${SITE_URL}/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 1.0,
   },
   {
     url: `${SITE_URL}/delhi-to-jim-corbett-package/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.95,
   },
   {
     url: `${SITE_URL}/jeep-safari/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.95,
   },
   {
     url: `${SITE_URL}/canter-safari/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.95,
   },
   {
     url: `${SITE_URL}/safari-price/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.90,
   },
   {
     url: `${SITE_URL}/delhi-corbett-cab/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "monthly",
     priority: 0.85,
   },
   {
     url: `${SITE_URL}/blog/`,
-    lastModified: new Date("2026-09-20"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.85,
   },
   {
     url: `${SITE_URL}/contact/`,
-    lastModified: new Date("2026-09-22"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "monthly",
     priority: 0.80,
   },
@@ -78,7 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const zones = ZoneRepository.getAllZones();
   const zoneEntries: MetadataRoute.Sitemap = zones.map((zone) => ({
     url: `${SITE_URL}/zones/${zone.slug}/`,
-    lastModified: new Date("2026-09-18"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.85,
   }));
@@ -87,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const packages = PackageRepository.getAllPackages();
   const packageEntries: MetadataRoute.Sitemap = packages.map((pkg) => ({
     url: `${SITE_URL}/packages/${pkg.slug}/`,
-    lastModified: new Date("2026-09-15"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "weekly",
     priority: 0.85,
   }));
@@ -96,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const restHouses = RestHouseRepository.getAllRestHouses();
   const restHouseEntries: MetadataRoute.Sitemap = restHouses.map((lodge) => ({
     url: `${SITE_URL}/forest-rest-houses/${lodge.slug}/`,
-    lastModified: new Date("2026-09-15"),
+    lastModified: new Date("2026-10-26"),
     changeFrequency: "monthly",
     priority: 0.80,
   }));

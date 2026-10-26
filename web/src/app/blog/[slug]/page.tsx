@@ -36,8 +36,10 @@ export async function generateMetadata({
     alternates: { canonical },
     openGraph: {
       type: "article",
+      siteName: "Panthera Corbett Safari",
+      locale: "en_IN",
       url: canonical,
-      title: post.metaTitle,
+      title: `${post.metaTitle} | Panthera Corbett Safari`,
       description: post.metaDescription,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -53,7 +55,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.metaTitle,
+      title: `${post.metaTitle} | Panthera Corbett Safari`,
       description: post.metaDescription,
       images: [post.featuredImage],
     },

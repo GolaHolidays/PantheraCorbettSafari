@@ -49,14 +49,16 @@ export async function generateMetadata({
     alternates: { canonical },
     openGraph: {
       type: "article",
+      siteName: "Panthera Corbett Safari",
+      locale: "en_IN",
       url: canonical,
-      title: seoEntry.title,
+      title: `${seoEntry.title} | Panthera Corbett Safari`,
       description: seoEntry.description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: `${zone.name} — Jim Corbett Tiger Reserve` }],
     },
     twitter: {
       card: "summary_large_image",
-      title: seoEntry.title,
+      title: `${seoEntry.title} | Panthera Corbett Safari`,
       description: seoEntry.description,
       images: [ogImage],
     },

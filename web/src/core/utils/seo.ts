@@ -461,8 +461,15 @@ export function buildLocalBusinessSchema(config: {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
     name: config.name,
+    legalName: "Panthera Corbett Safari",
+    alternateName: [
+      "Panthera Corbett",
+      "Panthera Corbett Safari",
+      "Panthera Safari",
+      "Panthera Corbett Safari Ramnagar",
+    ],
     description: config.description,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     telephone: config.telephone,
     email: config.email,
     address: {
@@ -491,13 +498,23 @@ export function buildLocalBusinessSchema(config: {
   };
 }
 
-/** WebSite schema with SearchAction — used once in root layout */
+/** WebSite schema with SearchAction & alternateName — Google Site Name specification */
 export function buildWebSiteSchema(siteName: string): object {
   return {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     name: siteName,
+    alternateName: [
+      "Panthera Corbett",
+      "Panthera Corbett Safari",
+      "Panthera Safari",
+      "Panthera Corbett Safari Ramnagar",
+    ],
+    publisher: {
+      "@id": `${SITE_URL}/#business`,
+    },
+    inLanguage: "en-IN",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/zones/{search_term_string}`,
@@ -634,6 +651,11 @@ export function buildRestHouseSchema(lodge: {
       "@type": "TouristAttraction",
       name: "Jim Corbett Tiger Reserve",
     },
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Panthera Corbett Safari",
+      url: `${SITE_URL}/`,
+    },
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Wildlife Safari Access", value: true },
       { "@type": "LocationFeatureSpecification", name: "Inside Core Zone", value: true },
@@ -644,7 +666,7 @@ export function buildRestHouseSchema(lodge: {
       price: lodge.tariffPerNightINR,
       priceCurrency: "INR",
       availability: "https://schema.org/LimitedAvailability",
-      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
+      seller: { "@type": "Organization", name: "Panthera Corbett Safari", url: `${SITE_URL}/` },
     },
   };
 }

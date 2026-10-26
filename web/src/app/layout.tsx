@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Jim Corbett Safari Booking | Jeep & Canter Safari | Dhikala Zone | Panthera Corbett Safari",
-    template: `%s | ${config.shortName}`,
+    template: `%s | ${config.name}`,
   },
   description:
     "Book Jim Corbett safari online — Dhikala canter safari ₹2,299/person, jeep safari from ₹5,999/jeep. Delhi to Jim Corbett packages available. All zones: Bijrani, Jhirna, Dhikala, Garjiya. Licensed Uttarakhand operator. Call +91 99974 88004.",

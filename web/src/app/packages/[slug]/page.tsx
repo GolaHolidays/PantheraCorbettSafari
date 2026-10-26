@@ -41,14 +41,16 @@ export async function generateMetadata({
     alternates: { canonical },
     openGraph: {
       type: "article",
+      siteName: "Panthera Corbett Safari",
+      locale: "en_IN",
       url: canonical,
-      title,
+      title: `${title} | Panthera Corbett Safari`,
       description,
       images: [{ url: pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} | Panthera Corbett Safari`,
       description,
     },
   };
