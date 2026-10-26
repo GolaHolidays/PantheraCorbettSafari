@@ -34,14 +34,14 @@ export async function generateMetadata({
   const canonical = `${SITE_URL}/forest-rest-houses/${slug}/`;
   const ogImage = lodge.image.startsWith("http") ? lodge.image : `${SITE_URL}${lodge.image}`;
 
-  // Rich, keyword-dense titles per FRH
+  // Rich, keyword-dense titles per FRH (concise so brand is never truncated)
   const titleMap: Record<string, string> = {
     "dhikala-forest-rest-house":
-      "Dhikala Forest Rest House Booking | Inside Corbett Core Zone | ₹9,500/night",
+      "Dhikala Forest Rest House Booking | Core Zone Stay",
     "gairal-forest-rest-house":
-      "Gairal Forest Rest House Booking | Ramganga River | Jim Corbett",
+      "Gairal Forest Rest House Booking | Ramganga River",
     "bijrani-forest-rest-house":
-      "Bijrani Forest Rest House Booking | Core Zone Stay | Jim Corbett",
+      "Bijrani Forest Rest House Booking | Core Zone Stay",
   };
   const descMap: Record<string, string> = {
     "dhikala-forest-rest-house":
@@ -69,14 +69,16 @@ export async function generateMetadata({
     alternates: { canonical },
     openGraph: {
       type: "article",
+      siteName: "Panthera Corbett Safari",
+      locale: "en_IN",
       url: canonical,
-      title,
+      title: `${title} | Panthera Corbett Safari`,
       description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: `${lodge.name} — Jim Corbett Tiger Reserve` }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} | Panthera Corbett Safari`,
       description,
       images: [ogImage],
     },
