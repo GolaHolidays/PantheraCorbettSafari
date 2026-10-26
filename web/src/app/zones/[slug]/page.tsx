@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import {
   ZoneRepository,
   SiteConfigRepository,
+  FaqRepository,
 } from "../../../core/database/repositories";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
 import {
@@ -13,6 +14,7 @@ import {
   ZONE_SEO_MAP,
   buildZoneSchema,
   buildBreadcrumbSchema,
+  buildFaqSchema,
 } from "../../../core/utils/seo";
 import { Button } from "../../../shared/components/ui/button/Button";
 import { Badge } from "../../../shared/components/ui/badge/Badge";
@@ -82,13 +84,30 @@ export default async function ZoneDetailPage({
     `Hello Panthera Corbett! I want to check availability for ${zone.name}.`
   );
 
-  // Build JSON-LD schemas via pure seo.ts functions — no inline objects here
+  // Filter 4-5 relevant FAQs for this zone
+  const allFaqs = FaqRepository.getAll();
+  const zoneNameLower = zone.name.toLowerCase();
+  const zoneFaqs = allFaqs
+    .filter((f) => {
+      const qLower = f.question.toLowerCase();
+      const aLower = f.answer.toLowerCase();
+      return (
+        qLower.includes(zoneNameLower) ||
+        aLower.includes(zoneNameLower) ||
+        f.category === "Booking and Permits" ||
+        f.category === "Pricing & Inclusions"
+      );
+    })
+    .slice(0, 5);
+
+  // Build JSON-LD schemas via pure seo.ts functions
   const zoneSchema = buildZoneSchema(zone);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Safari Zones", href: "/#zones" },
     { name: zone.name, href: `/zones/${zone.slug}/` },
   ]);
+  const faqSchema = zoneFaqs.length > 0 ? buildFaqSchema(zoneFaqs) : null;
 
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
@@ -102,6 +121,13 @@ export default async function ZoneDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {/* FAQPage structured data */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-2 text-xs text-[#8A9468]">
@@ -402,6 +428,76 @@ export default async function ZoneDetailPage({
                 Call Desk: {contact.phoneDisplay}
               </Button>
             </div>
+          </div>
+        </div>
+
+        {/* ─── ZONE FAQS ──────────────────────────────────────────────────── */}
+        {zoneFaqs.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Got Questions?</span>
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">{zone.name} Safari FAQ</h2>
+              </div>
+              <div className="space-y-3">
+                {zoneFaqs.map((faq, idx) => (
+                  <details key={idx} className="group border border-[#E8E0CC] rounded-[4px] bg-white overflow-hidden shadow-xs">
+                    <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-serif font-semibold text-sm sm:text-base text-[#17211A] select-none">
+                      {faq.question}
+                      <span className="ml-4 text-[#37482E] text-lg font-bold shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                    </summary>
+                    <div className="px-5 pb-5 text-sm text-[#17211A]/85 leading-relaxed border-t border-[#E8E0CC]/60 pt-3">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
+        <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Plan Your Corbett Trip</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore More Safari Options</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Book a private 4x4 Gypsy across all open zones with verified local drivers.</p>
+            </Link>
+
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Grassland</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari Booking</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">16-seater sharing open bus for Dhikala core zone at ₹2,299/person.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Complete breakdown of forest permits, vehicle charges, and guide fees.</p>
+            </Link>
+
+            <Link
+              href="/delhi-to-jim-corbett-package/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">NCR Getaways</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi 2N3D Packages</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Resort stay, core safari & round-trip private cab from Delhi starting ₹20,999.</p>
+            </Link>
           </div>
         </div>
       </div>

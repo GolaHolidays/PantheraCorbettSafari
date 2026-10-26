@@ -100,12 +100,13 @@ function buildArticleSchema(post: BlogPost) {
 const ACTION_LINKS: Record<string, string> = {
   whatsapp: "https://wa.me/919997488004?text=Hello!%20I%20want%20to%20book%20a%20Jim%20Corbett%20safari.",
   phone: "tel:+919997488004",
-  "safari-price": "/safari-price",
-  zones: "/zones/bijrani-zone",
-  "canter-safari": "/canter-safari",
-  "jeep-safari": "/jeep-safari",
-  "delhi-package": "/delhi-to-jim-corbett-package",
-  "delhi-cab": "/delhi-corbett-cab",
+  "safari-price": "/safari-price/",
+  zones: "/zones/bijrani-zone/",
+  "canter-safari": "/canter-safari/",
+  "jeep-safari": "/jeep-safari/",
+  "delhi-package": "/delhi-to-jim-corbett-package/",
+  "delhi-cab": "/delhi-corbett-cab/",
+  "safari-timings": "/safari-timings/",
 };
 
 const CALLOUT_STYLES = {
@@ -303,7 +304,7 @@ function Sidebar({
           {[
             { href: "/zones/bijrani-zone", label: "Bijrani Zone — Book Jeep" },
             { href: "/canter-safari", label: "Dhikala Canter Safari" },
-            { href: "/safari-price", label: "All Zone Prices 2025–26" },
+            { href: "/safari-price", label: "All Zone Prices 2026–27" },
             { href: "/delhi-to-jim-corbett-package", label: "Delhi Packages" },
             { href: "/delhi-corbett-cab", label: "Delhi → Ramnagar Cab" },
           ].map((link) => (

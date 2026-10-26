@@ -118,19 +118,19 @@ export default function CanterSafariPage() {
           </nav>
 
           {/* Scarcity badge */}
-          <div className="inline-flex items-center gap-2 bg-[#B84C1E]/20 border border-[#B84C1E]/40 text-[#B84C1E] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <div className="inline-flex items-center gap-2 bg-[#B84C1E]/20 border border-[#B84C1E]/40 text-[#E8734A] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
             <HugeiconsIcon icon={AlertCircleIcon} size={14} />
-            <span>Only 4 Canters per Shift — Limited Seats</span>
+            <span>Opens 15 November 2026 · Only 4 Canters (64 Seats) per Shift</span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-3xl">
-            Jim Corbett Canter Safari
+            Jim Corbett Canter Safari — Dhikala Zone Booking Online
           </h1>
           <p className="text-[#E8E0CC]/90 text-base sm:text-lg max-w-2xl leading-relaxed mb-3">
-            The only way day visitors see <strong className="text-white">Dhikala zone</strong> — India&apos;s most celebrated safari grassland, 32 km deep inside Corbett&apos;s core. A 16-person sharing open-roof Canter bus, departing from Ramnagar.
+            The only official way day visitors can access the legendary <strong className="text-white">Dhikala zone</strong> — India&apos;s most celebrated tiger grassland, located 32 km deep inside Corbett&apos;s core reserve. Open-roof 16-seater safari canter with pickup from Ramnagar.
           </p>
           <p className="text-[#C99A3D] text-sm font-semibold mb-8">
-            Season: 15 November – 15 June · ₹2,299/seat all-inclusive · Book 15–20 days ahead
+            Season 2026–27: 15 November 2026 – 15 June 2027 · ₹2,299/seat all-inclusive · 45-day advance booking recommended
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
@@ -300,6 +300,53 @@ export default function CanterSafariPage() {
               <p className="text-sm font-semibold text-[#37482E] mb-1">Choose Jeep if…</p>
               <p className="text-xs text-[#17211A]/80">You want privacy and full control over your experience. Visiting in monsoon (Jhirna/Phato). Group of 4–6 people. You prioritize tiger sightings in Bijrani or Garjiya.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── INTERNAL LINKING / HELPFUL SAFARI GUIDES ───────────────────── */}
+      <section className="py-12 bg-[#FBF8F0] border-t border-[#E8E0CC]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Other Safari Options & Guides</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Booking</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Exclusive 4x4 Gypsy for Bijrani, Jhirna, Garjiya & Dhela zones from ₹5,999.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official entry fees, guide charges, vehicle permits, and zone comparisons.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/dhikala-forest-rest-house/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Night Stay</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Dhikala Forest Lodge</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Stay deep inside core tiger habitat. 45-day lottery booking window.</p>
+            </Link>
+
+            <Link
+              href="/delhi-to-jim-corbett-package/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Delhi Transfers</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi 2N3D Packages</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">All-inclusive resort stays, core jeep safari, and private sedan/SUV cab from Delhi.</p>
+            </Link>
           </div>
         </div>
       </section>

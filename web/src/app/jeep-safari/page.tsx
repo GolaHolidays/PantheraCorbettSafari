@@ -19,6 +19,8 @@ import Ticket01Icon from "@hugeicons/core-free-icons/Ticket01Icon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
+import AlertCircleIcon from "@hugeicons/core-free-icons/AlertCircleIcon";
+import CheckmarkBadge01Icon from "@hugeicons/core-free-icons/CheckmarkBadge01Icon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -28,7 +30,13 @@ export const metadata: Metadata = generatePageMetadata({
   title: SEO.title,
   description: SEO.description,
   canonicalPath: SEO.canonicalPath,
-  keywords: SEO.keywords,
+  keywords: [
+    ...SEO.keywords,
+    "current booking corbett safari ramnagar",
+    "tatkal safari booking jim corbett",
+    "same day jim corbett safari booking",
+    "last minute corbett safari permit",
+  ],
 });
 
 // ─── Static data ──────────────────────────────────────────────────────────────
@@ -58,7 +66,14 @@ export default function JeepSafariPage() {
   const whatsAppLink = SiteConfigRepository.getWhatsAppLink(
     "Hello Panthera Corbett! I want to book a Jim Corbett jeep safari. Please share availability and pricing."
   );
-  const faqs = FaqRepository.getByCategory("Safari Types");
+  const safariFaqs = FaqRepository.getByCategory("Safari Types");
+  const bookingFaqs = FaqRepository.getByCategory("Booking and Permits").filter(
+    (f) =>
+      f.question.includes("same day") ||
+      f.question.includes("Tatkal") ||
+      f.question.includes("full")
+  );
+  const faqs = [...safariFaqs, ...bookingFaqs];
   const activeSchedule = SafariTimingRepository.getActiveSchedule();
   const faqSchema = buildFaqSchema(faqs);
   const breadcrumbSchema = buildBreadcrumbSchema([
@@ -139,7 +154,7 @@ export default function JeepSafariPage() {
           <SectionHeader
             title="Jeep Safari by Zone — Prices & Availability"
             subtitle="Price is per jeep (not per person). Up to 6 adults can share. Guide, permit & jeep included in all prices."
-            badgeText="Safari Price Guide 2025–26"
+            badgeText="Safari Price Guide 2026–27"
           />
 
           <div className="overflow-x-auto rounded-[4px] border border-[#E8E0CC]">
@@ -276,6 +291,132 @@ export default function JeepSafariPage() {
             badgeText="Government Schedule"
           />
           <SafariGateTimingsWidget showCanterSection={true} />
+        </div>
+      </section>
+
+      {/* ─── SAME-DAY & CURRENT BOOKING (TATKAL QUOTA) ────────────────────────── */}
+      <section className="py-14 sm:py-20 bg-[#17211A] text-[#FBF8F0] border-b border-[#37482E]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-[#C99A3D]/15 border border-[#C99A3D]/40 text-[#C99A3D] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <HugeiconsIcon icon={AlertCircleIcon} size={14} />
+                <span>Urgent / Last-Minute Travel</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#FBF8F0]">
+                Need a Same-Day Safari? How Current Booking Works
+              </h2>
+              <p className="text-[#8A9468] text-sm sm:text-base mt-2 max-w-2xl">
+                When the official government portal shows “Sold Out” for core zones, you still have legitimate on-ground options through cancellation releases and buffer zone quotas.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Button
+                variant="primary"
+                size="md"
+                href={`https://wa.me/919997488004?text=${encodeURIComponent("Hello! I am looking for a same-day or current booking safari permit for Jim Corbett today/tomorrow.")}`}
+                isExternal
+                className="inline-flex items-center gap-2"
+              >
+                <HugeiconsIcon icon={WhatsappIcon} size={16} />
+                <span>Check Today&apos;s Open Shifts</span>
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#1D2B22] border border-[#37482E] rounded-[6px] p-6 hover:border-[#8A9468]/50 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-[#B84C1E]/20 text-[#B84C1E] flex items-center justify-center font-bold text-sm mb-4">
+                01
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#FBF8F0] mb-2">
+                Cancellation Quota (Tatkal Shifts)
+              </h3>
+              <p className="text-xs text-[#E8E0CC]/80 leading-relaxed mb-4">
+                Core zone permits (Bijrani, Garjiya, Jhirna) frequently reopen 2 to 7 days before the safari date due to traveller itinerary changes. We monitor these releases in real time to lock permits for you.
+              </p>
+              <span className="text-[11px] text-[#C99A3D] font-mono tracking-wide">
+                • Lead time: 24–48 hours notice
+              </span>
+            </div>
+
+            <div className="bg-[#1D2B22] border border-[#37482E] rounded-[6px] p-6 hover:border-[#8A9468]/50 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-[#C99A3D]/20 text-[#C99A3D] flex items-center justify-center font-bold text-sm mb-4">
+                02
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#FBF8F0] mb-2">
+                100% Guaranteed Buffer Gypsies
+              </h3>
+              <p className="text-xs text-[#E8E0CC]/80 leading-relaxed mb-4">
+                Phato Zone and Sitabani Reserve Forest operate all 365 days with open vehicle quotas. Even on peak weekends, we can confirm a private 4x4 Gypsy with a registered guide on 2 hours&apos; notice.
+              </p>
+              <span className="text-[11px] text-[#C99A3D] font-mono tracking-wide">
+                • Same-day confirmation guaranteed
+              </span>
+            </div>
+
+            <div className="bg-[#1D2B22] border border-[#37482E] rounded-[6px] p-6 hover:border-[#8A9468]/50 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-[#37482E]/40 text-[#8A9468] flex items-center justify-center font-bold text-sm mb-4">
+                03
+              </div>
+              <h3 className="font-serif text-lg font-bold text-[#FBF8F0] mb-2">
+                Direct Ramnagar Desk Verification
+              </h3>
+              <p className="text-xs text-[#E8E0CC]/80 leading-relaxed mb-4">
+                Avoid unregistered road touts or fake booking slips. Our physical desk in Patkote verifies government gate manifests directly, ensuring your Gypsy and driver are official CTR registrants.
+              </p>
+              <span className="text-[11px] text-[#C99A3D] font-mono tracking-wide">
+                • Zero counterfeit permit risk
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── INTERNAL LINKING / HELPFUL SAFARI GUIDES ───────────────────── */}
+      <section className="py-12 bg-white border-t border-[#E8E0CC]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Other Safari Options & Guides</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Trip</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">The only day visit option for Dhikala grassland at ₹2,299/seat. 16-seater sharing bus.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official government rates for all core & buffer zones. Zero hidden surcharges.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Forest Rest Houses</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Night stays inside Dhikala, Bijrani, Gairal & Jhirna. Midnight booking guidance.</p>
+            </Link>
+
+            <Link
+              href="/delhi-to-jim-corbett-package/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Delhi Transfers</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi Tour Packages</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Round-trip private cab from NCR, resort stay, meals & core jeep safari from ₹20,999.</p>
+            </Link>
+          </div>
         </div>
       </section>
 

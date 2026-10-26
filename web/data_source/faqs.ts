@@ -30,6 +30,24 @@ export const faqs = [
     answer:
       "Same-day bookings are possible for buffer and reserve zones: Phato, Hathidangar, Sitabani, and Jhirna (open all year). Core zones like Bijrani and Garjiya are subject to quota — same-day slots exist but fill quickly on weekends and peak season (November to February). Dhikala canter safari requires 15–20 days advance booking; same-day is generally not possible for Dhikala.",
   },
+  {
+    category: "Booking and Permits",
+    question: "What is Tatkal or Current Safari Booking in Jim Corbett?",
+    answer:
+      "Current Booking (often called Tatkal Safari) refers to permits issued within 1 to 5 days of the safari date, including cancellation quota slots that reopen on the Corbett Tiger Reserve system approximately 7 days prior. When advance online quotas show 'Sold Out', our local Ramnagar booking desk monitors real-time cancellation releases and secures verified offline permits for available shifts.",
+  },
+  {
+    category: "Booking and Permits",
+    question: "Can I get a Jim Corbett safari permit if the official portal shows full?",
+    answer:
+      "Yes. If core zones (Bijrani, Dhikala) are full on the official portal, you have two reliable options: (1) Check cancellation quota releases (often released 2 to 7 days before the safari date), or (2) Book a private 4x4 Gypsy in high-density buffer zones like Phato Zone or Sitabani Wildlife Reserve. Both offer thriving tiger and wild elephant corridors and do not suffer from the same quota exhaustion as core zones.",
+  },
+  {
+    category: "Booking and Permits",
+    question: "How does 45-day advance booking work for Dhikala Forest Rest House?",
+    answer:
+      "Dhikala Forest Rest House night stay permits open exactly 45 days in advance at 00:00 midnight IST for Indian citizens (90 days for foreign nationals). Because only 32 rooms exist in Dhikala and 6 in Gairal, quotas frequently exhaust within 3 to 5 minutes of opening. To secure a slot, documents (Aadhaar/Passport numbers) must be organized in advance. Our Ramnagar team assists with 00:00 AM quota submission and mandatory gypsy pairing.",
+  },
   // ─── Pricing & Inclusions ─────────────────────────────────────────────────
   {
     category: "Pricing & Inclusions",
@@ -131,6 +149,12 @@ export const faqs = [
     question: "Do you offer honeymoon packages for Jim Corbett?",
     answer:
       "Yes. Our Delhi to Jim Corbett All-Inclusive Package and Dhikala FRH Immersion Package are widely popular with couples. The FRH stay is especially memorable — after 4:30 PM, day visitors leave and you have the Dhikala core zone to yourselves, with the Ramganga flowing below and the jungle settling into night. We also arrange riverfront resort stays with private safaris, candlelight dinners, and room decoration on request.",
+  },
+  {
+    category: "Delhi Packages",
+    question: "Are there special Jim Corbett packages for Diwali, Christmas & New Year 2026–2027?",
+    answer:
+      "Yes. We curate dedicated long-weekend holiday packages from Delhi NCR for Diwali, Christmas, and New Year 2026–2027. These include private round-trip door-to-door cab (Sedan or Innova Crysta), luxury jungle resort accommodation with festive gala dinners, and guaranteed core zone Gypsy safaris (Bijrani, Garjiya, or Jhirna). Holiday permits are strictly capped by the Forest Department, so advance booking of 20 to 30 days is strongly advised.",
   },
   // ─── Zones ────────────────────────────────────────────────────────────────
   {

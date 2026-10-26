@@ -103,7 +103,7 @@ export default function SafariPricePage() {
 
           <Badge variant="gold" size="md" className="mb-5 inline-flex items-center gap-1.5">
             <HugeiconsIcon icon={Calendar01Icon} size={14} />
-            <span>Updated for 2025–2026 Season</span>
+            <span>Updated for 2026–2027 Season</span>
           </Badge>
 
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-[#FBF8F0] leading-[1.1] mb-5 max-w-2xl">

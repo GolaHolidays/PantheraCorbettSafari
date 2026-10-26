@@ -16,8 +16,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "how-to-book-dhikala-canter-safari",
     slug: "how-to-book-dhikala-canter-safari-online",
-    title: "How to Book Dhikala Canter Safari Online — Step by Step Guide (2025)",
-    metaTitle: "How to Book Dhikala Canter Safari Online | 2025 Guide",
+    title: "How to Book Dhikala Canter Safari Online — Step by Step Guide (2026–27)",
+    metaTitle: "How to Book Dhikala Canter Safari Online | 2026–27 Guide",
     metaDescription:
       "Step-by-step guide to booking Dhikala canter safari online. Prices, timings, quota, what to carry, and how far ahead to book. ₹2,299/seat.",
     excerpt:
@@ -134,8 +134,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "best-time-to-visit-jim-corbett",
     slug: "best-time-to-visit-jim-corbett-national-park",
-    title: "Best Time to Visit Jim Corbett National Park — Month-by-Month Guide (2025–26)",
-    metaTitle: "Best Time to Visit Jim Corbett 2025–26 | Month-by-Month Guide",
+    title: "Best Time to Visit Jim Corbett National Park — Month-by-Month Guide (2026–27)",
+    metaTitle: "Best Time to Visit Jim Corbett 2026–27 | Month-by-Month Guide",
     metaDescription:
       "Complete month-by-month guide to the best time to visit Jim Corbett National Park. Tiger sightings, weather, open zones, and our seasonal safari recommendations.",
     excerpt:
@@ -338,23 +338,23 @@ export const blogPosts: BlogPost[] = [
   {
     id: "jim-corbett-safari-price-guide",
     slug: "jim-corbett-safari-price-2025-26-complete-guide",
-    title: "Jim Corbett Safari Price 2025–26: Complete Fee Guide for All Zones",
-    metaTitle: "Jim Corbett Safari Price 2025–26 | Complete Fee Guide",
+    title: "Jim Corbett Safari Price 2026–27: Complete Fee Guide for All Zones",
+    metaTitle: "Jim Corbett Safari Price 2026–27 | Complete Fee Guide",
     metaDescription:
-      "Complete Jim Corbett safari price guide 2025–26. Dhikala canter ₹2,299/seat. Jeep safari ₹5,999–₹8,499/jeep. All zone fees, inclusions, and hidden cost breakdown.",
+      "Complete Jim Corbett safari price guide 2026–27. Dhikala canter ₹2,299/seat. Jeep safari ₹5,999–₹8,499/jeep. All zone fees, inclusions, and hidden cost breakdown.",
     excerpt:
-      "All Jim Corbett safari prices for 2025–26 in one place — Dhikala canter, core zone jeep, buffer zone jeep, and what is actually included in each price. No hidden costs.",
+      "All Jim Corbett safari prices for 2026–27 in one place — Dhikala canter, core zone jeep, buffer zone jeep, and what is actually included in each price. No hidden costs.",
     category: "Booking Guide",
     tags: ["safari price", "jim corbett fee", "entry fee", "all zone prices"],
     publishedAt: "2025-10-15",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-26",
     readTimeMinutes: 6,
     featuredImage:
       "/image/photo-1518709268805-4e9042af9f23.jpg",
     featuredImageAlt: "Jim Corbett safari jeep with price details",
     keywords: [
       "jim corbett safari price",
-      "jim corbett entry fee 2025",
+      "jim corbett entry fee 2026",
       "jim corbett safari cost per person",
       "dhikala canter safari fee",
       "bijrani jeep safari price",
@@ -362,7 +362,7 @@ export const blogPosts: BlogPost[] = [
     ],
     isFeatured: false,
     content: [
-      { type: "h2", text: "Jim Corbett Safari Price — All Zone Summary 2025–26" },
+      { type: "h2", text: "Jim Corbett Safari Price — All Zone Summary 2026–27" },
       {
         type: "table",
         headers: ["Zone", "Vehicle", "Price", "Capacity", "Pickup Included?"],
@@ -441,8 +441,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "delhi-to-jim-corbett-distance-route",
     slug: "delhi-to-jim-corbett-distance-route-train-cab-guide",
-    title: "Delhi to Jim Corbett: Distance, Route, Train & Cab Guide (2025)",
-    metaTitle: "Delhi to Jim Corbett Distance, Route & Travel Guide 2025",
+    title: "Delhi to Jim Corbett: Distance, Route, Train & Cab Guide (2026–27)",
+    metaTitle: "Delhi to Jim Corbett Distance, Route & Travel Guide 2026–27",
     metaDescription:
       "Delhi to Jim Corbett distance is 250–260 km (5–6 hrs). Complete guide: road route via NH-9, best trains (Ranikhet Express), cab prices, and tips for your Corbett trip.",
     excerpt:
@@ -545,8 +545,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "jeep-safari-vs-canter-safari",
     slug: "jeep-safari-vs-canter-safari-jim-corbett-comparison",
-    title: "Jeep Safari vs Canter Safari in Jim Corbett — Full Comparison (2025)",
-    metaTitle: "Jeep Safari vs Canter Safari Jim Corbett | 2025 Comparison",
+    title: "Jeep Safari vs Canter Safari in Jim Corbett — Full Comparison (2026–27)",
+    metaTitle: "Jeep Safari vs Canter Safari Jim Corbett | 2026–27 Comparison",
     metaDescription:
       "Jeep safari vs canter safari in Jim Corbett — which should you book? Complete comparison of price, privacy, zones, capacity, and our recommendation for different groups.",
     excerpt:
@@ -630,8 +630,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "all-jim-corbett-safari-zones-explained",
     slug: "jim-corbett-safari-zones-complete-guide-2025",
-    title: "All Jim Corbett Safari Zones Explained — 2025 Updated Guide",
-    metaTitle: "Jim Corbett Safari Zones 2025 | Complete Zone Guide",
+    title: "All Jim Corbett Safari Zones Explained — 2026–27 Updated Guide",
+    metaTitle: "Jim Corbett Safari Zones 2026–27 | Complete Zone Guide",
     metaDescription:
       "Complete guide to all 9 Jim Corbett safari zones — Dhikala, Bijrani, Jhirna, Dhela, Garjiya, Durga Devi, Phato, Hathidangar, Sitabani. Prices, seasons, and best use.",
     excerpt:
@@ -639,7 +639,7 @@ export const blogPosts: BlogPost[] = [
     category: "Zone Guide",
     tags: ["all zones", "jim corbett zones", "safari zones", "zone guide"],
     publishedAt: "2025-11-10",
-    updatedAt: "2026-09-01",
+    updatedAt: "2026-10-26",
     readTimeMinutes: 10,
     featuredImage:
       "/image/photo-1561731216-c3a4d99437d5.jpg",
@@ -648,7 +648,8 @@ export const blogPosts: BlogPost[] = [
       "jim corbett safari zones",
       "all zones in jim corbett",
       "jim corbett zones list",
-      "corbett zone guide 2025",
+      "corbett zone guide 2026-27",
+      "jim corbett safari zones 2026",
     ],
     isFeatured: false,
     content: [
@@ -815,8 +816,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "what-to-pack-jim-corbett-safari",
     slug: "what-to-pack-for-jim-corbett-safari-checklist",
-    title: "What to Pack for Jim Corbett Safari — Complete Checklist (2025)",
-    metaTitle: "Jim Corbett Safari Packing List | What to Carry 2025",
+    title: "What to Pack for Jim Corbett Safari — Complete Checklist (2026–27)",
+    metaTitle: "Jim Corbett Safari Packing List | What to Carry 2026–27",
     metaDescription:
       "Complete Jim Corbett safari packing list — what to wear, what camera gear to bring, what not to carry. Checklist for morning and afternoon shifts, all seasons.",
     excerpt:
@@ -909,8 +910,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "jim-corbett-weekend-trip-delhi",
     slug: "jim-corbett-weekend-trip-from-delhi-2n3d-itinerary",
-    title: "Jim Corbett Weekend Trip from Delhi — Perfect 2N3D Itinerary (2025)",
-    metaTitle: "Jim Corbett Weekend Trip from Delhi | 2N3D Itinerary 2025",
+    title: "Jim Corbett Weekend Trip from Delhi — Perfect 2N3D Itinerary (2026–27)",
+    metaTitle: "Jim Corbett Weekend Trip from Delhi | 2N3D Itinerary 2026–27",
     metaDescription:
       "Plan the perfect Jim Corbett weekend trip from Delhi — 2 nights 3 days itinerary, when to leave, which zones to safari, where to stay. From ₹11,999/couple (ex-Ramnagar) or ₹20,999/couple with Delhi round-trip cab.",
     excerpt:

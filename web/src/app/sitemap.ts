@@ -54,6 +54,12 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
     priority: 0.90,
   },
   {
+    url: `${SITE_URL}/safari-timings/`,
+    lastModified: new Date("2026-10-26"),
+    changeFrequency: "weekly",
+    priority: 0.90,
+  },
+  {
     url: `${SITE_URL}/delhi-corbett-cab/`,
     lastModified: new Date("2026-10-26"),
     changeFrequency: "monthly",

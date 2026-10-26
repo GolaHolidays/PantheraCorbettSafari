@@ -246,6 +246,43 @@ export default function DelhiToJimCorbettPackagePage() {
         </div>
       </section>
 
+      {/* ─── FESTIVE & LONG WEEKEND HOLIDAY CALLOUT ───────────────────────── */}
+      <section className="bg-[#17211A] text-[#FBF8F0] py-8 border-b border-[#37482E]/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-[#17211A] via-[#243324] to-[#17211A] border border-[#C99A3D]/40 rounded-xl p-5 sm:p-7 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-[#C99A3D]/20 border border-[#C99A3D]/50 text-[#E8C374] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <HugeiconsIcon icon={StarIcon} size={14} />
+                <span>Diwali, Christmas &amp; New Year 2026–2027 Special</span>
+              </div>
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
+                Long Weekend Holiday Packages Ex-Delhi (2N/3D)
+              </h2>
+              <p className="text-sm text-[#E8E0CC]/85 leading-relaxed">
+                Experience Corbett&apos;s winter magic during festive long weekends. Includes private doorstep Delhi-NCR AC cab, riverside luxury resort stay with buffet breakfast &amp; dinner, bonfire evenings, and guaranteed core zone 4x4 Gypsy safari permits.
+              </p>
+            </div>
+            <div className="shrink-0 w-full md:w-auto flex flex-col sm:flex-row md:flex-col gap-2.5">
+              <Button
+                variant="primary"
+                size="md"
+                href={`https://wa.me/919997488004?text=${encodeURIComponent(
+                  "Hello! I am planning a Delhi to Jim Corbett trip for Diwali / New Year 2026-27 long weekend. Please share package details and availability."
+                )}`}
+                isExternal
+                className="w-full justify-center inline-flex items-center gap-2"
+              >
+                <HugeiconsIcon icon={WhatsappIcon} size={16} />
+                <span>Get Festive Quote</span>
+              </Button>
+              <span className="text-[11px] text-center text-[#8A9468]">
+                Advance booking essential · Limited festive resort inventory
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── PACKAGES ─────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#FBF8F0]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -383,6 +420,53 @@ export default function DelhiToJimCorbettPackagePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
+      <section className="py-12 bg-white border-t border-[#E8E0CC]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Plan Your Journey</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Transportation &amp; Safari Services</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/delhi-corbett-cab/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Direct Transfers</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi to Corbett Cab</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Doorstep AC Sedan &amp; Innova Crysta pickup from Delhi Airport &amp; NCR. Transparent toll-inclusive fares.</p>
+            </Link>
+
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Booking</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Book exclusive 4x4 Gypsies for Bijrani, Jhirna, Garjiya, and Dhela zones with local drivers.</p>
+            </Link>
+
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Trip</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Shared 16-seater safari bus taking you 32 km deep into Dhikala grassland at ₹2,299/person.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Compare official zone charges, permit fees, resort inclusions, and seasonal offers.</p>
+            </Link>
           </div>
         </div>
       </section>

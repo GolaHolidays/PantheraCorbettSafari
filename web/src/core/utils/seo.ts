@@ -302,22 +302,42 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     canonicalPath: "/canter-safari/",
   },
   "safari-price": {
-    title: "Jim Corbett Safari Price 2025–26 | All Zone Fees & Inclusions",
+    title: "Jim Corbett Safari Price 2026–27 | All Zone Fees & Inclusions",
     description:
-      "Complete Jim Corbett safari price guide 2025–26. Dhikala canter safari ₹2,299/person. Jeep safari from ₹5,999–₹8,499/jeep. All zones: Bijrani, Jhirna, Garjiya, Dhela, Sitabani. Zero hidden costs — guide, permit & jeep included.",
+      "Complete Jim Corbett safari price guide 2026–27. Dhikala canter safari ₹2,299/person. Jeep safari from ₹5,999–₹8,499/jeep. All zones: Bijrani, Jhirna, Garjiya, Dhela, Sitabani. Zero hidden costs — guide, permit & jeep included.",
     keywords: [
       "jim corbett safari price",
       "jim corbett safari fee",
-      "jim corbett entry fee 2025",
+      "jim corbett entry fee 2026",
+      "jim corbett entry fee 2027",
       "jim corbett safari cost per person",
       "dhikala canter safari fee",
       "bijrani jeep safari price",
+      "jim corbett safari price for 6 persons",
       "jim corbett safari charges",
       "jim corbett safari price for indians",
       "jim corbett national park entry fee",
       "corbett national park permit fee",
     ],
     canonicalPath: "/safari-price/",
+  },
+  "safari-timings": {
+    title: "Jim Corbett Safari Timings 2026–27 | Gate Shifts & Cutoffs",
+    description:
+      "Official Uttarakhand Forest Department Jim Corbett safari timings 2026–27. Morning & afternoon shifts for Bijrani, Dhikala, Jhirna, Garjiya & Dhela zones. Gate opening hours, last entry cutoffs & seasonal schedule.",
+    keywords: [
+      "jim corbett safari timing",
+      "jim corbett safari timings",
+      "corbett safari timing 2026",
+      "jim corbett safari timing today",
+      "morning safari timing jim corbett",
+      "evening safari timing jim corbett",
+      "dhikala canter safari timing",
+      "bijrani safari timing",
+      "corbett gate entry cutoff timing",
+      "safari timing winter jim corbett",
+    ],
+    canonicalPath: "/safari-timings/",
   },
 };
 
@@ -415,11 +435,11 @@ export function buildBreadcrumbSchema(crumbs: BreadcrumbItem[]): object {
   };
 }
 
-/** TouristAttraction + Offer schema for a single zone detail page */
+/** TouristAttraction + TouristTrip + Offer schema for a single zone detail page */
 export function buildZoneSchema(zone: SafariZone): object {
   return {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
+    "@type": ["TouristAttraction", "TouristTrip"],
     name: `${zone.name} — Jim Corbett Tiger Reserve`,
     description: zone.description,
     url: `${SITE_URL}/zones/${zone.slug}/`,
@@ -437,7 +457,16 @@ export function buildZoneSchema(zone: SafariZone): object {
       availability: zone.isOpenNow
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
-      seller: { "@type": "Organization", name: "Panthera Corbett Safari" },
+      seller: {
+        "@type": "LocalBusiness",
+        name: "Panthera Corbett Safari",
+        "@id": `${SITE_URL}/#business`,
+      },
+    },
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Panthera Corbett Safari",
+      "@id": `${SITE_URL}/#business`,
     },
     touristType: zone.bestFor,
   };
