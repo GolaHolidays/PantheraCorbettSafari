@@ -75,13 +75,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             Optical correction — large display text must track tight.
           */}
           <h1
-            className="display-heading font-serif font-bold text-[#FBF8F0] text-[1.85rem] sm:text-[3.25rem] lg:text-[4rem]"
+            className="display-heading font-serif font-bold text-[#FBF8F0] text-[1.85rem] sm:text-[3.25rem] lg:text-[3.85rem]"
             style={{
               textShadow:
                 "0 2px 20px rgba(23,33,26,0.70), 0 1px 4px rgba(23,33,26,0.45)",
             }}
           >
-            The Real Wild of Jim&nbsp;Corbett
+            Jim Corbett Safari Booking Online
           </h1>
 
           {/* ── Thin gold rule ───────────────────────────────────────────── */}
@@ -92,9 +92,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             className="hidden sm:block text-[1rem] text-[#E8E0CC]/85 font-normal leading-[1.7]"
             style={{ textShadow: "0 1px 8px rgba(23,33,26,0.55)" }}
           >
-            Official Forest Department jeep permits and heritage night stays
-            inside Dhikala, Bijrani &amp; Jhirna core zones — guided by
-            native trackers and registered nature guides.
+            Official Forest Department 4x4 Gypsy permits, Dhikala Canter seats,
+            and heritage night stays inside Dhikala, Bijrani &amp; Jhirna core
+            zones — guided by native trackers and registered nature guides.
           </p>
 
           {/* ── Scarcity note — desktop full, mobile compact chip ────────── */}
