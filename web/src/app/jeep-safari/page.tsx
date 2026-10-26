@@ -20,7 +20,6 @@ import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
 import AlertCircleIcon from "@hugeicons/core-free-icons/AlertCircleIcon";
-import CheckmarkBadge01Icon from "@hugeicons/core-free-icons/CheckmarkBadge01Icon";
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 

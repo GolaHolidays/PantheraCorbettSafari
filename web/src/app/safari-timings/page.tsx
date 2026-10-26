@@ -15,10 +15,6 @@ import {
 import { Button, Badge, SectionHeader } from "../../shared";
 import { SafariGateTimingsWidget } from "../../features/safari-types";
 import { HugeiconsIcon } from "@hugeicons/react";
-import Clock01Icon from "@hugeicons/core-free-icons/Clock01Icon";
-import AlertCircleIcon from "@hugeicons/core-free-icons/AlertCircleIcon";
-import CheckmarkBadge01Icon from "@hugeicons/core-free-icons/CheckmarkBadge01Icon";
-import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
 import Call02Icon from "@hugeicons/core-free-icons/Call02Icon";
 import WhatsappIcon from "@hugeicons/core-free-icons/WhatsappIcon";
 
@@ -42,9 +38,7 @@ export default function SafariTimingsPage() {
   );
 
   const activeSchedule = SafariTimingRepository.getActiveSchedule();
-  const allSchedules = SafariTimingRepository.getAllSchedules();
   const dhikalaSchedule = SafariTimingRepository.getDhikalaSchedule();
-  const protocol = SafariTimingRepository.getProtocol();
 
   // Curate 6 high-intent FAQs related to safari timings & gate rules
   const allFaqs = FaqRepository.getAll();
