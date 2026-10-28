@@ -59,6 +59,13 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
     images: [`${SITE_URL}/og-image.jpg`],
   },
   {
+    url: `${SITE_URL}/forest-rest-houses/`,
+    lastModified: new Date("2026-10-28"),
+    changeFrequency: "weekly",
+    priority: 0.90,
+    images: [`${SITE_URL}/image/photo-1547471080-7cc2caa01a7e.jpg`],
+  },
+  {
     url: `${SITE_URL}/safari-timings/`,
     lastModified: new Date("2026-10-28"),
     changeFrequency: "weekly",
