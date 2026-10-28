@@ -30,12 +30,13 @@ export async function generateMetadata({
   const pkg = PackageRepository.getPackageBySlug(slug);
   if (!pkg) return { title: "Package Not Found" };
 
-  const title = pkg.seoTitle ?? `${pkg.title} | Jim Corbett Safari Package`;
+  const pageTitle = `${pkg.title} | ${pkg.priceDisplay}`;
   const description = pkg.seoDescription ?? pkg.overview;
   const canonical = `${SITE_URL}/packages/${slug}/`;
+  const fullTitle = `${pageTitle} | Panthera Corbett Safari`;
 
   return {
-    title,
+    title: pageTitle,
     description,
     ...(pkg.seoKeywords?.length ? { keywords: pkg.seoKeywords } : {}),
     alternates: { canonical },
@@ -44,13 +45,13 @@ export async function generateMetadata({
       siteName: "Panthera Corbett Safari",
       locale: "en_IN",
       url: canonical,
-      title: `${title} | Panthera Corbett Safari`,
+      title: fullTitle,
       description,
-      images: [{ url: pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`, width: 1200, height: 630, alt: title }],
+      images: [{ url: pkg.image.startsWith("http") ? pkg.image : `${SITE_URL}${pkg.image}`, width: 1200, height: 630, alt: fullTitle }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | Panthera Corbett Safari`,
+      title: fullTitle,
       description,
     },
   };

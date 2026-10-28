@@ -89,8 +89,8 @@ export default function ContactPage() {
   const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "@id": `${SITE_URL}/contact#webpage`,
-    url: `${SITE_URL}/contact`,
+    "@id": `${SITE_URL}/contact/#webpage`,
+    url: `${SITE_URL}/contact/`,
     name: "Contact Panthera Corbett Safari — Ramnagar Booking Desk",
     description:
       "Official contact page for Panthera Corbett Safari desk in Ramnagar, Uttarakhand. Direct phone, WhatsApp, email, and Google Maps office navigation.",
