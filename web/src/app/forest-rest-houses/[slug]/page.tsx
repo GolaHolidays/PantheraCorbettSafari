@@ -133,10 +133,12 @@ export default async function RestHouseDetailPage({
   });
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
-    { name: "Forest Rest Houses", href: "/#night-stays" },
+    { name: "Forest Rest Houses", href: "/forest-rest-houses/" },
     { name: lodge.name, href: `/forest-rest-houses/${slug}/` },
   ]);
   const faqSchema = lodgeFaqs.length > 0 ? buildFaqSchema(lodgeFaqs) : null;
+  const otherLodges = RestHouseRepository.getAllRestHouses().filter((r) => r.slug !== slug);
+  const parentZoneSlug = slug === "bijrani-forest-rest-house" ? "bijrani-zone" : "dhikala-zone";
 
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
@@ -163,7 +165,7 @@ export default async function RestHouseDetailPage({
             Home
           </Link>
           <span>/</span>
-          <Link href="/#night-stays" className="hover:underline">
+          <Link href="/forest-rest-houses/" className="hover:underline">
             Forest Rest Houses
           </Link>
           <span>/</span>
@@ -193,6 +195,14 @@ export default async function RestHouseDetailPage({
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#FBF8F0]">
               {lodge.name}
             </h1>
+            <div className="mt-2">
+              <Link
+                href={`/zones/${parentZoneSlug}/`}
+                className="inline-flex items-center gap-1 text-xs text-[#E8E0CC] hover:text-white underline underline-offset-2"
+              >
+                Located inside {lodge.zone} — View Zone Guide →
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -306,6 +316,69 @@ export default async function RestHouseDetailPage({
           </div>
         )}
 
+        {/* ─── OTHER LODGES ────────────────────────────────────────────── */}
+        {otherLodges.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
+            <div className="text-center mb-8">
+              <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">
+                More Heritage Lodges
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">
+                Other Jim Corbett Forest Rest Houses
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {otherLodges.map((other) => (
+                <article
+                  key={other.id}
+                  className="bg-white border border-[#E8E0CC] rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="relative h-48 w-full overflow-hidden bg-[#17211A]">
+                      <Image
+                        src={other.image}
+                        alt={other.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute top-2.5 left-2.5">
+                        <Badge variant="gold" size="sm">
+                          {other.zone}
+                        </Badge>
+                      </div>
+                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-baseline text-white text-xs">
+                        <span className="bg-black/60 px-2 py-0.5 rounded text-[11px]">Season: {other.season}</span>
+                        <span className="bg-[#37482E]/90 px-2 py-0.5 rounded text-[#C99A3D] font-semibold">{other.roomsAvailable} Rooms</span>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-serif font-bold text-lg text-[#17211A] group-hover:text-[#37482E] transition-colors mb-2">
+                        {other.name}
+                      </h3>
+                      <p className="text-xs text-[#17211A]/75 line-clamp-2 leading-relaxed mb-3">
+                        {other.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-5 pt-0 border-t border-[#E8E0CC]/70 mt-2 flex items-baseline justify-between pt-3">
+                    <div>
+                      <span className="text-[10px] text-[#8A9468] uppercase font-semibold block">Govt Tariff From</span>
+                      <span className="font-serif font-bold text-xl text-[#17211A] font-tabular">{formatCurrencyINR(other.startingPriceINR)} / night</span>
+                    </div>
+                    <Link
+                      href={`/forest-rest-houses/${other.slug}/`}
+                      className="text-xs font-bold text-[#B84C1E] hover:underline"
+                    >
+                      Lodge Rules →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
         <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
           <div className="text-center mb-8">
@@ -313,6 +386,15 @@ export default async function RestHouseDetailPage({
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Other Core Experiences</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">All Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">FRH Directory</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Complete guide comparing Dhikala, Gairal &amp; Bijrani tariffs and rules.</p>
+            </Link>
+
             <Link
               href="/canter-safari/"
               className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
@@ -323,21 +405,12 @@ export default async function RestHouseDetailPage({
             </Link>
 
             <Link
-              href="/jeep-safari/"
+              href="/safari-timings/"
               className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
             >
-              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Day Jeep Safari</p>
-              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
-              <p className="text-xs text-[#17211A]/75 leading-relaxed">Exclusive 4x4 Gypsy across Bijrani, Jhirna, Garjiya and Dhela zones.</p>
-            </Link>
-
-            <Link
-              href="/safari-price/"
-              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
-            >
-              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
-              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
-              <p className="text-xs text-[#17211A]/75 leading-relaxed">Detailed forest rest house tariffs, gypsy hiring charges, and guide fees.</p>
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Shift Hours</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Check official entry gate hours, shift cutoffs, and seasonal schedules.</p>
             </Link>
 
             <Link

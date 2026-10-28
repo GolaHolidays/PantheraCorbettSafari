@@ -459,7 +459,7 @@ export default function ContactPage() {
                   Excellent 4-lane highway up to Moradabad. Private cabs start at ₹4,500 one-way.
                 </p>
                 <Link
-                  href="/delhi-corbett-cab"
+                  href="/delhi-corbett-cab/"
                   className="mt-3 inline-block text-xs font-bold text-[#37482E] hover:underline"
                 >
                   Book Delhi to Corbett Cab →
@@ -514,6 +514,53 @@ export default function ContactPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Planning Hub Grid ────────────────────────────────────────── */}
+        <section className="py-12 border-t border-[#E8E0CC] bg-[#F4EFE6]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Safari Services &amp; Timings</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link
+                href="/jeep-safari/"
+                className="p-4 rounded-[var(--radius-card)] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+              >
+                <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private 4x4 Gypsy</p>
+                <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
+                <p className="text-xs text-[#8A9468] leading-relaxed">Book exclusive Gypsies across Bijrani, Jhirna, Garjiya, and Dhela zones.</p>
+              </Link>
+
+              <Link
+                href="/canter-safari/"
+                className="p-4 rounded-[var(--radius-card)] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+              >
+                <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Trip</p>
+                <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+                <p className="text-xs text-[#8A9468] leading-relaxed">16-seater sharing open bus into Dhikala grasslands at ₹2,299/seat.</p>
+              </Link>
+
+              <Link
+                href="/safari-timings/"
+                className="p-4 rounded-[var(--radius-card)] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+              >
+                <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Gate Schedules</p>
+                <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+                <p className="text-xs text-[#8A9468] leading-relaxed">Official seasonal morning and afternoon shift timings and entry cutoff regulations.</p>
+              </Link>
+
+              <Link
+                href="/safari-price/"
+                className="p-4 rounded-[var(--radius-card)] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+              >
+                <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+                <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+                <p className="text-xs text-[#8A9468] leading-relaxed">Official government rates for permits, vehicles, and guide charges across all zones.</p>
+              </Link>
+            </div>
           </div>
         </section>
       </div>

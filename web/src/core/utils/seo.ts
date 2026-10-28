@@ -339,6 +339,22 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     ],
     canonicalPath: "/safari-timings/",
   },
+  "forest-rest-houses": {
+    title: "Corbett Forest Rest Houses | Dhikala, Bijrani, Gairal",
+    description:
+      "Book Jim Corbett Forest Rest House night stays inside core zones. Official government tariffs from ₹9,500/night for Dhikala, Gairal, and Bijrani FRH. Morning & evening Gypsy safaris included.",
+    keywords: [
+      "jim corbett forest rest house booking",
+      "dhikala forest rest house booking",
+      "gairal forest rest house",
+      "bijrani forest rest house",
+      "corbett night stay booking",
+      "corbett core zone stay",
+      "jim corbett rest house price",
+      "corbett frh permit booking",
+    ],
+    canonicalPath: "/forest-rest-houses/",
+  },
 };
 
 // ─── Metadata Factory ─────────────────────────────────────────────────────────

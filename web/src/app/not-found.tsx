@@ -10,12 +10,13 @@ export default function NotFound() {
   );
 
   const quickLinks = [
-    { label: "Jeep Safari", href: "/jeep-safari" },
-    { label: "Canter Safari", href: "/canter-safari" },
-    { label: "Forest Rest Houses", href: "/forest-rest-houses/dhikala-forest-rest-house" },
-    { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package" },
-    { label: "Safari Prices", href: "/safari-price" },
-    { label: "Delhi Cabs", href: "/delhi-corbett-cab" },
+    { label: "Jeep Safari", href: "/jeep-safari/" },
+    { label: "Canter Safari", href: "/canter-safari/" },
+    { label: "Forest Rest Houses", href: "/forest-rest-houses/" },
+    { label: "Safari Timings", href: "/safari-timings/" },
+    { label: "Safari Prices", href: "/safari-price/" },
+    { label: "Delhi Packages", href: "/delhi-to-jim-corbett-package/" },
+    { label: "Delhi Cabs", href: "/delhi-corbett-cab/" },
   ];
 
   return (

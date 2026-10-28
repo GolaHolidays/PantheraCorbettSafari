@@ -90,6 +90,8 @@ export default async function PackageDetailPage({
   ]);
 
   const packageResorts = PackageRepository.getResortsForPackage(pkg);
+  const allPackages = PackageRepository.getAllPackages();
+  const otherPackages = allPackages.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <div className="py-12 sm:py-20 bg-[#FBF8F0]">
@@ -333,6 +335,120 @@ export default async function PackageDetailPage({
                 Call Desk: {contact.phoneDisplay}
               </Button>
             </div>
+          </div>
+        </div>
+
+        {/* ─── OTHER PACKAGES ────────────────────────────────────────────── */}
+        {otherPackages.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
+            <div className="text-center mb-8">
+              <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">
+                More Tour Options
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">
+                Other Curated Corbett Packages
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {otherPackages.map((other) => (
+                <article
+                  key={other.id}
+                  className="bg-white border border-[#E8E0CC] rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="relative h-44 w-full overflow-hidden bg-[#17211A]">
+                      <Image
+                        src={other.image}
+                        alt={other.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute top-2.5 left-2.5">
+                        <Badge variant="gold" size="sm">
+                          {other.badge}
+                        </Badge>
+                      </div>
+                      <div className="absolute bottom-2.5 left-2.5 bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] font-medium text-white">
+                        {other.duration}
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">
+                        {other.title}
+                      </h3>
+                      <p className="text-xs text-[#8A9468] mb-2 font-medium">
+                        {other.zone} · {other.safariCount}
+                      </p>
+                      <p className="text-xs text-[#17211A]/75 line-clamp-2 leading-relaxed">
+                        {other.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-4 pt-0 border-t border-[#E8E0CC]/70 mt-2 flex items-baseline justify-between pt-3">
+                    <div>
+                      <span className="text-[10px] text-[#8A9468] uppercase font-semibold block">Price</span>
+                      <span className="font-serif font-bold text-lg text-[#17211A] font-tabular">{other.priceDisplay}</span>
+                    </div>
+                    <Link
+                      href={`/packages/${other.slug}/`}
+                      className="text-xs font-bold text-[#37482E] hover:underline"
+                    >
+                      View Details →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
+        <div className="mt-16 pt-12 border-t border-[#E8E0CC]">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">
+              Corbett Planning Hub
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">
+              Explore Safari Options &amp; Transfers
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/delhi-to-jim-corbett-package/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Delhi Transfers</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi Tour Packages</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">All-inclusive 2N3D packages with doorstep AC cab, resort stay &amp; core safaris.</p>
+            </Link>
+
+            <Link
+              href="/delhi-corbett-cab/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private Taxi</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Delhi to Corbett Cab</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Fixed-rate sedan, Ertiga, and Innova Crysta transfers from NCR to Ramnagar.</p>
+            </Link>
+
+            <Link
+              href="/safari-timings/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Shift Schedules</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official seasonal sunrise &amp; afternoon shift opening hours and last entry rules.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official government rates for permits, vehicles, and guide charges across all zones.</p>
+            </Link>
           </div>
         </div>
       </div>

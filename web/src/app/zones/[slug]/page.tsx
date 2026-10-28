@@ -294,50 +294,80 @@ export default async function ZoneDetailPage({
                       <span><strong>Advance Booking:</strong> Book at least 15 to 20 days in advance for better availability</span>
                     </div>
                   </div>
+
+                  <div className="p-3 bg-[#17211A] text-[#FBF8F0] rounded border border-[#37482E] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                    <div>
+                      <div className="text-xs font-semibold text-[#C99A3D]">Want a Private Gypsy Safari inside Dhikala?</div>
+                      <div className="text-[11px] text-[#E8E0CC]/80">Gypsy safaris are reserved exclusively for guests staying overnight in Forest Rest Houses.</div>
+                    </div>
+                    <Link
+                      href="/forest-rest-houses/dhikala-forest-rest-house/"
+                      className="text-xs font-bold text-[#FBF8F0] underline hover:text-[#C99A3D] whitespace-nowrap"
+                    >
+                      Dhikala FRH Stay →
+                    </Link>
+                  </div>
                 </div>
               )}
 
               {/* Core Zones Pricing Breakdown */}
               {["bijrani", "jhirna", "dhela", "garjiya", "durga-devi"].includes(zone.id) && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-4 bg-white rounded border-2 border-[#37482E]/30 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#37482E] bg-[#E8E0CC]/80 px-2 py-0.5 rounded">
-                        Pre-Booking Rate
-                      </span>
-                      <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked &gt; 5 Days Ahead</h4>
-                      <p className="text-[11px] text-[#17211A]/75 mb-3">
-                        Includes complimentary hotel transfer within 10 km radius.
-                      </p>
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="p-4 bg-white rounded border-2 border-[#37482E]/30 flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#37482E] bg-[#E8E0CC]/80 px-2 py-0.5 rounded">
+                          Pre-Booking Rate
+                        </span>
+                        <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked &gt; 5 Days Ahead</h4>
+                        <p className="text-[11px] text-[#17211A]/75 mb-3">
+                          Includes complimentary hotel transfer within 10 km radius.
+                        </p>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold font-serif text-[#37482E] font-tabular">₹7,999</div>
+                        <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
+                        <div className="text-[11px] text-[#37482E] font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
+                          ✓ Guide + Permit + Personal Jeep + Jeep Cost + Complimentary pickup/drop up to 10 km from Ramnagar
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-2xl font-bold font-serif text-[#37482E] font-tabular">₹7,999</div>
-                      <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
-                      <div className="text-[11px] text-[#37482E] font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
-                        ✓ Guide + Permit + Personal Jeep + Jeep Cost + Complimentary pickup/drop up to 10 km from Ramnagar
+
+                    <div className="p-4 bg-white rounded border border-[#E8E0CC] flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#B84C1E] bg-[#B84C1E]/10 px-2 py-0.5 rounded">
+                          Current Zone Booking
+                        </span>
+                        <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked Within 5 Days</h4>
+                        <p className="text-[11px] text-[#17211A]/75 mb-3">
+                          Last-minute slot confirmation subject to gate availability.
+                        </p>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold font-serif text-[#17211A] font-tabular">₹8,499</div>
+                        <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
+                        <div className="text-[11px] text-[#17211A]/80 font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
+                          ✓ Guide + Permit + Personal Jeep + Jeep Cost
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 bg-white rounded border border-[#E8E0CC] flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#B84C1E] bg-[#B84C1E]/10 px-2 py-0.5 rounded">
-                        Current Zone Booking
-                      </span>
-                      <h4 className="font-bold text-[#17211A] text-sm mt-1.5 mb-1">Booked Within 5 Days</h4>
-                      <p className="text-[11px] text-[#17211A]/75 mb-3">
-                        Last-minute slot confirmation subject to gate availability.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold font-serif text-[#17211A] font-tabular">₹8,499</div>
-                      <div className="text-[11px] text-[#8A9468]">per personal jeep (up to 6 guests)</div>
-                      <div className="text-[11px] text-[#17211A]/80 font-medium mt-2 pt-2 border-t border-[#E8E0CC]">
-                        ✓ Guide + Permit + Personal Jeep + Jeep Cost
+                  {zone.id === "bijrani" && (
+                    <div className="mt-3 p-3 bg-white border border-[#E8E0CC] rounded flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                      <div>
+                        <div className="text-xs font-semibold text-[#37482E]">Overnight Stay inside Bijrani Core Zone:</div>
+                        <div className="text-[11px] text-[#17211A]/80">Stay inside Bijrani Forest Rest House at official government tariffs.</div>
                       </div>
+                      <Link
+                        href="/forest-rest-houses/bijrani-forest-rest-house/"
+                        className="text-xs font-bold text-[#B84C1E] underline hover:text-[#17211A] whitespace-nowrap"
+                      >
+                        Bijrani FRH Stay →
+                      </Link>
                     </div>
-                  </div>
-                </div>
+                  )}
+                </>
               )}
 
               {/* Buffer & Reserve Zones Breakdown */}
@@ -462,7 +492,7 @@ export default async function ZoneDetailPage({
             <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Plan Your Corbett Trip</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore More Safari Options</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link
               href="/jeep-safari/"
               className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
@@ -482,12 +512,30 @@ export default async function ZoneDetailPage({
             </Link>
 
             <Link
+              href="/safari-timings/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Shift Hours</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Check official entry gate hours, seasonal sunrise/dusk schedules, and last cutoffs.</p>
+            </Link>
+
+            <Link
               href="/safari-price/"
               className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
             >
               <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
               <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
               <p className="text-xs text-[#17211A]/75 leading-relaxed">Complete breakdown of forest permits, vehicle charges, and guide fees.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Forest Rest Houses</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Overnight stays inside Dhikala, Bijrani &amp; Gairal with exclusive morning safaris.</p>
             </Link>
 
             <Link

@@ -32,18 +32,18 @@ export const metadata: Metadata = generatePageMetadata({
 // These match data_source/safari-types.ts and data_source/zones.ts exactly.
 
 const CORE_ZONE_JEEP = [
-  { zone: "Dhela", gate: "Dhela Gate", preBooking: 7999, currentBooking: 8499, openYear: true },
-  { zone: "Jhirna", gate: "Jhirna Gate", preBooking: 7999, currentBooking: 8499, openYear: true },
-  { zone: "Bijrani", gate: "Amdanda Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
-  { zone: "Garjiya", gate: "Garjiya Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
-  { zone: "Durga Devi", gate: "Durgadevi Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
+  { zone: "Dhela", slug: "dhela-zone", gate: "Dhela Gate", preBooking: 7999, currentBooking: 8499, openYear: true },
+  { zone: "Jhirna", slug: "jhirna-zone", gate: "Jhirna Gate", preBooking: 7999, currentBooking: 8499, openYear: true },
+  { zone: "Bijrani", slug: "bijrani-zone", gate: "Amdanda Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
+  { zone: "Garjiya", slug: "garjiya-zone", gate: "Garjiya Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
+  { zone: "Durga Devi", slug: "durga-devi-zone", gate: "Durgadevi Gate", preBooking: 7999, currentBooking: 8499, openYear: false },
 ];
 
 const BUFFER_ZONE_JEEP = [
-  { zone: "Phato", gate: "Phato Gate", price: 6499, openYear: true },
-  { zone: "Hathidangar", gate: "Hathidangar Gate", price: 6499, openYear: true },
-  { zone: "Sitabani (Pawalgarh)", gate: "Pawalgarh Gate", price: 6499, openYear: true },
-  { zone: "Sitabani (Teda / Bhandarpani)", gate: "Teda / Bhandarpani Gate", price: 5999, openYear: true },
+  { zone: "Phato", slug: "phato-zone", gate: "Phato Gate", price: 6499, openYear: true },
+  { zone: "Hathidangar", slug: "hathidangar-zone", gate: "Hathidangar Gate", price: 6499, openYear: true },
+  { zone: "Sitabani (Pawalgarh)", slug: "sitabani-zone", gate: "Pawalgarh Gate", price: 6499, openYear: true },
+  { zone: "Sitabani (Teda / Bhandarpani)", slug: "sitabani-zone", gate: "Teda / Bhandarpani Gate", price: 5999, openYear: true },
 ];
 
 const INCLUSIONS_SHARED = [
@@ -169,7 +169,7 @@ export default function SafariPricePage() {
                   <HugeiconsIcon icon={WhatsappIcon} size={16} />
                   <span>Check Dhikala Availability</span>
                 </Button>
-                <Link href="/canter-safari" className="text-[#8A9468] text-sm underline underline-offset-2 self-center hover:text-[#E8E0CC]">
+                <Link href="/canter-safari/" className="text-[#8A9468] text-sm underline underline-offset-2 self-center hover:text-[#E8E0CC]">
                   Full Canter Safari Details →
                 </Link>
               </div>
@@ -218,7 +218,11 @@ export default function SafariPricePage() {
               <tbody>
                 {CORE_ZONE_JEEP.map((row, idx) => (
                   <tr key={row.zone} className={`border-t border-[#E8E0CC] ${idx % 2 === 0 ? "bg-white" : "bg-[#FBF8F0]"}`}>
-                    <td className="px-4 py-3 font-medium text-[#17211A]">{row.zone}</td>
+                    <td className="px-4 py-3 font-medium text-[#17211A]">
+                      <Link href={`/zones/${row.slug}/`} className="text-[#37482E] font-semibold hover:underline">
+                        {row.zone}
+                      </Link>
+                    </td>
                     <td className="px-4 py-3 text-[#8A9468] hidden sm:table-cell">{row.gate}</td>
                     <td className="px-4 py-3 text-right font-bold text-[#17211A] font-tabular">
                       ₹{row.preBooking.toLocaleString("en-IN")}
@@ -275,7 +279,11 @@ export default function SafariPricePage() {
               <tbody>
                 {BUFFER_ZONE_JEEP.map((row, idx) => (
                   <tr key={row.zone} className={`border-t border-[#E8E0CC] ${idx % 2 === 0 ? "bg-white" : "bg-[#FBF8F0]"}`}>
-                    <td className="px-4 py-3 font-medium text-[#17211A]">{row.zone}</td>
+                    <td className="px-4 py-3 font-medium text-[#17211A]">
+                      <Link href={`/zones/${row.slug}/`} className="text-[#37482E] font-semibold hover:underline">
+                        {row.zone}
+                      </Link>
+                    </td>
                     <td className="px-4 py-3 text-[#8A9468] hidden sm:table-cell">{row.gate}</td>
                     <td className="px-4 py-3 text-right font-bold text-[#17211A] font-tabular">
                       ₹{row.price.toLocaleString("en-IN")}
@@ -332,6 +340,53 @@ export default function SafariPricePage() {
           </div>
         </section>
       )}
+
+      {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
+      <section className="py-14 sm:py-20 bg-white border-t border-[#E8E0CC]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Safari Services &amp; Timings</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private 4x4 Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Book exclusive Gypsies across Bijrani, Jhirna, Garjiya, and Dhela zones.</p>
+            </Link>
+
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Safari</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">16-seater sharing open bus into Dhikala grasslands at ₹2,299/person.</p>
+            </Link>
+
+            <Link
+              href="/safari-timings/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Gate Schedules</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official seasonal morning &amp; afternoon shift opening hours and entry cutoff deadlines.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Forest Rest Houses</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Night stays inside Dhikala, Bijrani &amp; Gairal. 45-day permit window rules.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ─── FINAL CTA ────────────────────────────────────────────────────── */}
       <section className="py-14 sm:py-20 bg-[#17211A]">

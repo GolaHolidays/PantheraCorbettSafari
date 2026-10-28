@@ -409,6 +409,53 @@ export default function SafariTimingsPage() {
         </section>
       )}
 
+      {/* ─── CORBETT PLANNING HUB / INTERNAL LINKS ──────────────────────── */}
+      <section className="py-14 sm:py-20 bg-[#F4EFE6] border-t border-[#E8E0CC]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Safari Services &amp; Tariffs</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private 4x4 Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Book exclusive Gypsies across Bijrani, Jhirna, Garjiya, and Dhela zones.</p>
+            </Link>
+
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Safari</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">16-seater sharing open bus into Dhikala grasslands at ₹2,299/person.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official government rates for permits, vehicle hiring, and guide fees.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-white border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Forest Rest Houses</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Night stays inside Dhikala, Bijrani &amp; Gairal. 45-day permit window rules.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── FINAL CTA ────────────────────────────────────────────────────── */}
       <section className="py-14 sm:py-20 bg-[#17211A]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -41,14 +41,14 @@ export const metadata: Metadata = generatePageMetadata({
 // ─── Static data ──────────────────────────────────────────────────────────────
 
 const JEEP_ZONES = [
-  { zone: "Bijrani", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "1 km from Amdanda Gate", sighting: "9.1/10", openYear: false, season: "Oct–Jun" },
-  { zone: "Jhirna", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "16 km from Jhirna Gate", sighting: "8.2/10", openYear: true, season: "All Year" },
-  { zone: "Garjiya", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "12 km from Garjiya Gate", sighting: "8.9/10", openYear: false, season: "Nov–Jun" },
-  { zone: "Dhela", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "22 km from Dhela Gate", sighting: "8.4/10", openYear: true, season: "All Year" },
-  { zone: "Durga Devi", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "28 km from Ramnagar", sighting: "7.8/10", openYear: false, season: "Nov–Jun" },
-  { zone: "Phato", type: "Buffer Zone", preBooking: 6499, currentBooking: 6499, distance: "18 km from Phato Gate", sighting: "7.5/10", openYear: true, season: "All Year" },
-  { zone: "Hathidangar", type: "Buffer Zone", preBooking: 6499, currentBooking: 6499, distance: "15 km from Ramnagar", sighting: "7.3/10", openYear: true, season: "All Year" },
-  { zone: "Sitabani (Teda/Bhandarpani)", type: "Reserve Forest", preBooking: 5999, currentBooking: 5999, distance: "20 km from Ramnagar", sighting: "7.1/10", openYear: true, season: "All Year" },
+  { zone: "Bijrani", slug: "bijrani-zone", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "1 km from Amdanda Gate", sighting: "9.1/10", openYear: false, season: "Oct–Jun" },
+  { zone: "Jhirna", slug: "jhirna-zone", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "16 km from Jhirna Gate", sighting: "8.2/10", openYear: true, season: "All Year" },
+  { zone: "Garjiya", slug: "garjiya-zone", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "12 km from Garjiya Gate", sighting: "8.9/10", openYear: false, season: "Nov–Jun" },
+  { zone: "Dhela", slug: "dhela-zone", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "22 km from Dhela Gate", sighting: "8.4/10", openYear: true, season: "All Year" },
+  { zone: "Durga Devi", slug: "durga-devi-zone", type: "Core Zone", preBooking: 7999, currentBooking: 8499, distance: "28 km from Ramnagar", sighting: "7.8/10", openYear: false, season: "Nov–Jun" },
+  { zone: "Phato", slug: "phato-zone", type: "Buffer Zone", preBooking: 6499, currentBooking: 6499, distance: "18 km from Phato Gate", sighting: "7.5/10", openYear: true, season: "All Year" },
+  { zone: "Hathidangar", slug: "hathidangar-zone", type: "Buffer Zone", preBooking: 6499, currentBooking: 6499, distance: "15 km from Ramnagar", sighting: "7.3/10", openYear: true, season: "All Year" },
+  { zone: "Sitabani (Teda/Bhandarpani)", slug: "sitabani-zone", type: "Reserve Forest", preBooking: 5999, currentBooking: 5999, distance: "20 km from Ramnagar", sighting: "7.1/10", openYear: true, season: "All Year" },
 ];
 
 const INCLUSIONS = [
@@ -175,7 +175,9 @@ export default function JeepSafariPage() {
                     className={`border-t border-[#E8E0CC] ${idx % 2 === 0 ? "bg-white" : "bg-[#FBF8F0]"}`}
                   >
                     <td className="px-4 py-3 font-medium text-[#17211A]">
-                      {row.zone}
+                      <Link href={`/zones/${row.slug}/`} className="text-[#37482E] font-semibold hover:underline">
+                        {row.zone}
+                      </Link>
                       {row.openYear && (
                         <span className="ml-2 text-[9px] bg-[#37482E] text-white px-1.5 py-0.5 rounded-full uppercase">
                           All Year

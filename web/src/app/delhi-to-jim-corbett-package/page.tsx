@@ -431,7 +431,7 @@ export default function DelhiToJimCorbettPackagePage() {
             <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Plan Your Journey</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#17211A] mt-1">Explore Transportation &amp; Safari Services</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link
               href="/delhi-corbett-cab/"
               className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
@@ -460,12 +460,30 @@ export default function DelhiToJimCorbettPackagePage() {
             </Link>
 
             <Link
+              href="/safari-timings/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Shift Schedules</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official seasonal sunrise &amp; afternoon shift opening hours and last entry cutoff rules.</p>
+            </Link>
+
+            <Link
               href="/safari-price/"
               className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
             >
               <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
               <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
               <p className="text-xs text-[#17211A]/75 leading-relaxed">Compare official zone charges, permit fees, resort inclusions, and seasonal offers.</p>
+            </Link>
+
+            <Link
+              href="/forest-rest-houses/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Core Lodges</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Forest Rest Houses</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Night stays inside Dhikala, Bijrani &amp; Gairal. 45-day permit window rules.</p>
             </Link>
           </div>
         </div>

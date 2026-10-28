@@ -44,8 +44,9 @@
 3. **Forest Rest House (FRH) Core Night Stays:**
    - Accommodation: Dhikala FRH (32 rooms), Gairal FRH (6 rooms), Bijrani FRH (6 rooms).
    - Distinct Privilege: Guests staying inside FRHs are the only individuals permitted inside the core forest before day safaris open and after afternoon gates close.
-   - Quota Opening: Exactly 45 days in advance at 00:00 IST for Indian nationals; 90 days for foreign nationals.
-   - URL: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/dhikala-forest-rest-house/
+   - Quota Opening: Exactly 45 days in advance at 10:00 AM IST for Indian nationals; 90 days for foreign nationals.
+   - Directory URL: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/
+   - Dhikala FRH: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/dhikala-forest-rest-house/
 
 4. **Delhi to Jim Corbett All-Inclusive Packages:**
    - Duration: 1 Night/2 Days, 2 Nights/3 Days.

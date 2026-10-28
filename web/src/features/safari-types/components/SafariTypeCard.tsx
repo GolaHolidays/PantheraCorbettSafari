@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SafariType } from "../../../core/models";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
 import { Button } from "../../../shared/components/ui/button/Button";
@@ -147,14 +148,22 @@ export const SafariTypeCard: React.FC<SafariTypeCardProps> = ({
           </span>
         </div>
 
-        <Button
-          variant="primary"
-          size="md"
-          href={inquiryUrl}
-          isExternal
-        >
-          {safari.ctaText}
-        </Button>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <Link
+            href={`/${safari.slug}/`}
+            className="inline-flex items-center justify-center text-xs font-semibold px-3 py-2 border border-[#37482E] text-[#37482E] rounded-[3px] hover:bg-[#37482E] hover:text-white transition-colors"
+          >
+            Full Guide →
+          </Link>
+          <Button
+            variant="primary"
+            size="md"
+            href={inquiryUrl}
+            isExternal
+          >
+            {safari.ctaText}
+          </Button>
+        </div>
       </div>
     </div>
   );
