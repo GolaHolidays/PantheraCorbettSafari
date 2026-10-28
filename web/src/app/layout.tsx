@@ -54,13 +54,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Jim Corbett Safari Booking | Jeep & Canter Safari | Dhikala Zone | Panthera Corbett Safari",
+    default: "Panthera Corbett Safari: Jim Corbett Safari Booking | Jeep & Canter Permits",
     template: `%s | ${config.name}`,
   },
   description:
     "Book Jim Corbett safari online — Dhikala canter safari ₹2,299/person, jeep safari from ₹5,999/jeep. Delhi to Jim Corbett packages available. All zones: Bijrani, Jhirna, Dhikala, Garjiya. Licensed Uttarakhand operator. Call +91 99974 88004.",
   keywords: SITE_KEYWORDS,
-  authors: [{ name: config.name, url: SITE_URL }],
+  authors: [{ name: config.name, url: `${SITE_URL}/` }],
   creator: config.name,
   publisher: config.name,
   generator: undefined,
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     siteName: config.name,
-    title: "Jim Corbett Safari Booking | Jeep & Canter Safari | Panthera Corbett Safari",
+    title: "Panthera Corbett Safari: Jim Corbett Safari Booking | Jeep & Canter Permits",
     description:
       "Book Jim Corbett safari online. Dhikala canter safari, jeep safari, Delhi packages. All zones covered. Local Ramnagar safari specialists.",
     images: [
@@ -100,12 +100,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jim Corbett Safari Booking | Jeep & Canter Safari | Panthera Corbett",
+    title: "Panthera Corbett Safari: Jim Corbett Safari Booking | Jeep & Canter Permits",
     description:
       "Book safari permits and Dhikala FRH stays. All Corbett zones. Licensed Uttarakhand Forest Dept operator.",
     images: [`${SITE_URL}/og-image.jpg`],
   },
-  alternates: { canonical: SITE_URL },
+  alternates: { canonical: `${SITE_URL}/` },
   category: "travel",
 };
 
@@ -115,6 +115,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+    buildWebSiteSchema(config.name),
     buildLocalBusinessSchema({
       name: config.name,
       description: config.description,
@@ -129,7 +130,6 @@ const jsonLd = {
       googleBusinessProfile: config.social.googleBusinessProfile,
     }),
     buildParkAttractionSchema(),
-    buildWebSiteSchema(config.name),
     buildServiceListSchema(),
   ],
 };

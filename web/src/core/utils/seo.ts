@@ -487,16 +487,11 @@ export function buildLocalBusinessSchema(config: {
   googleBusinessProfile: string;
 }): object {
   return {
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "TravelAgency"],
     "@id": `${SITE_URL}/#business`,
     name: config.name,
     legalName: "Panthera Corbett Safari",
-    alternateName: [
-      "Panthera Corbett",
-      "Panthera Corbett Safari",
-      "Panthera Safari",
-      "Panthera Corbett Safari Ramnagar",
-    ],
+    alternateName: ["Panthera Corbett", "Panthera Safari"],
     description: config.description,
     url: `${SITE_URL}/`,
     telephone: config.telephone,
@@ -534,12 +529,7 @@ export function buildWebSiteSchema(siteName: string): object {
     "@id": `${SITE_URL}/#website`,
     url: `${SITE_URL}/`,
     name: siteName,
-    alternateName: [
-      "Panthera Corbett",
-      "Panthera Corbett Safari",
-      "Panthera Safari",
-      "Panthera Corbett Safari Ramnagar",
-    ],
+    alternateName: ["Panthera Corbett", "Panthera Safari"],
     publisher: {
       "@id": `${SITE_URL}/#business`,
     },
