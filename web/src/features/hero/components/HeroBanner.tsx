@@ -81,6 +81,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                 "0 2px 20px rgba(23,33,26,0.70), 0 1px 4px rgba(23,33,26,0.45)",
             }}
           >
+            <span className="block font-sans text-xs sm:text-sm lg:text-[15px] font-semibold tracking-[0.22em] uppercase text-[#C99A3D] mb-1.5 sm:mb-2.5">
+              Panthera Corbett Safari
+            </span>
             Jim Corbett Safari Booking Online
           </h1>
 

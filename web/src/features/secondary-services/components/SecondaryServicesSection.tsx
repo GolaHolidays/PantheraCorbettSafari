@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SecondaryServicesData } from "../../../core/models";
 import { formatCurrencyINR } from "../../../core/utils/formatters";
 import { SectionHeader } from "../../../shared/components/ui/section-header/SectionHeader";
@@ -71,6 +72,31 @@ export const SecondaryServicesSection: React.FC<SecondaryServicesSectionProps> =
                       From {formatCurrencyINR(service.startingPriceINR)}
                     </span>
                   </div>
+
+                  {service.id === "delhi-corbett-cab" && (
+                    <Link
+                      href="/delhi-corbett-cab/"
+                      className="text-xs font-semibold text-[#37482E] hover:underline block mb-3"
+                    >
+                      View Route &amp; Vehicle Fares →
+                    </Link>
+                  )}
+                  {service.id === "pantnagar-airport-transfer" && (
+                    <Link
+                      href="/delhi-corbett-cab/"
+                      className="text-xs font-semibold text-[#37482E] hover:underline block mb-3"
+                    >
+                      Station &amp; Airport Pickup Fares →
+                    </Link>
+                  )}
+                  {service.id === "resort-stay-booking" && (
+                    <Link
+                      href="/delhi-to-jim-corbett-package/"
+                      className="text-xs font-semibold text-[#37482E] hover:underline block mb-3"
+                    >
+                      View Resort + Safari Packages →
+                    </Link>
+                  )}
 
                   <Button
                     variant="outline"

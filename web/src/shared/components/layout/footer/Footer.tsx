@@ -71,6 +71,11 @@ export const Footer: React.FC<FooterProps> = ({ config, zones }) => {
                 </Link>
               </li>
               <li>
+                <Link href="/forest-rest-houses/" className="hover:text-white transition-colors">
+                  Forest Rest House Stays
+                </Link>
+              </li>
+              <li>
                 <Link href="/safari-price/" className="hover:text-white transition-colors">
                   Safari Prices 2026–27
                 </Link>

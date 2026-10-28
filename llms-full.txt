@@ -12,7 +12,7 @@
 - **Direct Phone:** +91 99974 88004
 - **WhatsApp Support:** https://wa.me/919997488004 (+91 99974 88004)
 - **Email:** pantheracorbettsafari@gmail.com
-- **Official Domain:** https://pantheracorbettsafari.corbettcamp.com
+- **Official Domain:** https://pantheracorbettsafari.corbettcamp.com/
 - **Operating Hours & Official Safari Gate Schedule:**
   - Booking & Inquiry Desk: 06:00 AM – 09:30 PM IST (Daily)
   - Oct 01 – Nov 14: Morning 06:30 AM – 10:30 AM (Last entry 08:00 AM) | Afternoon 02:00 PM – 06:00 PM (Last entry 03:30 PM)
@@ -31,7 +31,7 @@
    - Inclusions: Dhikala core zone entry permit, seat on Canter, authorized wildlife guide, Ramnagar/Dhangarhi Gate pickup & drop.
    - Quota: Strictly 4 Canters per shift (total 64 seats/shift).
    - Season: 15 November to 15 June (closed during monsoon).
-   - URL: https://pantheracorbettsafari.corbettcamp.com/canter-safari
+   - URL: https://pantheracorbettsafari.corbettcamp.com/canter-safari/
 
 2. **Exclusive 4x4 Jeep Safari (Gypsy):**
    - Vehicle: Registered private Maruti Gypsy 4x4 (Maximum 6 adults + 2 children under 5).
@@ -39,26 +39,39 @@
    - Core Zones: Bijrani, Jhirna, Dhela, Garjiya, Durga Devi.
    - Buffer Zones: Phato, Hathidangar, Sitabani.
    - Inclusions: Zone permit, registered 4x4 Gypsy, fuel, licensed driver, authorized forest naturalist/guide, pickup and drop within 5 km of Ramnagar town.
-   - URL: https://pantheracorbettsafari.corbettcamp.com/jeep-safari
+   - URL: https://pantheracorbettsafari.corbettcamp.com/jeep-safari/
 
 3. **Forest Rest House (FRH) Core Night Stays:**
    - Accommodation: Dhikala FRH (32 rooms), Gairal FRH (6 rooms), Bijrani FRH (6 rooms).
    - Distinct Privilege: Guests staying inside FRHs are the only individuals permitted inside the core forest before day safaris open and after afternoon gates close.
-   - Quota Opening: Exactly 45 days in advance at 00:00 IST for Indian nationals; 90 days for foreign nationals.
-   - URL: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/dhikala-forest-rest-house
+   - Quota Opening: Exactly 45 days in advance at 10:00 AM IST for Indian nationals; 90 days for foreign nationals.
+   - Directory URL: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/
+   - Dhikala FRH: https://pantheracorbettsafari.corbettcamp.com/forest-rest-houses/dhikala-forest-rest-house/
 
 4. **Delhi to Jim Corbett All-Inclusive Packages:**
    - Duration: 1 Night/2 Days, 2 Nights/3 Days.
    - Inclusions: Private doorstep AC cab transfers from Delhi NCR (Swift Dzire), 3-star or 4-star jungle resort stay, breakfast & dinner, confirmed core zone safaris, government permits, all tolls and driver fees.
    - Pricing: Starting ₹20,999/couple (1N/2D) | ₹24,999/couple (2N/3D) | Weekend ex-Ramnagar from ₹11,999/couple.
-   - URL: https://pantheracorbettsafari.corbettcamp.com/delhi-to-jim-corbett-package
+   - URL: https://pantheracorbettsafari.corbettcamp.com/delhi-to-jim-corbett-package/
 
 5. **Delhi to Jim Corbett Private Cab Service:**
    - Route: Delhi / Gurgaon / Noida / Ghaziabad to Ramnagar (250 km, ~5 to 6 hours via NH-9).
    - Sedan (Swift Dzire / Toyota Etios): ₹4,500 one way | ₹9,000 round trip (All inclusive: tolls, state tax, driver allowance).
    - MUV (New Ertiga 6+1): ₹6,000 one way | ₹12,000 round trip.
    - SUV (Toyota Innova Crysta 6+1): ₹8,500 one way | ₹17,000 round trip.
-   - URL: https://pantheracorbettsafari.corbettcamp.com/delhi-corbett-cab
+   - URL: https://pantheracorbettsafari.corbettcamp.com/delhi-corbett-cab/
+
+6. **Official Safari Gate Timings & Cutoffs Guide:**
+   - Official Uttarakhand Forest Department gate opening hours and entry cutoff deadlines.
+   - Seasonal shifts: Winter (15 Nov – 15 Feb), Spring (16 Feb – 15 Apr), Summer (16 Apr onwards), Autumn (01 Oct – 14 Nov).
+   - Zone coverage: Bijrani, Dhikala Canter, Jhirna, Dhela, Garjiya, Durga Devi, Phato, Hathidangar, Sitabani.
+   - URL: https://pantheracorbettsafari.corbettcamp.com/safari-timings/
+
+7. **Official Ramnagar Safari Desk & Office Location:**
+   - Physical CTR assistance office at Patkote, Ramnagar, Nainital District, Uttarakhand – 244715.
+   - Direct helpline: +91 99974 88004 | WhatsApp: https://wa.me/919997488004
+   - Google Maps Directions: https://maps.app.goo.gl/YrBbDtW9tSNNbBKr8
+   - URL: https://pantheracorbettsafari.corbettcamp.com/contact/
 
 ---
 
@@ -78,7 +91,7 @@
 
 ---
 
-## 4. Safari Pricing Schedule (2025–26)
+## 4. Safari Pricing Schedule (2026–27)
 
 ### Indian Citizens:
 - **Dhikala Canter Safari:** ₹2,299 per person (Fixed year-round)

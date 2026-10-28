@@ -328,7 +328,7 @@ function Sidebar({
             {relatedPosts.map((p) => (
               <li key={p.id}>
                 <Link
-                  href={`/blog/${p.slug}`}
+                  href={`/blog/${p.slug}/`}
                   className="group flex gap-3"
                 >
                   <div className="relative w-16 h-14 shrink-0 rounded overflow-hidden bg-[#E8E0CC]">
@@ -408,7 +408,7 @@ export default async function BlogPostPage({
             <nav className="mb-4 flex items-center gap-2 text-xs text-[#8A9468]">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>/</span>
               <span className="text-[#E8E0CC]/70 truncate max-w-[180px]">{post.category}</span>
             </nav>
@@ -490,7 +490,7 @@ export default async function BlogPostPage({
                   WhatsApp Booking
                 </a>
                 <Link
-                  href="/safari-price"
+                  href="/safari-price/"
                   className="border border-[#8A9468] text-[#E8E0CC] text-sm px-6 py-2.5 rounded-[4px] hover:bg-[#37482E] transition-colors"
                 >
                   View All Prices
@@ -501,7 +501,7 @@ export default async function BlogPostPage({
             {/* Back to blog */}
             <div className="mt-8">
               <Link
-                href="/blog"
+                href="/blog/"
                 className="inline-flex items-center gap-2 text-sm text-[#37482E] hover:text-[#17211A] transition-colors"
               >
                 ← Back to all articles

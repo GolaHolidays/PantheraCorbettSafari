@@ -449,9 +449,15 @@ export default function DelhiCorbettCabPage() {
             <p>
               Our Delhi to Jim Corbett packages combine doorstep cab service with resort stay and safari bookings —
               making us a single-point contact for your entire Corbett trip from Delhi. Many guests
-              choose our Delhi to Jim Corbett All-Inclusive Package (from ₹20,999/couple with round-trip cab,
-              resort stay &amp; core safari) or our Bijrani Weekend Package (from ₹11,999/couple ex-Ramnagar)
-              for a completely hassle-free door-to-door experience.
+              choose our{" "}
+              <Link href="/delhi-to-jim-corbett-package/" className="text-[#37482E] font-semibold underline underline-offset-2 hover:text-[#17211A]">
+                Delhi to Jim Corbett All-Inclusive Package
+              </Link>{" "}
+              (from ₹20,999/couple with round-trip cab, resort stay &amp; core safari) or our{" "}
+              <Link href="/packages/bijrani-weekend-safari/" className="text-[#37482E] font-semibold underline underline-offset-2 hover:text-[#17211A]">
+                Bijrani Weekend Package
+              </Link>{" "}
+              (from ₹11,999/couple ex-Ramnagar) for a completely hassle-free door-to-door experience.
             </p>
           </div>
         </section>
@@ -479,6 +485,51 @@ export default function DelhiCorbettCabPage() {
           </div>
         </section>
 
+        {/* ── Corbett Planning Hub / Internal Links ── */}
+        <section className="bg-white border border-[#E8E0CC] rounded-[4px] p-6 sm:p-8">
+          <div className="text-center mb-6">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#8A9468]">Corbett Planning Hub</span>
+            <h2 className="font-serif text-2xl font-bold text-[#17211A] mt-1">Explore Safari Services &amp; Timings</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link
+              href="/jeep-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Private 4x4 Gypsy</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Jeep Safari Guide</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Book exclusive Gypsies across Bijrani, Jhirna, Garjiya, and Dhela zones.</p>
+            </Link>
+
+            <Link
+              href="/canter-safari/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Dhikala Day Safari</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Canter Safari (Dhikala)</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">16-seater sharing open bus into Dhikala grasslands at ₹2,299/person.</p>
+            </Link>
+
+            <Link
+              href="/safari-timings/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Gate Schedules</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Gate Timings</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Seasonal morning &amp; afternoon shift opening hours and entry cutoff deadlines.</p>
+            </Link>
+
+            <Link
+              href="/safari-price/"
+              className="p-4 rounded-[4px] bg-[#FBF8F0] border border-[#E8E0CC] hover:border-[#37482E] hover:shadow-md transition-all group"
+            >
+              <p className="text-xs font-semibold text-[#8A9468] uppercase tracking-wider mb-1">Tariff Guide</p>
+              <h3 className="font-serif font-bold text-base text-[#17211A] group-hover:text-[#37482E] transition-colors mb-1">Safari Prices 2026–27</h3>
+              <p className="text-xs text-[#17211A]/75 leading-relaxed">Official government rates for permits, gypsy hiring, and guide fees.</p>
+            </Link>
+          </div>
+        </section>
+
         {/* ── Final CTA ── */}
         <section className="bg-[#F4EFE6] border border-[#E8E0CC] rounded-[4px] p-8 text-center">
           <h2 className="font-serif text-2xl font-bold text-[#17211A] mb-2">
@@ -503,7 +554,7 @@ export default function DelhiCorbettCabPage() {
           </div>
           <p className="mt-4 text-xs text-[#8A9468]">
             Also look at our{" "}
-            <Link href="/delhi-to-jim-corbett-package" className="underline hover:text-[#17211A]">
+            <Link href="/delhi-to-jim-corbett-package/" className="underline hover:text-[#17211A]">
               Delhi to Jim Corbett tour packages
             </Link>{" "}
             — safari + resort + cab in one booking.

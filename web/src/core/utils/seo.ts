@@ -113,7 +113,7 @@ export interface ZoneSeoEntry {
 
 export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
   "dhikala-zone": {
-    title: "Dhikala Zone Canter Safari Booking | ₹2,299/Seat | Jim Corbett",
+    title: "Dhikala Canter Safari Booking | ₹2,299/Seat",
     description:
       "Book Dhikala zone canter safari online at ₹2,299/person. 16-person sharing open safari bus with pickup from Ramnagar / Dhangarhi Gate. Season: 15 Nov–15 Jun. Only 4 canters/shift — book 15–20 days ahead.",
     keywords: [
@@ -128,7 +128,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "bijrani-zone": {
-    title: "Bijrani Zone Jeep Safari Booking | ₹7,999/Jeep | Jim Corbett",
+    title: "Bijrani Zone Jeep Safari Booking | ₹7,999/Jeep",
     description:
       "Book Bijrani zone jeep safari from ₹7,999/jeep (up to 6 guests). Closest core zone to Ramnagar with the highest tiger sighting record. Private 4x4 Gypsy, guide & permit included. Morning & evening shifts available.",
     keywords: [
@@ -142,7 +142,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "jhirna-zone": {
-    title: "Jhirna Zone Safari Booking | Open All 365 Days | Jim Corbett",
+    title: "Jhirna Zone Safari Booking | Open All 365 Days",
     description:
       "Book Jhirna zone jeep safari — open all year including monsoon. ₹7,999/jeep (pre-booking). Highest sloth bear density, active tiger corridors. Exclusive 4x4 Gypsy for up to 6 guests with guide & permit.",
     keywords: [
@@ -156,7 +156,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "dhela-zone": {
-    title: "Dhela Zone Safari Booking | Limited 15 Jeeps/Shift | Jim Corbett",
+    title: "Dhela Zone Safari Booking | 15 Jeeps/Shift",
     description:
       "Book Dhela zone jeep safari — strictly capped at 15 jeeps/shift for a quiet, private experience. Open all 365 days. ₹7,999/jeep with guide & permit. Mixed forest, waterholes, and elephant sightings.",
     keywords: [
@@ -169,7 +169,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "garjiya-zone": {
-    title: "Garjiya Zone Safari Booking | Kosi River | Jim Corbett",
+    title: "Garjiya Zone Safari Booking | Kosi Riverbed",
     description:
       "Book Garjiya zone jeep safari from ₹7,999/jeep. Rugged Kosi riverbed terrain, just 12 km from Ramnagar, with one of the strongest tiger movement records. Private 4x4 Gypsy, guide & all permits included.",
     keywords: [
@@ -182,7 +182,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "durga-devi-zone": {
-    title: "Durgadevi Zone Safari Booking | Birdwatching | Jim Corbett",
+    title: "Durgadevi Zone Safari Booking | Birdwatching",
     description:
       "Book Durgadevi zone jeep safari from ₹7,999/jeep. Northeastern hilly terrain, river gorges, mahseer pools, and rare raptors. Ideal for birdwatchers and anglers. 28 km from Ramnagar.",
     keywords: [
@@ -195,7 +195,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "phato-zone": {
-    title: "Phato Zone Safari Booking | Buffer Zone Open All Year | Jim Corbett",
+    title: "Phato Zone Safari Booking | Buffer Zone Open All Year",
     description:
       "Book Phato zone jeep safari at ₹6,499/jeep — fixed price for both pre-booking and same-day. Open 365 days. Forest treehouse stopover, reliable tiger and elephant encounters.",
     keywords: [
@@ -208,7 +208,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "hathidangar-zone": {
-    title: "Hathidangar Zone Safari | Elephant Corridor | Jim Corbett",
+    title: "Hathidangar Safari Booking | Elephant Corridor",
     description:
       "Book Hathidangar zone jeep safari at ₹6,499/jeep. Prime elephant corridor in Ampokhra range, open all year. Private 4x4 Gypsy, guide & permit included. 15 km from Ramnagar.",
     keywords: [
@@ -221,7 +221,7 @@ export const ZONE_SEO_MAP: Record<string, ZoneSeoEntry> = {
     ],
   },
   "sitabani-zone": {
-    title: "Sitabani Safari Booking | Reserve Forest | From ₹5,999 | Jim Corbett",
+    title: "Sitabani Safari Booking | Reserve Forest | From ₹5,999",
     description:
       "Book Sitabani reserve forest jeep safari — 3 gates: Teda & Bhandarpani at ₹5,999/jeep, Pawalgarh at ₹6,499/jeep. No quota cap, easy same-day availability. Open 365 days. Guide & permit included.",
     keywords: [
@@ -248,7 +248,7 @@ export interface LandingPageSeo {
 
 export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
   "delhi-to-jim-corbett-package": {
-    title: "Delhi to Jim Corbett Package | 2N3D & Weekend Tour",
+    title: "Delhi to Jim Corbett Package | 2N3D Tour",
     description:
       "Book Delhi to Jim Corbett tour packages from ₹20,999/couple with private round-trip cab, or weekend packages from ₹11,999/couple ex-Ramnagar. 1N/2D & 2N/3D options with core jeep safari, resort stay & meals included. Call +91 99974 88004.",
     keywords: [
@@ -266,7 +266,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     canonicalPath: "/delhi-to-jim-corbett-package/",
   },
   "jeep-safari": {
-    title: "Jim Corbett Jeep Safari Booking | Private 4x4 Gypsy | From ₹5,999",
+    title: "Jim Corbett Jeep Safari | Private 4x4 Gypsy",
     description:
       "Book Jim Corbett jeep safari online — exclusive private 4x4 Gypsy for up to 6 guests. Bijrani, Jhirna, Garjiya, Dhela, Durga Devi zones. Morning & evening shifts. Guide + permit + jeep included. Pre-booking from ₹5,999/jeep.",
     keywords: [
@@ -285,7 +285,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     canonicalPath: "/jeep-safari/",
   },
   "canter-safari": {
-    title: "Jim Corbett Canter Safari | Dhikala Zone Booking | ₹2,299/Seat",
+    title: "Jim Corbett Canter Safari | Dhikala ₹2,299",
     description:
       "Book Dhikala canter safari online at ₹2,299/seat. 16-person sharing open safari bus with pickup from Ramnagar / Dhangarhi Gate. Season 15 Nov–15 Jun. Only 4 canters per shift — book 15–20 days ahead.",
     keywords: [
@@ -302,7 +302,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     canonicalPath: "/canter-safari/",
   },
   "safari-price": {
-    title: "Jim Corbett Safari Price 2026–27 | All Zone Fees & Inclusions",
+    title: "Jim Corbett Safari Price 2026–27 | Zone Fees",
     description:
       "Complete Jim Corbett safari price guide 2026–27. Dhikala canter safari ₹2,299/person. Jeep safari from ₹5,999–₹8,499/jeep. All zones: Bijrani, Jhirna, Garjiya, Dhela, Sitabani. Zero hidden costs — guide, permit & jeep included.",
     keywords: [
@@ -322,7 +322,7 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
     canonicalPath: "/safari-price/",
   },
   "safari-timings": {
-    title: "Jim Corbett Safari Timings 2026–27 | Gate Shifts & Cutoffs",
+    title: "Jim Corbett Safari Timings 2026–27 | Shifts",
     description:
       "Official Uttarakhand Forest Department Jim Corbett safari timings 2026–27. Morning & afternoon shifts for Bijrani, Dhikala, Jhirna, Garjiya & Dhela zones. Gate opening hours, last entry cutoffs & seasonal schedule.",
     keywords: [
@@ -338,6 +338,22 @@ export const LANDING_PAGE_SEO: Record<string, LandingPageSeo> = {
       "safari timing winter jim corbett",
     ],
     canonicalPath: "/safari-timings/",
+  },
+  "forest-rest-houses": {
+    title: "Corbett Forest Rest Houses | Dhikala, Bijrani, Gairal",
+    description:
+      "Book Jim Corbett Forest Rest House night stays inside core zones. Official government tariffs from ₹9,500/night for Dhikala, Gairal, and Bijrani FRH. Morning & evening Gypsy safaris included.",
+    keywords: [
+      "jim corbett forest rest house booking",
+      "dhikala forest rest house booking",
+      "gairal forest rest house",
+      "bijrani forest rest house",
+      "corbett night stay booking",
+      "corbett core zone stay",
+      "jim corbett rest house price",
+      "corbett frh permit booking",
+    ],
+    canonicalPath: "/forest-rest-houses/",
   },
 };
 
@@ -487,16 +503,11 @@ export function buildLocalBusinessSchema(config: {
   googleBusinessProfile: string;
 }): object {
   return {
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "TravelAgency"],
     "@id": `${SITE_URL}/#business`,
     name: config.name,
     legalName: "Panthera Corbett Safari",
-    alternateName: [
-      "Panthera Corbett",
-      "Panthera Corbett Safari",
-      "Panthera Safari",
-      "Panthera Corbett Safari Ramnagar",
-    ],
+    alternateName: ["Panthera Corbett", "Panthera Safari"],
     description: config.description,
     url: `${SITE_URL}/`,
     telephone: config.telephone,
@@ -534,12 +545,7 @@ export function buildWebSiteSchema(siteName: string): object {
     "@id": `${SITE_URL}/#website`,
     url: `${SITE_URL}/`,
     name: siteName,
-    alternateName: [
-      "Panthera Corbett",
-      "Panthera Corbett Safari",
-      "Panthera Safari",
-      "Panthera Corbett Safari Ramnagar",
-    ],
+    alternateName: ["Panthera Corbett", "Panthera Safari"],
     publisher: {
       "@id": `${SITE_URL}/#business`,
     },
@@ -576,6 +582,8 @@ export function buildServiceListSchema(): object {
   return {
     "@type": "Service",
     "@id": `${SITE_URL}/#services`,
+    name: "Jim Corbett Safari Booking Services",
+    url: `${SITE_URL}/`,
     provider: { "@id": `${SITE_URL}/#business` },
     serviceType: "Wildlife Safari Booking",
     hasOfferCatalog: {
